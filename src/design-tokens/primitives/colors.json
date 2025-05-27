@@ -1,0 +1,69 @@
+{
+    "color": {
+      "midnight": {
+        "50": { "value": "#E6F0FA" },
+        "100": { "value": "#CCE1F5" },
+        "200": { "value": "#B2D2EF" },
+        "300": { "value": "#99C3EA" },
+        "400": { "value": "#7FB4E4" },
+        "500": { "value": "#66A5DF" },
+        "600": { "value": "#4C96D9" },
+        "700": { "value": "#3387D4" },
+        "800": { "value": "#1978CE" },
+        "900": { "value": "#0069C9" }
+      },
+      "yellow": {
+        "50": { "value": "#FFFDEA" },
+        "100": { "value": "#FFFBD4" },
+        "200": { "value": "#FFF8BE" },
+        "300": { "value": "#FFF6A8" },
+        "400": { "value": "#FFF391" },
+        "500": { "value": "#FFD700" },
+        "600": { "value": "#E6C100" },
+        "700": { "value": "#CCAA00" },
+        "800": { "value": "#B39400" },
+        "900": { "value": "#9A7D00" }
+      },
+      "purple": {
+        "50": { "value": "#F6F5FF" },
+        "100": { "value": "#ECEBFF" },
+        "200": { "value": "#E2E0FF" },
+        "300": { "value": "#E6E6FA" },
+        "400": { "value": "#CECCFF" },
+        "500": { "value": "#C4C2FF" },
+        "600": { "value": "#BAB7FF" },
+        "700": { "value": "#B0ADFF" },
+        "800": { "value": "#A6A3FF" },
+        "900": { "value": "#9C99FF" }
+      },
+      "green": {
+        "50": { "value": "#F2FDED" },
+        "100": { "value": "#E5FBDC" },
+        "200": { "value": "#D8F9CA" },
+        "300": { "value": "#CBF7B9" },
+        "400": { "value": "#BEF5A7" },
+        "500": { "value": "#B1F396" },
+        "600": { "value": "#A4F184" },
+        "700": { "value": "#97EF72" },
+        "800": { "value": "#8AED61" },
+        "900": { "value": "#7FFF00" }
+      },
+      "waxflower": {
+        "50": { "value": "#FFF0ED" },
+        "100": { "value": "#FFE1DC" },
+        "200": { "value": "#FFD2CA" },
+        "300": { "value": "#FFC3B9" },
+        "400": { "value": "#FFC0CB" },
+        "500": { "value": "#FFA596" },
+        "600": { "value": "#FF9684" },
+        "700": { "value": "#FF8773" },
+        "800": { "value": "#FF7861" },
+        "900": { "value": "#FF6950" }
+      },
+      "brand": {
+        "pink": { "value": "#FF0C38" },
+        "blue": { "value": "#1E90FF" },
+        "cream": { "value": "#F1F2E5" }
+      }
+    }
+  }

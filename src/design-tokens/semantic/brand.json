@@ -1,0 +1,16 @@
+{
+    "color": {
+      "brand": {
+        "primary": { "value": "{color.yellow.500}" },
+        "secondary": { "value": "{color.purple.300}" },
+        "accent": { "value": "{color.green.900}" },
+        "midnight": { "value": "{color.midnight.900}" },
+        "lavender": { "value": "{color.purple.300}" },
+        "haloGreen": { "value": "{color.green.900}" },
+        "waxFlower": { "value": "{color.waxflower.400}" },
+        "brandPink": { "value": "{color.brand.pink}" },
+        "brandBlue": { "value": "{color.brand.blue}" },
+        "brandCream": { "value": "{color.brand.cream}" }
+      }
+    }
+  }

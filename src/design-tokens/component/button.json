@@ -1,0 +1,26 @@
+{
+    "component": {
+      "button": {
+        "primary": {
+          "background": { "value": "{color.brand.primary}" },
+          "text": { "value": "#FFFFFF" },
+          "border": { "value": "{color.brand.primary}" }
+        },
+        "secondary": {
+          "background": { "value": "{color.brand.secondary}" },
+          "text": { "value": "#000000" },
+          "border": { "value": "{color.brand.secondary}" }
+        },
+        "clear": {
+          "background": { "value": "transparent" },
+          "text": { "value": "{color.brand.primary}" },
+          "border": { "value": "transparent" }
+        },
+        "contained": {
+          "background": { "value": "{color.brand.primary}" },
+          "text": { "value": "#FFFFFF" },
+          "border": { "value": "{color.brand.primary}" }
+        }
+      }
+    }
+  }

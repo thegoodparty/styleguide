@@ -1,0 +1,28 @@
+{
+    "component": {
+      "avatar": {
+        "default": {
+          "background": { "value": "{color.brand.brandCream}" }
+        },
+        "brightYellow": {
+          "background": { "value": "{color.brand.primary}" }
+        },
+        "lavender": {
+          "background": { "value": "{color.brand.lavender}" }
+        },
+        "haloGreen": {
+          "background": { "value": "{color.brand.haloGreen}" }
+        },
+        "blue": {
+          "background": { "value": "{color.brand.brandBlue}" }
+        },
+        "waxFlower": {
+          "background": { "value": "{color.brand.waxFlower}" }
+        },
+        "badge": {
+          "background": { "value": "{color.brand.brandCream}" },
+          "border": { "value": "{color.brand.brandCream}" }
+        }
+      }
+    }
+  }
