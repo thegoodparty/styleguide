@@ -28,9 +28,8 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: Link Vercel Project
-        run: |
-          vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
+      - name: Login to Vercel
+        run: vercel login --token ${{ secrets.VERCEL_TOKEN }}
 
       - name: Capture Deployment URL
         run: |
@@ -40,18 +39,16 @@ jobs:
           echo "Using deployment URL: $DEPLOYMENT_URL"
           echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
 
-      # Get preview token for authentication
-      - name: Get Preview Token
+      - name: Start Storybook in background
         run: |
-          # Get deployment token
-          TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} deployment ls --scope good-party | grep ${{ env.BASE_URL }} | awk '{print $2}')
-          echo "Using deployment token: $TOKEN"
-          echo "PREVIEW_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+          npm run storybook -- --ci --port 6006 &
+          echo "Waiting for Storybook to start..."
+          sleep 20
 
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html?token=${{ env.PREVIEW_TOKEN }}; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
