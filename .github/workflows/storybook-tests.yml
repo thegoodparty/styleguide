@@ -54,7 +54,34 @@ jobs:
           # Add the bypass secret as an environment variable for the test command
           export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"true"}'
           
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}; then
+          # Function to check if Storybook is ready
+          check_storybook() {
+            curl -s -o /dev/null -w "%{http_code}" "${{ env.BASE_URL }}"
+          }
+          
+          # Wait for Storybook to be ready (max 2 minutes)
+          echo "Waiting for Storybook to be ready..."
+          TIMEOUT=120
+          while [ $TIMEOUT -gt 0 ]; do
+            STATUS=$(check_storybook)
+            if [ "$STATUS" = "200" ]; then
+              echo "Storybook is ready!"
+              break
+            fi
+            echo "Storybook not ready yet (status: $STATUS). Retrying in 5 seconds..."
+            sleep 5
+            TIMEOUT=$((TIMEOUT-5))
+          done
+          
+          if [ $TIMEOUT -le 0 ]; then
+            echo "Timeout waiting for Storybook to be ready"
+            exit 1
+          fi
+          
+          # Add a small additional delay to ensure full initialization
+          sleep 10
+          
+          if npm run test-storybook -- --url ${{ env.BASE_URL }} --timeout 60000; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
