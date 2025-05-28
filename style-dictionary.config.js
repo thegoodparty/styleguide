@@ -27,8 +27,9 @@ StyleDictionary.registerFormat({
         const variantName = path[2];   // default, secondary, etc.
         const property = path[3];      // background, text, border
         
-        // Create Tailwind-compatible color names: --color-button-default-background
-        themeVars += `  --color-${componentName}-${variantName}-${property}: var(--component-${componentName}-${variantName}-${property});\n`;
+        // Use token.name which matches the actual CSS variable name (kebab-case)
+        // This ensures the reference matches the generated CSS variable
+        themeVars += `  --color-${componentName}-${variantName}-${property}: var(--${token.name});\n`;
       }
     });
     

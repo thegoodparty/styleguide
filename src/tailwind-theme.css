@@ -23,12 +23,12 @@
   --color-button-ghost-background: var(--component-button-ghost-background);
   --color-button-ghost-text: var(--component-button-ghost-text);
   --color-button-ghost-border: var(--component-button-ghost-border);
-  --color-button-whiteOutlined-background: var(--component-button-whiteOutlined-background);
-  --color-button-whiteOutlined-text: var(--component-button-whiteOutlined-text);
-  --color-button-whiteOutlined-border: var(--component-button-whiteOutlined-border);
-  --color-button-whiteGhost-background: var(--component-button-whiteGhost-background);
-  --color-button-whiteGhost-text: var(--component-button-whiteGhost-text);
-  --color-button-whiteGhost-border: var(--component-button-whiteGhost-border);
+  --color-button-whiteOutlined-background: var(--component-button-white-outlined-background);
+  --color-button-whiteOutlined-text: var(--component-button-white-outlined-text);
+  --color-button-whiteOutlined-border: var(--component-button-white-outlined-border);
+  --color-button-whiteGhost-background: var(--component-button-white-ghost-background);
+  --color-button-whiteGhost-text: var(--component-button-white-ghost-text);
+  --color-button-whiteGhost-border: var(--component-button-white-ghost-border);
   --color-grayscale-50: var(--color-grayscale-50);
   --color-grayscale-100: var(--color-grayscale-100);
   --color-grayscale-200: var(--color-grayscale-200);
