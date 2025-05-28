@@ -43,13 +43,14 @@ jobs:
       # Get preview token for authentication
       - name: Get Preview Token
         run: |
-          PREVIEW_TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} generate-preview-token --scope good-party)
+          # Use vercel preview-url command instead
+          PREVIEW_TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} pull --yes)
           echo "PREVIEW_TOKEN=$PREVIEW_TOKEN" >> "$GITHUB_ENV"
 
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html?token=${{ env.PREVIEW_TOKEN }}; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
@@ -60,13 +61,10 @@ jobs:
         if: always()
         uses: 8398a7/action-slack@v3
         with:
-          status: ${{ steps.storybook-test.outputs.test_outcome }}
-          fields: repo,message,commit,author,action,eventName,ref,workflow
-          mention: 'here'
-          if_mention: failure
+          status: custom
           custom_payload: |
             {
-              "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*Deployment URL:* ${{ env.BASE_URL || 'N/A' }}",
+              "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*Status:* ${{ steps.storybook-test.outputs.test_outcome == 'success' && '✅ Passed' || '❌ Failed' }}\n*Deployment URL:* ${{ env.BASE_URL || 'N/A' }}",
               "attachments": [{
                 "color": "${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}"
               }]
