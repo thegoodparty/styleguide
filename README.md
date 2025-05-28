@@ -178,7 +178,7 @@ This will regenerate all CSS custom properties and Tailwind theme files.
 
 ```bash
 # Clone the repo
-git clone <repository-url>
+git clone https://github.com/thegoodparty/styleguide.git
 cd goodparty-styleguide
 npm install
 ```

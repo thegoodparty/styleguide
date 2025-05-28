@@ -13,6 +13,7 @@
     "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist --tsconfig tsconfig.app.json && npm run build:tokens && cp src/design-tokens.css dist/ && echo '@import \"./design-tokens.css\";' > dist/index.css",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "build:storybook": "storybook build",
+    "build-storybook": "storybook build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
