@@ -43,14 +43,15 @@ jobs:
       # Get preview token for authentication
       - name: Get Preview Token
         run: |
-          # Use vercel preview-url command instead
-          PREVIEW_TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} pull --yes)
-          echo "PREVIEW_TOKEN=$PREVIEW_TOKEN" >> "$GITHUB_ENV"
+          # Get deployment token
+          TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} deployment ls --scope good-party | grep ${{ env.BASE_URL }} | awk '{print $2}')
+          echo "Using deployment token: $TOKEN"
+          echo "PREVIEW_TOKEN=$TOKEN" >> "$GITHUB_ENV"
 
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html?token=${{ env.PREVIEW_TOKEN }}; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
