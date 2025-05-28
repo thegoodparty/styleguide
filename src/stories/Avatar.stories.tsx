@@ -96,19 +96,19 @@ export const ColorVariants: Story = {
       <Avatar variant="default">
         <AvatarFallback>DF</AvatarFallback>
       </Avatar>
-      <Avatar variant="brightYellow">
+      <Avatar variant="brightyellow">
         <AvatarFallback>BY</AvatarFallback>
       </Avatar>
       <Avatar variant="lavender">
         <AvatarFallback>LV</AvatarFallback>
       </Avatar>
-      <Avatar variant="haloGreen">
+      <Avatar variant="halogreen">
         <AvatarFallback>HG</AvatarFallback>
       </Avatar>
       <Avatar variant="blue">
         <AvatarFallback>BL</AvatarFallback>
       </Avatar>
-      <Avatar variant="waxFlower">
+      <Avatar variant="waxflower">
         <AvatarFallback>WF</AvatarFallback>
       </Avatar>
     </div>
@@ -177,7 +177,7 @@ export const BadgeSizes: Story = {
 export const IconWithColorAndBadge: Story = {
   render: () => (
     <div className="flex items-center gap-4">
-      <Avatar variant="brightYellow" size="large">
+      <Avatar variant="brightyellow" size="large">
         <AvatarIcon>
           <UserIcon className="h-6 w-6" />
         </AvatarIcon>
@@ -193,7 +193,7 @@ export const IconWithColorAndBadge: Story = {
           <StarIcon className="h-3 w-3 text-yellow-500" />
         </AvatarBadge>
       </Avatar>
-      <Avatar variant="haloGreen" size="large">
+      <Avatar variant="halogreen" size="large">
         <AvatarIcon>
           <UserIcon className="h-6 w-6" />
         </AvatarIcon>

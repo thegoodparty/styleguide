@@ -29,10 +29,17 @@ export const Secondary: Story = {
   },
 }
 
-export const Outline: Story = {
+export const Destructive: Story = {
   args: {
-    children: 'Outline',
-    variant: 'outline',
+    children: 'Delete',
+    variant: 'destructive',
+  },
+}
+
+export const Outlined: Story = {
+  args: {
+    children: 'Outlined',
+    variant: 'outlined',
   },
 }
 
@@ -43,31 +50,17 @@ export const Ghost: Story = {
   },
 }
 
-export const Link: Story = {
+export const WhiteGhost: Story = {
   args: {
-    children: 'Link',
-    variant: 'link',
+    children: 'White Ghost',
+    variant: 'whiteGhost',
   },
 }
 
-export const Destructive: Story = {
+export const WhiteOutlined: Story = {
   args: {
-    children: 'Delete',
-    variant: 'destructive',
-  },
-}
-
-export const Clear: Story = {
-  args: {
-    children: 'Clear',
-    variant: 'clear',
-  },
-}
-
-export const Contained: Story = {
-  args: {
-    children: 'Contained',
-    variant: 'contained',
+    children: 'White Outlined',
+    variant: 'whiteOutlined',
   },
 }
 
@@ -97,6 +90,19 @@ export const Sizes: Story = {
   ),
 }
 
+export const AllStates: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4">
+      {(["default", "secondary", "destructive", "outlined", "ghost", "whiteOutlined", "whiteGhost"] as const).map(variant => (
+        <div key={variant} className="flex gap-4">
+          <Button variant={variant} size="large">{variant} Enabled</Button>
+          <Button variant={variant} size="large" disabled>{variant} Disabled</Button>
+        </div>
+      ))}
+    </div>
+  ),
+}
+
 export const IconButtonSizes: Story = {
   render: () => (
     <div className="flex items-center gap-4">
@@ -122,18 +128,13 @@ export const IconButtonSizes: Story = {
 export const IconButtonVariants: Story = {
   render: () => (
     <div className="flex items-center gap-4">
-      <IconButton variant="default" aria-label="Default icon button">
-        <DownloadIcon className="h-5 w-5" />
-      </IconButton>
-      <IconButton variant="outline" aria-label="Outline icon button">
-        <DownloadIcon className="h-5 w-5" />
-      </IconButton>
-      <IconButton variant="clear" aria-label="Clear icon button">
-        <DownloadIcon className="h-5 w-5" />
-      </IconButton>
-      <IconButton variant="contained" aria-label="Contained icon button">
-        <DownloadIcon className="h-5 w-5" />
-      </IconButton>
+      {(["default", "secondary", "destructive", "outlined", "ghost", "whiteOutlined", "whiteGhost"] as const).map(variant => (
+        <div key={variant} className="flex gap-4">
+          <IconButton variant={variant} aria-label={variant}>
+            <DownloadIcon className="h-5 w-5" />
+          </IconButton>
+        </div>
+      ))}
     </div>
   ),
-} 
+}

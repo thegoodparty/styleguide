@@ -10,18 +10,19 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-brand-primary text-white shadow-xs hover:bg-brand-primary/90",
-        destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "bg-button-default-background text-button-default-text border-button-default-border shadow-xs hover:bg-button-default-background/90",
         secondary:
-          "bg-brand-secondary text-black shadow-xs hover:bg-brand-secondary/80",
+          "bg-button-secondary-background text-button-secondary-text border-button-secondary-border shadow-xs hover:bg-button-secondary-background/80",
+        destructive:
+          "bg-button-destructive-background text-button-destructive-text border-button-destructive-border shadow-xs hover:bg-button-destructive-background/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
+        outlined:
+          "bg-button-outlined-background text-button-outlined-text border-button-outlined-border shadow-xs hover:bg-accent hover:text-accent-foreground",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
-        clear: "bg-transparent text-brand-primary hover:bg-accent/20",
-        contained: "bg-brand-primary text-white shadow-xs hover:bg-brand-primary/90",
+          "bg-button-ghost-background text-button-ghost-text border-button-ghost-border hover:bg-accent hover:text-accent-foreground",
+        whiteOutlined:
+          "bg-button-whiteOutlined-background text-button-whiteOutlined-text border-button-whiteOutlined-border shadow-xs hover:bg-accent/20 hover:text-accent-foreground",
+        whiteGhost:
+          "bg-button-whiteGhost-background text-button-whiteGhost-text border-button-whiteGhost-border hover:bg-accent/20 hover:text-accent-foreground",
       },
       size: {
         xSmall: "h-6 px-3 py-1.5 text-xs has-[>svg]:px-2",

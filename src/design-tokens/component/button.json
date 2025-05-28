@@ -1,26 +1,41 @@
 {
     "component": {
       "button": {
-        "primary": {
-          "background": { "value": "{color.brand.primary}" },
-          "text": { "value": "#FFFFFF" },
-          "border": { "value": "{color.brand.primary}" }
+        "default": {
+          "background": { "value": "{color.brand.default}" },
+          "text": { "value": "{color.grayscale.black}" },
+          "border": { "value": "{color.grayscale.black}" }
         },
         "secondary": {
           "background": { "value": "{color.brand.secondary}" },
-          "text": { "value": "#000000" },
+          "text": { "value": "{color.grayscale.white}" },
           "border": { "value": "{color.brand.secondary}" }
         },
-        "clear": {
+        "destructive": {
+          "background": { "value": "{color.brand.destructive}" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "{color.brand.destructive}" }
+        },
+        "outlined": {
           "background": { "value": "transparent" },
-          "text": { "value": "{color.brand.primary}" },
+          "text": { "value": "{color.grayscale.black}" },
+          "border": { "value": "{color.grayscale.black}" }
+        },
+        "ghost": {
+          "background": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.black}" },
           "border": { "value": "transparent" }
         },
-        "contained": {
-          "background": { "value": "{color.brand.primary}" },
-          "text": { "value": "#FFFFFF" },
-          "border": { "value": "{color.brand.primary}" }
+        "whiteOutlined": {
+          "background": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "{color.grayscale.white}" }
+        },
+        "whiteGhost": {
+          "background": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "transparent" }
         }
       }
     }
-  }
+}

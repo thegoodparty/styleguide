@@ -2,26 +2,26 @@
     "component": {
       "avatar": {
         "default": {
-          "background": { "value": "{color.brand.brandCream}" }
+          "background": { "value": "{color.grayscale.white}" }
         },
-        "brightYellow": {
-          "background": { "value": "{color.brand.primary}" }
+        "brightyellow": {
+          "background": { "value": "{color.brand.default}" }
         },
         "lavender": {
           "background": { "value": "{color.brand.lavender}" }
         },
-        "haloGreen": {
-          "background": { "value": "{color.brand.haloGreen}" }
+        "halogreen": {
+          "background": { "value": "{color.brand.halogreen}" }
         },
         "blue": {
-          "background": { "value": "{color.brand.brandBlue}" }
+          "background": { "value": "{color.gp.blue}" }
         },
-        "waxFlower": {
-          "background": { "value": "{color.brand.waxFlower}" }
+        "waxflower": {
+          "background": { "value": "{color.brand.waxflower}" }
         },
         "badge": {
-          "background": { "value": "{color.brand.brandCream}" },
-          "border": { "value": "{color.brand.brandCream}" }
+          "background": { "value": "{color.gp.cream}" },
+          "border": { "value": "{color.gp.cream}" }
         }
       }
     }

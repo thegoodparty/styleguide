@@ -18,12 +18,12 @@ const avatarVariants = cva(
         xLarge: "size-16",
       },
       variant: {
-        default: "bg-brand-cream",
-        brightYellow: "bg-brand-primary",
-        lavender: "bg-brand-lavender",
-        haloGreen: "bg-brand-halo-green",
-        blue: "bg-brand-blue",
-        waxFlower: "bg-brand-wax-flower",
+        default: "bg-avatar-default-background",
+        brightyellow: "bg-avatar-brightyellow-background",
+        lavender: "bg-avatar-lavender-background",
+        halogreen: "bg-avatar-halogreen-background",
+        blue: "bg-avatar-blue-background",
+        waxflower: "bg-avatar-waxflower-background",
       },
     },
     defaultVariants: {
