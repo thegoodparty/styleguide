@@ -56,11 +56,20 @@ jobs:
         with:
           status: ${{ steps.storybook-test.outputs.test_outcome }}
           fields: repo,message,commit,author,action,eventName,ref,workflow
-          color: ${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}
-          text: |
-            *Storybook Test Results* 📚
-            *Repository:* ${{ github.repository }}
-            *Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}
-            *Deployment URL:* ${{ env.BASE_URL || 'N/A' }}
+          mention: 'here'
+          if_mention: failure
+          custom_payload: |
+            {
+              "attachments": [{
+                "color": "${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}",
+                "blocks": [{
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*Deployment URL:* ${{ env.BASE_URL || 'N/A' }}"
+                  }
+                }]
+              }]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
