@@ -31,7 +31,7 @@ jobs:
       - name: Link Vercel Project
         run: |
           vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
-          vercel login good-party --github --token ${{ secrets.VERCEL_TOKEN }}
+          vercel login good-party --github
 
       - name: Capture Deployment URL
         run: |
