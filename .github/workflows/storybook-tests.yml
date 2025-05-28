@@ -1,0 +1,66 @@
+name: Storybook Tests
+
+on:
+  deployment_status:
+    environments:
+      - 'Preview - gp-styleguide'
+      - 'Production - gp-styleguide'
+      
+  schedule:
+  # Run at midnight PST (8 AM UTC)
+  - cron: '0 8 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Link Vercel Project
+        run: |
+          vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
+
+      - name: Capture Deployment URL
+        run: |
+          # Get the Vercel preview URL directly from the deployment status
+          DEPLOYMENT_URL="${{ github.event.deployment_status.target_url }}"
+          
+          echo "Using deployment URL: $DEPLOYMENT_URL"
+          echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
+
+      - name: Run Storybook tests
+        id: storybook-test
+        run: |
+          if npm run test-storybook; then
+            echo "test_outcome=success" >> "$GITHUB_OUTPUT"
+          else
+            echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
+          fi
+        continue-on-error: true
+
+      - name: Send Slack notification
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ steps.storybook-test.outputs.test_outcome }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow
+          color: ${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}
+          text: |
+            *Storybook Test Results* 📚
+            *Repository:* ${{ github.repository }}
+            *Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}
+            *Deployment URL:* ${{ env.BASE_URL || 'N/A' }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
