@@ -31,7 +31,6 @@ jobs:
       - name: Link Vercel Project
         run: |
           vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
-          vercel login good-party --github
 
       - name: Capture Deployment URL
         run: |
@@ -52,7 +51,10 @@ jobs:
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html?token=${{ env.PREVIEW_TOKEN }}; then
+          # Add the bypass secret as an environment variable for the test command
+          export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"true"}'
+          
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
