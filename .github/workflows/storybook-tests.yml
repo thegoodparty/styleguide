@@ -54,9 +54,12 @@ jobs:
           # Add the bypass secret as an environment variable for the test command
           export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"true"}'
           
-          # Function to check if Storybook is ready
+          # Function to check if Storybook is ready with authentication
           check_storybook() {
-            curl -s -o /dev/null -w "%{http_code}" "${{ env.BASE_URL }}"
+            curl -s -o /dev/null -w "%{http_code}" \
+              -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
+              -H "x-vercel-set-bypass-cookie: true" \
+              "${{ env.BASE_URL }}"
           }
           
           # Wait for Storybook to be ready (max 2 minutes)
