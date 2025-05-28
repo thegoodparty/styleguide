@@ -43,7 +43,7 @@ jobs:
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
