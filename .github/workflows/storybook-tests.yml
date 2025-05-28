@@ -30,8 +30,9 @@ jobs:
 
       - name: Link Vercel Project
         run: |
-          vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
-          vercel login good-party
+          mkdir -p ~/.vercel
+          echo "{\"orgId\":\"good-party\",\"projectId\":\"gp-styleguide\"}" > .vercel/project.json
+          vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes
 
       - name: Capture Deployment URL
         run: |
@@ -51,8 +52,10 @@ jobs:
 
       - name: Run Storybook tests
         id: storybook-test
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html?token=${{ env.PREVIEW_TOKEN }}; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html?token=$VERCEL_TOKEN; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
