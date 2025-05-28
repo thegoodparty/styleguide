@@ -43,7 +43,7 @@ jobs:
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
@@ -60,15 +60,9 @@ jobs:
           if_mention: failure
           custom_payload: |
             {
+              "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*Deployment URL:* ${{ env.BASE_URL || 'N/A' }}",
               "attachments": [{
-                "color": "${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}",
-                "blocks": [{
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*Deployment URL:* ${{ env.BASE_URL || 'N/A' }}"
-                  }
-                }]
+                "color": "${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}"
               }]
             }
         env:
