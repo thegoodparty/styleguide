@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import {
   HoverCard,
@@ -7,7 +6,7 @@ import {
 } from '../components/ui/hover-card'
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
 import { Button } from '../components/ui/button'
-import { CalendarIcon } from 'lucide-react'
+import { CalendarIcon } from '../components/ui/icons'
 
 const meta: Meta<typeof HoverCard> = {
   title: 'Components/HoverCard',
@@ -22,7 +21,7 @@ function DefaultHoverCard() {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Button variant="link">@nextjs</Button>
+        <Button variant="ghost">@nextjs</Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-80">
         <div className="flex justify-between space-x-4">
@@ -132,10 +131,10 @@ function InteractiveContentHoverCard() {
             This hover card contains interactive elements.
           </p>
           <div className="flex space-x-2">
-            <Button size="sm" variant="outline">
+            <Button size="small" variant="outline">
               Action 1
             </Button>
-            <Button size="sm" variant="outline">
+            <Button size="small" variant="outline">
               Action 2
             </Button>
           </div>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { UserIcon, CheckIcon, StarIcon } from '../components/ui/icons'
 import { Avatar, AvatarFallback, AvatarImage, AvatarIcon, AvatarBadge } from '../components/ui/avatar'
-import { UserIcon, CheckIcon, StarIcon } from 'lucide-react'
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
