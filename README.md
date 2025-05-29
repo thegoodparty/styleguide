@@ -1,6 +1,6 @@
 # goodparty-styleguide
 
-A modern React component library built with automated design tokens and Tailwind CSS v4.
+A modern React component library with automated design tokens, Tailwind CSS v4, and comprehensive typography system.
 
 ## 📦 Installation
 
@@ -18,6 +18,8 @@ pnpm add goodparty-styleguide
 
 ## 🚀 Usage
 
+### Components
+
 Import components directly from the package:
 
 ```tsx
@@ -32,6 +34,28 @@ export default function Example() {
   );
 }
 ```
+
+### Typography
+
+The styleguide includes a complete typography system with pre-styled HTML elements and utility classes:
+
+```html
+<!-- Use semantic HTML elements - they're automatically styled -->
+<h1>Page Title</h1>
+<p class="text-lead">Introduction paragraph with lead styling</p>
+<p>Regular body text with <strong>emphasis</strong> and <a href="#">links</a></p>
+
+<!-- Or use utility classes for custom styling -->
+<p class="text-xl font-semibold">Custom styled text</p>
+<button class="button-text-medium">Perfectly styled button text</button>
+```
+
+**Key Features:**
+- ✅ Pre-styled HTML elements (h1-h6, p, lists, blockquotes, etc.)
+- ✅ Utility classes for sizes, weights, and line heights
+- ✅ CSS custom properties for all typography values
+- ✅ Outfit font with system fallbacks
+- ✅ Responsive and accessible defaults
 
 ## 🆕 Usage in a New Project
 
@@ -48,24 +72,54 @@ export default function Example() {
    @import 'tailwindcss';
    @import 'goodparty-styleguide/dist/index.css';
    ```
+   
+   > **Typography included:** The main CSS import includes both components and typography styles.
 
-3. Use the components in your project:
+3. Use components and typography in your project:
    ```tsx
    import { Avatar, Button } from 'goodparty-styleguide';
 
    export default function MyComponent() {
      return (
-       <div>
-         <Avatar variant="brightyellow" size="medium">
-           <Avatar.Fallback>JD</Avatar.Fallback>
-         </Avatar>
-         <Button variant="default">Click me</Button>
-       </div>
+       <article>
+         <h1>Welcome to Our Platform</h1>
+         <p className="text-lead">
+           Get started with beautiful, consistent design.
+         </p>
+         
+         <div className="flex items-center gap-4">
+           <Avatar variant="brightyellow" size="medium">
+             <Avatar.Fallback>JD</Avatar.Fallback>
+           </Avatar>
+           <Button variant="default">Get Started</Button>
+         </div>
+         
+         <p>
+           Use any HTML elements and they'll automatically match 
+           your design system.
+         </p>
+       </article>
      );
    }
    ```
 
-### Option 2: Tailwind CSS v3 (Legacy)
+### Option 2: Typography Only
+
+If you only need the typography system without React components:
+
+```css
+/* Import just typography styles */
+@import 'goodparty-styleguide/dist/typography.css';
+```
+
+This gives you:
+- **Text Sizes:** `.text-xs` through `.text-7xl`
+- **Font Weights:** `.font-regular` (400) to `.font-bold` (700)
+- **Special Styles:** `.text-lead`, `.text-large`, `.text-small`, `.text-muted`
+- **Button Text:** `.button-text-large`, `.button-text-medium`, `.button-text-small`
+- **All HTML elements** pre-styled with consistent typography
+
+### Option 3: Tailwind CSS v3 (Legacy)
 
 1. Install the package and Tailwind CSS:
    ```bash

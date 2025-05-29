@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Design System/Typography/Documentation" />
+
+# Typography
+
+Simple, maintainable typography using CSS defaults and utility classes.
+
+## Quick Start
+
+```css
+/* Import in your project */
+@import '@goodparty/styleguide/dist/typography.css';
+```
+
+## Default Styles
+
+All standard HTML elements are pre-styled:
+
+- **Headings**: `<h1>` through `<h6>`
+- **Body text**: `<p>`
+- **Lists**: `<ul>`, `<ol>`, `<li>`
+- **Inline elements**: `<strong>`, `<em>`, `<code>`, `<a>`
+- **Block elements**: `<blockquote>`, `<pre>`
+
+## Utility Classes
+
+### Text Sizes
+- `.text-xs` through `.text-7xl`
+
+### Text Styles
+- `.text-lead` - Lead paragraph style
+- `.text-large` - Larger body text
+- `.text-small` - Smaller body text  
+- `.text-muted` - Muted color text
+
+### Font Weights
+- `.font-regular` - 400
+- `.font-medium` - 500
+- `.font-semibold` - 600
+- `.font-bold` - 700
+
+### Button Text
+- `.button-text-large` - 16px
+- `.button-text-medium` - 14px
+- `.button-text-small` - 12px
+
+## CSS Custom Properties
+
+All values are available as CSS variables:
+
+```css
+/* Use in your CSS */
+.my-heading {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-semibold);
+}
+```
+
+## Examples
+
+```html
+<!-- Heading -->
+<h1>Main Page Title</h1>
+
+<!-- Lead paragraph -->
+<p class="text-lead">
+  Introduction text that's slightly larger
+</p>
+
+<!-- Regular paragraph -->
+<p>
+  Body text with <strong>emphasis</strong> and 
+  <a href="#">links</a>.
+</p>
+
+<!-- Button -->
+<button class="button-text-medium">
+  Click Me
+</button>
+``` 
