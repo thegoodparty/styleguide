@@ -74,3 +74,23 @@ jobs:
             STATUS="Fail ❌"
             COLOR="danger"
           fi
+
+          # Send notification to Slack
+          curl -X POST -H 'Content-type: application/json' \
+            --data "{
+              \"attachments\": [
+                {
+                  \"color\": \"${COLOR}\",
+                  \"blocks\": [
+                    {
+                      \"type\": \"section\",
+                      \"text\": {
+                        \"type\": \"mrkdwn\",
+                        \"text\": \"*Storybook Tests Status:* ${STATUS}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*URL:* ${{ env.BASE_URL }}\"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }" \
+            ${{ secrets.SLACK_WORKFLOW_WEBHOOK }}
