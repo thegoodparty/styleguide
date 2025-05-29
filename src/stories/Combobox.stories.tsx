@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Check, ChevronsUpDown } from '../components/ui/icons'
+import { CheckIcon, ChevronsUpDownIcon } from '../components/ui/icons'
 import { cn } from '../lib/utils'
 import { Button } from '../components/ui/button'
 import {
@@ -70,7 +70,7 @@ function DefaultCombobox() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -87,7 +87,7 @@ function DefaultCombobox() {
                   setOpen(false)
                 }}
               >
-                <Check
+                <CheckIcon
                   className={cn(
                     "mr-2 h-4 w-4",
                     value === framework.value ? "opacity-100" : "opacity-0"
@@ -139,7 +139,7 @@ function MultipleGroupsCombobox() {
                 .flat()
                 .find((item) => item.value === value)?.label
             : "Select technology..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -157,7 +157,7 @@ function MultipleGroupsCombobox() {
                     setOpen(false)
                   }}
                 >
-                  <Check
+                  <CheckIcon
                     className={cn(
                       "mr-2 h-4 w-4",
                       value === item.value ? "opacity-100" : "opacity-0"
@@ -190,7 +190,7 @@ function CustomStylesCombobox() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -214,7 +214,7 @@ function CustomStylesCombobox() {
                 className="flex items-center justify-between rounded-md px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground"
               >
                 <span>{framework.label}</span>
-                <Check
+                <CheckIcon
                   className={cn(
                     "h-4 w-4",
                     value === framework.value ? "opacity-100" : "opacity-0"
@@ -259,7 +259,7 @@ function DisabledItemsCombobox() {
           {value
             ? frameworksWithDisabled.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -282,7 +282,7 @@ function DisabledItemsCombobox() {
                 )}
               >
                 <span>{framework.label}</span>
-                <Check
+                <CheckIcon
                   className={cn(
                     "h-4 w-4",
                     value === framework.value ? "opacity-100" : "opacity-0"

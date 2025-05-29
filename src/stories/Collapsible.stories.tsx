@@ -5,7 +5,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '../components/ui/collapsible'
-import { ChevronDown } from '../components/ui/icons'
+import { ChevronDownIcon } from '../components/ui/icons'
 
 const meta: Meta<typeof Collapsible> = {
   title: 'Components/Collapsible',
@@ -23,7 +23,7 @@ export const Default: Story = {
         <h4 className="text-sm font-semibold">@peduarte starred 3 repositories</h4>
         <CollapsibleTrigger asChild>
           <Button variant="ghost" size="small" className="w-9 p-0">
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDownIcon className="h-4 w-4" />
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>
@@ -48,7 +48,7 @@ export const WithCustomTrigger: Story = {
     <Collapsible className="w-[350px] space-y-2">
       <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 font-medium">
         <span>Click to expand</span>
-        <ChevronDown className="h-4 w-4" />
+        <ChevronDownIcon className="h-4 w-4" />
       </CollapsibleTrigger>
       <CollapsibleContent className="space-y-2">
         <div className="rounded-md border px-4 py-3">
@@ -67,13 +67,13 @@ export const WithNestedContent: Story = {
     <Collapsible className="w-[350px] space-y-2">
       <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 font-medium">
         <span>Parent Section</span>
-        <ChevronDown className="h-4 w-4" />
+        <ChevronDownIcon className="h-4 w-4" />
       </CollapsibleTrigger>
       <CollapsibleContent className="space-y-2">
         <Collapsible className="space-y-2">
           <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 font-medium">
             <span>Child Section 1</span>
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDownIcon className="h-4 w-4" />
           </CollapsibleTrigger>
           <CollapsibleContent className="space-y-2">
             <div className="rounded-md border px-4 py-3">
@@ -84,7 +84,7 @@ export const WithNestedContent: Story = {
         <Collapsible className="space-y-2">
           <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 font-medium">
             <span>Child Section 2</span>
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDownIcon className="h-4 w-4" />
           </CollapsibleTrigger>
           <CollapsibleContent className="space-y-2">
             <div className="rounded-md border px-4 py-3">
@@ -102,7 +102,7 @@ export const WithCustomStyles: Story = {
     <Collapsible className="w-[350px] space-y-2">
       <CollapsibleTrigger className="group flex w-full items-center justify-between rounded-lg border bg-card p-4 font-medium transition-colors hover:bg-accent">
         <span>Custom Styled Section</span>
-        <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+        <ChevronDownIcon className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
       </CollapsibleTrigger>
       <CollapsibleContent className="space-y-2">
         <div className="rounded-md border bg-card p-4">
@@ -121,7 +121,7 @@ export const WithAnimation: Story = {
     <Collapsible className="w-[350px] space-y-2">
       <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 font-medium">
         <span>Animated Section</span>
-        <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+        <ChevronDownIcon className="h-4 w-4 transition-transform duration-200" />
       </CollapsibleTrigger>
       <CollapsibleContent className="space-y-2">
         <div className="rounded-md border p-4">

@@ -1,7 +1,7 @@
 import * as React from "react"
 import {
   ChevronLeftIcon,
-  ChevronRight,
+  ChevronRightIcon,
   MoreHorizontalIcon,
 } from "./icons"
 
@@ -94,7 +94,7 @@ function PaginationNext({
       {...props}
     >
       <span className="hidden sm:block">Next</span>
-      <ChevronRight />
+      <ChevronRightIcon />
     </PaginationLink>
   )
 }
