@@ -5,24 +5,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    
-    "dist",
-    "src/design-tokens.css"
-  
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist --tsconfig tsconfig.app.json && npm run build:tokens && cp src/design-tokens.css dist/ && echo '@import \"./design-tokens.css\";' > dist/index.css",
-    "build:tokens": "style-dictionary build --config style-dictionary.config.js",
-    "build:storybook": "storybook build",
-    "build-storybook": "storybook build",
+    "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "storybook:tokens": "npm run build:tokens && npm run storybook",
-    "tokens:watch": "style-dictionary build --config style-dictionary.config.js --watch",
-    "clean": "rm -rf dist storybook-static",
-    "prepublishOnly": "npm run clean && npm run build",
+    "build-storybook": "storybook build",
     "test-storybook": "test-storybook"
   },
   "peerDependencies": {
@@ -102,8 +93,6 @@
     "globals": "^16.0.0",
     "playwright": "^1.52.0",
     "storybook": "^8.6.12",
-    "style-dictionary": "^5.0.0",
-    "tsup": "^8.5.0",
     "tw-animate-css": "^1.2.9",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
