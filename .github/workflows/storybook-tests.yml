@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Install Vercel CLI
         run: npm install -g vercel
 
@@ -40,20 +43,9 @@ jobs:
           echo "Using deployment URL: $DEPLOYMENT_URL"
           echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
 
-      # Get preview token for authentication
-      - name: Get Preview Token
-        run: |
-          # Get deployment token
-          TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} deployment ls --scope good-party | grep ${{ env.BASE_URL }} | awk '{print $2}')
-          echo "Using deployment token: $TOKEN"
-          echo "PREVIEW_TOKEN=$TOKEN" >> "$GITHUB_ENV"
-
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          # Add the bypass secret as an environment variable for the test command
-          export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"true"}'
-          
           if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
