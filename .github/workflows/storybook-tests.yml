@@ -56,16 +56,24 @@ jobs:
           STATUS=$(if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then echo "Pass"; else echo "Fail"; fi)
           COLOR=$(if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then echo "good"; else echo "danger"; fi)
           
-          # Send the Slack notification
-          curl -X POST -H "Content-type: application/json" \
-          --data '{
-            "text": "Storybook Test Results ('"${STATUS}"')",
+          # Create JSON payload
+          JSON_DATA=$(cat <<EOF
+          {
+            "text": "Storybook Test Results ($STATUS)",
             "attachments": [
               {
-                "color": "'"${COLOR}"'",
+                "color": "$COLOR",
                 "fields": [
-                  { "title": "Branch", "value": "'"${{ github.ref_name }}"'", "short": true },
-                  { "title": "Commit", "value": "'"${{ github.sha }}"'", "short": true }
+                  {
+                    "title": "Branch",
+                    "value": "${{ github.ref_name }}",
+                    "short": true
+                  },
+                  {
+                    "title": "Commit",
+                    "value": "${{ github.sha }}",
+                    "short": true
+                  }
                 ],
                 "actions": [
                   {
@@ -77,4 +85,12 @@ jobs:
                 ]
               }
             ]
-          }' $SLACK_WORKFLOW_WEBHOOK 
+          }
+          EOF
+          )
+          
+          # Send the notification
+          curl -X POST \
+            -H "Content-type: application/json" \
+            -d "$JSON_DATA" \
+            "$SLACK_WORKFLOW_WEBHOOK" 
