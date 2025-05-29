@@ -1,15 +1,17 @@
 name: Storybook Tests
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, converted_to_draft, ready_for_review]
+  deployment_status:
+    environments:
+      - 'Preview - gp-styleguide'
+      - 'Production - gp-styleguide'
+      
   schedule:
-    # Run at midnight PST (8 AM UTC)
-    - cron: '0 8 * * *'
+  # Run at midnight PST (8 AM UTC)
+  - cron: '0 8 * * *'
 
 jobs:
   test:
-    if: github.event.pull_request.draft == true || github.event.pull_request.draft == false
     runs-on: ubuntu-latest
 
     steps:
@@ -23,24 +25,36 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+      - name: Install Vercel CLI
+        run: npm install -g vercel
 
-      - name: Build Storybook
-        run: npm run build-storybook
-
-      - name: Start Storybook in the background
-        run: npm run storybook -- --ci --port 6006 &
-        
-      - name: Wait for Storybook to be ready
+      - name: Link Vercel Project
         run: |
-          echo "Waiting for Storybook to be available..."
-          timeout 30 bash -c 'until curl -s http://localhost:6006 > /dev/null; do sleep 1; done'
+          vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
+
+      - name: Capture Deployment URL
+        run: |
+          # Get the Vercel preview URL directly from the deployment status
+          DEPLOYMENT_URL="${{ github.event.deployment_status.target_url }}"
+          
+          echo "Using deployment URL: $DEPLOYMENT_URL"
+          echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
+
+      # Get preview token for authentication
+      - name: Get Preview Token
+        run: |
+          # Get deployment token
+          TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} deployment ls --scope good-party | grep ${{ env.BASE_URL }} | awk '{print $2}')
+          echo "Using deployment token: $TOKEN"
+          echo "PREVIEW_TOKEN=$TOKEN" >> "$GITHUB_ENV"
 
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook -- --url http://localhost:6006; then
+          # Add the bypass secret as an environment variable for the test command
+          export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"true"}'
+          
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}/iframe.html; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
@@ -60,8 +74,3 @@ jobs:
             STATUS="Fail ❌"
             COLOR="danger"
           fi
-
-          curl -X POST \
-            -H "Content-type: application/json" \
-            -d "{\"text\":\"Storybook Test Results ($STATUS)\",\"attachments\":[{\"color\":\"$COLOR\",\"fields\":[{\"title\":\"Branch\",\"value\":\"${{ github.ref_name }}\",\"short\":true},{\"title\":\"Commit\",\"value\":\"${{ github.sha }}\",\"short\":true}],\"actions\":[{\"type\":\"button\",\"text\":\"View GitHub Action\",\"url\":\"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\",\"style\":\"primary\"}]}]}" \
-            "$SLACK_WORKFLOW_WEBHOOK" 
