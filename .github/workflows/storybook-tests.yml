@@ -51,60 +51,10 @@ jobs:
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          # Create the headers with proper JSON escaping
-          HEADERS="{\"x-vercel-protection-bypass\":\"${{ secrets.VERCEL_PROTECTION_BYPASS }}\",\"x-vercel-set-bypass-cookie\":\"true\"}"
+          # Add the bypass secret as an environment variable for the test command
+          export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"samesitenone"}'
           
-          # Check if we can access the URL without hitting login page
-          echo "Testing URL accessibility with bypass headers..."
-          echo "First trying without following redirects:"
-          curl -v \
-            -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
-            -H "x-vercel-set-bypass-cookie: true" \
-            -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
-            ${{ env.BASE_URL }}
-            
-          echo "\nNow trying with limited redirects:"
-          curl -v -L --max-redirs 5 \
-            -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
-            -H "x-vercel-set-bypass-cookie: true" \
-            -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
-            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
-            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-            ${{ env.BASE_URL }}
-            
-          RESPONSE_CODE=$(curl --max-redirs 5 -L -s -o /dev/null -w "%{http_code}" \
-            -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
-            -H "x-vercel-set-bypass-cookie: true" \
-            -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
-            -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
-            -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-            ${{ env.BASE_URL }})
-          
-          if [ "$RESPONSE_CODE" = "200" ]; then
-            echo "✅ URL is accessible (HTTP 200)"
-          else
-            echo "❌ URL returned HTTP $RESPONSE_CODE"
-            echo "Final URL and headers:"
-            curl -sIL --max-redirs 5 \
-              -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
-              -H "x-vercel-set-bypass-cookie: true" \
-              -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
-              -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" \
-              -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
-              -w "\nFinal URL: %{url_effective}\n" \
-              ${{ env.BASE_URL }}
-            exit 1
-          fi
-          
-          export STORYBOOK_TEST_HEADERS="$HEADERS"
-          
-          # Add a small delay to ensure full initialization
-          sleep 10
-          
-          # Run the test with the bypass headers
-          if npx concurrently \
-            "npx http-server -p 8080" \
-            "npx wait-on http://localhost:8080 && npm run test-storybook -- --url ${{ env.BASE_URL }}"; then
+          if npm run test-storybook -- --url ${{ env.BASE_URL }}; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
