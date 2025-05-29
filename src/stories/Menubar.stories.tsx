@@ -17,7 +17,7 @@ import {
   SettingsIcon,
   UserIcon,
   LogOutIcon,
-} from 'lucide-react'
+} from '../components/ui/icons'
 
 const meta: Meta<typeof Menubar> = {
   title: 'Components/Menubar',

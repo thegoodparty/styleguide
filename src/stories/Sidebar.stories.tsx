@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { 
   Sidebar,
@@ -14,7 +15,7 @@ import {
   SidebarTrigger,
   SidebarInset
 } from '../components/ui/sidebar'
-import { Home, Users, FolderOpen, Settings, ChevronRight } from 'lucide-react'
+import { Home, Users, FolderOpenIcon, SettingsIcon, ChevronRight } from '../components/ui/icons'
 
 const meta: Meta<typeof Sidebar> = {
   title: 'Components/Sidebar',
@@ -63,7 +64,7 @@ export const Default: Story = {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <FolderOpen className="h-4 w-4" />
+                    <FolderOpenIcon className="h-4 w-4" />
                     <span>Projects</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -75,7 +76,7 @@ export const Default: Story = {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <Settings className="h-4 w-4" />
+                <SettingsIcon className="h-4 w-4" />
                 <span>Settings</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -128,7 +129,7 @@ export const Floating: Story = {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <FolderOpen className="h-4 w-4" />
+                    <FolderOpenIcon className="h-4 w-4" />
                     <span>Projects</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -182,7 +183,7 @@ export const Collapsible: Story = {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton tooltip="Projects">
-                    <FolderOpen className="h-4 w-4" />
+                    <FolderOpenIcon className="h-4 w-4" />
                     <span>Projects</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -194,7 +195,7 @@ export const Collapsible: Story = {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton tooltip="Settings">
-                <Settings className="h-4 w-4" />
+                <SettingsIcon className="h-4 w-4" />
                 <span>Settings</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -249,7 +250,7 @@ export const WithNestedItems: Story = {
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <FolderOpen className="h-4 w-4" />
+                    <FolderOpenIcon className="h-4 w-4" />
                     <span>Projects</span>
                     <ChevronRight className="ml-auto h-4 w-4" />
                   </SidebarMenuButton>
@@ -263,7 +264,7 @@ export const WithNestedItems: Story = {
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
-                    <Settings className="h-4 w-4" />
+                    <SettingsIcon className="h-4 w-4" />
                     <span>Preferences</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

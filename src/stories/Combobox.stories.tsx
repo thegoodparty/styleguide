@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Check, ChevronsUpDown } from 'lucide-react'
+import { Check, ChevronsUpDown } from '../components/ui/icons'
 import { cn } from '../lib/utils'
 import { Button } from '../components/ui/button'
 import {

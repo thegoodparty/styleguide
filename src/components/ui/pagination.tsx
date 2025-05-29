@@ -1,9 +1,9 @@
 import * as React from "react"
 import {
   ChevronLeftIcon,
-  ChevronRightIcon,
+  ChevronRight,
   MoreHorizontalIcon,
-} from "lucide-react"
+} from "./icons"
 
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
@@ -94,7 +94,7 @@ function PaginationNext({
       {...props}
     >
       <span className="hidden sm:block">Next</span>
-      <ChevronRightIcon />
+      <ChevronRight />
     </PaginationLink>
   )
 }
