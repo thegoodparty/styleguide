@@ -26,10 +26,18 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
+      - name: Start Storybook in the background
+        run: npm run storybook -- --ci --port 6006 &
+        
+      - name: Wait for Storybook to be ready
+        run: |
+          echo "Waiting for Storybook to be available..."
+          timeout 30 bash -c 'until curl -s http://localhost:6006 > /dev/null; do sleep 1; done'
+
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          if npm run test-storybook; then
+          if npm run test-storybook -- --url http://localhost:6006; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
