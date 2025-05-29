@@ -35,12 +35,13 @@ export default function Example() {
 
 ## 🆕 Usage in a New Project
 
-### Option 1: Tailwind CSS v4 (Recommended)
+### Option 1: Tailwind CSS v4 or Later (Recommended)
 
-1. Install the package and Tailwind CSS v4:
+1. Install the package and Tailwind CSS v4 or later:
    ```bash
    npm install goodparty-styleguide tailwindcss@next
    ```
+   > **Note:** `tailwindcss@next` installs the latest version of Tailwind CSS (v4 or newer).
 
 2. Import the styles in your CSS file (e.g., `src/index.css`):
    ```css
@@ -151,9 +152,9 @@ This package uses an automated design token system that ensures consistency betw
 - `default` - Primary brand button
 - `secondary` - Secondary brand button  
 - `destructive` - Destructive/danger actions
-- `outlined` - Outlined button style
+- `outline` - Outlined button style
 - `ghost` - Minimal button style
-- `whiteOutlined` - White outlined for dark backgrounds
+- `whiteOutline` - White outlined for dark backgrounds
 - `whiteGhost` - White ghost for dark backgrounds
 
 #### Avatar Variants
