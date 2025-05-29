@@ -1,11 +1,8 @@
 name: Storybook Tests
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     types: [opened, synchronize, reopened, converted_to_draft, ready_for_review]
-    branches: [ main ]
   schedule:
     # Run at midnight PST (8 AM UTC)
     - cron: '0 8 * * *'
