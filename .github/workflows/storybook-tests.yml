@@ -53,44 +53,15 @@ jobs:
           SLACK_WORKFLOW_WEBHOOK: ${{ secrets.SLACK_WORKFLOW_WEBHOOK }}
         run: |
           # Set STATUS and COLOR based on test outcome
-          STATUS=$(if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then echo "Pass"; else echo "Fail"; fi)
-          COLOR=$(if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then echo "good"; else echo "danger"; fi)
-          
-          # Create JSON payload
-          JSON_DATA=$(cat <<EOF
-          {
-            "text": "Storybook Test Results ($STATUS)",
-            "attachments": [
-              {
-                "color": "$COLOR",
-                "fields": [
-                  {
-                    "title": "Branch",
-                    "value": "${{ github.ref_name }}",
-                    "short": true
-                  },
-                  {
-                    "title": "Commit",
-                    "value": "${{ github.sha }}",
-                    "short": true
-                  }
-                ],
-                "actions": [
-                  {
-                    "type": "button",
-                    "text": "View GitHub Action",
-                    "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                    "style": "primary"
-                  }
-                ]
-              }
-            ]
-          }
-          EOF
-          )
-          
-          # Send the notification
+          if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then
+            STATUS="Pass ✅"
+            COLOR="good"
+          else
+            STATUS="Fail ❌"
+            COLOR="danger"
+          fi
+
           curl -X POST \
             -H "Content-type: application/json" \
-            -d "$JSON_DATA" \
+            -d "{\"text\":\"Storybook Test Results ($STATUS)\",\"attachments\":[{\"color\":\"$COLOR\",\"fields\":[{\"title\":\"Branch\",\"value\":\"${{ github.ref_name }}\",\"short\":true},{\"title\":\"Commit\",\"value\":\"${{ github.sha }}\",\"short\":true}],\"actions\":[{\"type\":\"button\",\"text\":\"View GitHub Action\",\"url\":\"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\",\"style\":\"primary\"}]}]}" \
             "$SLACK_WORKFLOW_WEBHOOK" 
