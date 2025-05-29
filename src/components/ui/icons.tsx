@@ -29,7 +29,6 @@ import {
   ChevronUpDownIcon,
 } from '@heroicons/react/24/solid';
 
-// Export with the same names as lucide-react for drop-in replacement
 export {
   ChevronRightIcon as ChevronRight,
   EllipsisHorizontalIcon as MoreHorizontal,
@@ -46,7 +45,6 @@ export {
   Bars3Icon as GripVerticalIcon,
   ChevronLeftIcon,
   EllipsisHorizontalIcon as MoreHorizontalIcon,
-  // Additional icons for stories
   DocumentIcon as FileIcon,
   PencilIcon,
   EyeIcon,
