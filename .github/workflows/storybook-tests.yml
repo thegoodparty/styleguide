@@ -75,22 +75,28 @@ jobs:
             COLOR="danger"
           fi
 
-          # Send notification to Slack
-          curl -X POST -H 'Content-type: application/json' \
-            --data "{
-              \"attachments\": [
-                {
-                  \"color\": \"${COLOR}\",
-                  \"blocks\": [
-                    {
-                      \"type\": \"section\",
-                      \"text\": {
-                        \"type\": \"mrkdwn\",
-                        \"text\": \"*Storybook Tests Status:* ${STATUS}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*URL:* ${{ env.BASE_URL }}\"
-                      }
+          PAYLOAD=$(cat <<EOF
+          {
+            "attachments": [
+              {
+                "color": "$COLOR",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Storybook Tests Status:* $STATUS\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*URL:* ${{ env.BASE_URL }}"
                     }
-                  ]
-                }
-              ]
-            }" \
-            ${{ secrets.SLACK_WORKFLOW_WEBHOOK }}
+                  }
+                ]
+              }
+            ]
+          }
+EOF
+          )
+
+          # Send notification to Slack
+          curl -X POST \
+            -H 'Content-type: application/json' \
+            -d "$PAYLOAD" \
+            "$SLACK_WORKFLOW_WEBHOOK"
