@@ -51,13 +51,17 @@ jobs:
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          # Add the bypass secret as an environment variable for the test command
-          export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"true"}'
+          # Create the headers with proper JSON escaping
+          HEADERS="{\"x-vercel-protection-bypass\":\"${{ secrets.VERCEL_PROTECTION_BYPASS }}\",\"x-vercel-set-bypass-cookie\":\"true\"}"
+          export STORYBOOK_TEST_HEADERS="$HEADERS"
           
-          # Add a small additional delay to ensure full initialization
+          # Add a small delay to ensure full initialization
           sleep 10
           
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}; then
+          # Run the test with the bypass headers
+          if npx concurrently \
+            "npx http-server -p 8080" \
+            "npx wait-on http://localhost:8080 && npm run test-storybook -- --url ${{ env.BASE_URL }}"; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
