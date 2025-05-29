@@ -56,9 +56,17 @@ jobs:
           
           # Check if we can access the URL without hitting login page
           echo "Testing URL accessibility with bypass headers..."
-          RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+          echo "Full response with redirects:"
+          curl -v -L \
             -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
             -H "x-vercel-set-bypass-cookie: true" \
+            -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
+            ${{ env.BASE_URL }}
+            
+          RESPONSE_CODE=$(curl -L -s -o /dev/null -w "%{http_code}" \
+            -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
+            -H "x-vercel-set-bypass-cookie: true" \
+            -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
             ${{ env.BASE_URL }})
           
           if [ "$RESPONSE_CODE" = "200" ]; then
@@ -66,9 +74,10 @@ jobs:
           else
             echo "❌ URL returned HTTP $RESPONSE_CODE - might be hitting login page"
             echo "Response headers:"
-            curl -s -I \
+            curl -s -I -L \
               -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
               -H "x-vercel-set-bypass-cookie: true" \
+              -H "Cookie: _vercel_jwt=${{ env.PREVIEW_TOKEN }}" \
               ${{ env.BASE_URL }}
             exit 1
           fi
