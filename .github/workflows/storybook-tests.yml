@@ -53,6 +53,26 @@ jobs:
         run: |
           # Create the headers with proper JSON escaping
           HEADERS="{\"x-vercel-protection-bypass\":\"${{ secrets.VERCEL_PROTECTION_BYPASS }}\",\"x-vercel-set-bypass-cookie\":\"true\"}"
+          
+          # Check if we can access the URL without hitting login page
+          echo "Testing URL accessibility with bypass headers..."
+          RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
+            -H "x-vercel-set-bypass-cookie: true" \
+            ${{ env.BASE_URL }})
+          
+          if [ "$RESPONSE_CODE" = "200" ]; then
+            echo "✅ URL is accessible (HTTP 200)"
+          else
+            echo "❌ URL returned HTTP $RESPONSE_CODE - might be hitting login page"
+            echo "Response headers:"
+            curl -s -I \
+              -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}" \
+              -H "x-vercel-set-bypass-cookie: true" \
+              ${{ env.BASE_URL }}
+            exit 1
+          fi
+          
           export STORYBOOK_TEST_HEADERS="$HEADERS"
           
           # Add a small delay to ensure full initialization
