@@ -8,7 +8,22 @@
         "lavender": { "value": "{color.lavender.600}" },
         "halogreen": { "value": "{color.halogreen.400}" },
         "waxflower": { "value": "{color.waxflower.400}" },
-        "destructive": { "value": "{color.red.500}" }
+        "destructive": { "value": "{color.red.500}" },
+        "hover": {
+          "secondary": { "value": "{color.brightYellow.700}" },
+          "primary": { "value": "{color.midnight.800}" },
+          "destructive": { "value": "{color.red.700}" },
+          "outline": { "value": "{color.states.hover.black}" },
+          "ghost": { "value": "{color.states.hover.primary}" },
+          "whiteOutline": { "value": "{color.states.hover.white}" },
+          "whiteGhost": { "value": "{color.states.hover.white}" }
+        },
+        "focus": {
+          "outline": { "value": "{color.states.focus.black}" },
+          "ghost": { "value": "{color.states.focus.primary}" },
+          "whiteOutline": { "value": "{color.states.focus.white}" },
+          "whiteGhost": { "value": "{color.states.focus.white}" }
+        }
       }
     }
   }

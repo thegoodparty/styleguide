@@ -372,6 +372,30 @@
       "cream": {
         "value": "#FCF8F3"
       }
+    },
+    "states": {
+      "hover": {
+        "black": {
+          "value": "#00000029"
+        },
+        "primary": {
+          "value": "#447BCA29"
+        },
+        "white": {
+          "value": "#FFFFFF52"
+        }
+      },
+      "focus": {
+        "black": {
+          "value": "#0000003D"
+        },
+        "primary": {
+          "value": "#447BCA3D"
+        },
+        "white": {
+          "value": "#FFFFFF7A"
+        }
+      }
     }
   }
 }

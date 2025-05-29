@@ -36,10 +36,10 @@ export const Destructive: Story = {
   },
 }
 
-export const Outlined: Story = {
+export const Outline: Story = {
   args: {
-    children: 'Outlined',
-    variant: 'outlined',
+    children: 'Outline',
+    variant: 'outline',
   },
 }
 
@@ -64,10 +64,10 @@ export const WhiteGhost: Story = {
   ],
 }
 
-export const WhiteOutlined: Story = {
+export const WhiteOutline: Story = {
   args: {
-    children: 'White Outlined',
-    variant: 'whiteOutlined',
+    children: 'White Outline',
+    variant: 'whiteOutline',
   },
   decorators: [
     (Story) => (
@@ -107,14 +107,14 @@ export const Sizes: Story = {
 export const AllStates: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
-      {(["default", "secondary", "destructive", "outlined", "ghost"] as const).map(variant => (
+      {(["default", "secondary", "destructive", "outline", "ghost"] as const).map(variant => (
         <div key={variant} className="flex gap-4">
           <Button variant={variant} size="large">{variant} Enabled</Button>
           <Button variant={variant} size="large" disabled>{variant} Disabled</Button>
         </div>
       ))}
       {/* White variants on dark background */}
-      {(["whiteOutlined", "whiteGhost"] as const).map(variant => (
+      {(["whiteOutline", "whiteGhost"] as const).map(variant => (
         <div key={variant} className="flex gap-4 bg-gray-800 p-4 rounded-lg">
           <Button variant={variant} size="large">{variant} Enabled</Button>
           <Button variant={variant} size="large" disabled>{variant} Disabled</Button>
@@ -150,7 +150,7 @@ export const IconButtonVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-4">
-        {(["default", "secondary", "destructive", "outlined", "ghost"] as const).map(variant => (
+        {(["default", "secondary", "destructive", "outline", "ghost"] as const).map(variant => (
           <IconButton key={variant} variant={variant} aria-label={variant}>
             <DownloadIcon className="h-5 w-5" />
           </IconButton>
@@ -158,7 +158,7 @@ export const IconButtonVariants: Story = {
       </div>
       {/* White variants on dark background */}
       <div className="flex items-center gap-4 bg-gray-800 p-4 rounded-lg">
-        {(["whiteOutlined", "whiteGhost"] as const).map(variant => (
+        {(["whiteOutline", "whiteGhost"] as const).map(variant => (
           <IconButton key={variant} variant={variant} aria-label={variant}>
             <DownloadIcon className="h-5 w-5" />
           </IconButton>
