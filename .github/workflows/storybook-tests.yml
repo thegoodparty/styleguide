@@ -1,14 +1,13 @@
 name: Storybook Tests
 
 on:
-  deployment_status:
-    environments:
-      - 'Preview - gp-styleguide'
-      - 'Production - gp-styleguide'
-      
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
-  # Run at midnight PST (8 AM UTC)
-  - cron: '0 8 * * *'
+    # Run at midnight PST (8 AM UTC)
+    - cron: '0 8 * * *'
 
 jobs:
   test:
@@ -25,36 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Link Vercel Project
-        run: |
-          vercel link --token ${{ secrets.VERCEL_TOKEN }} --yes --project gp-styleguide --scope good-party
-
-      - name: Capture Deployment URL
-        run: |
-          # Get the Vercel preview URL directly from the deployment status
-          DEPLOYMENT_URL="${{ github.event.deployment_status.target_url }}"
-          
-          echo "Using deployment URL: $DEPLOYMENT_URL"
-          echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
-
-      # Get preview token for authentication
-      - name: Get Preview Token
-        run: |
-          # Get deployment token
-          TOKEN=$(vercel --token ${{ secrets.VERCEL_TOKEN }} deployment ls --scope good-party | grep ${{ env.BASE_URL }} | awk '{print $2}')
-          echo "Using deployment token: $TOKEN"
-          echo "PREVIEW_TOKEN=$TOKEN" >> "$GITHUB_ENV"
+      - name: Build Storybook
+        run: npm run build-storybook
 
       - name: Run Storybook tests
         id: storybook-test
         run: |
-          # Add the bypass secret as an environment variable for the test command
-          export STORYBOOK_TEST_HEADERS='{"x-vercel-protection-bypass":"${{ secrets.VERCEL_PROTECTION_BYPASS }}","x-vercel-set-bypass-cookie":"samesitenone"}'
-          
-          if npm run test-storybook -- --url ${{ env.BASE_URL }}; then
+          if npm run test-storybook; then
             echo "test_outcome=success" >> "$GITHUB_OUTPUT"
           else
             echo "test_outcome=failure" >> "$GITHUB_OUTPUT"
@@ -68,7 +44,7 @@ jobs:
           status: custom
           custom_payload: |
             {
-              "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Environment:* ${{ github.event.deployment_status.environment || 'Scheduled Run' }}\n*Status:* ${{ steps.storybook-test.outputs.test_outcome == 'success' && '✅ Passed' || '❌ Failed' }}\n*Deployment URL:* ${{ env.BASE_URL || 'N/A' }}",
+              "text": "*Storybook Test Results* 📚\n*Repository:* ${{ github.repository }}\n*Status:* ${{ steps.storybook-test.outputs.test_outcome == 'success' && '✅ Passed' || '❌ Failed' }}",
               "attachments": [{
                 "color": "${{ steps.storybook-test.outputs.test_outcome == 'success' && 'good' || 'danger' }}"
               }]
