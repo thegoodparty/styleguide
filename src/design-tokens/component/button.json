@@ -1,0 +1,59 @@
+{
+    "component": {
+      "button": {
+        "default": {
+          "background": { "value": "{color.brand.default}" },
+          "backgroundHover": { "value": "{color.brand.hover.secondary}" },
+          "backgroundDisabled": { "value": "{color.brand.default}" },
+          "text": { "value": "{color.grayscale.black}" },
+          "border": { "value": "{color.grayscale.black}" }
+        },
+        "secondary": {
+          "background": { "value": "{color.brand.secondary}" },
+          "backgroundHover": { "value": "{color.brand.hover.primary}" },
+          "backgroundDisabled": { "value": "{color.brand.secondary}" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "{color.brand.secondary}" }
+        },
+        "destructive": {
+          "background": { "value": "{color.brand.destructive}" },
+          "backgroundHover": { "value": "{color.brand.hover.destructive}" },
+          "backgroundDisabled": { "value": "{color.brand.destructive}" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "{color.brand.destructive}" }
+        },
+        "outline": {
+          "background": { "value": "transparent" },
+          "backgroundHover": { "value": "{color.brand.hover.outline}" },
+          "backgroundDisabled": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.black}" },
+          "border": { "value": "{color.grayscale.black}" },
+          "borderFocus": { "value": "{color.brand.focus.outline}" }
+        },
+        "ghost": {
+          "background": { "value": "transparent" },
+          "backgroundHover": { "value": "{color.brand.hover.ghost}" },
+          "backgroundDisabled": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.black}" },
+          "border": { "value": "transparent" },
+          "borderFocus": { "value": "{color.brand.focus.ghost}" }
+        },
+        "whiteOutline": {
+          "background": { "value": "transparent" },
+          "backgroundHover": { "value": "{color.brand.hover.whiteOutline}" },
+          "backgroundDisabled": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "{color.grayscale.white}" },
+          "borderFocus": { "value": "{color.brand.focus.whiteOutline}" }
+        },
+        "whiteGhost": {
+          "background": { "value": "transparent" },
+          "backgroundHover": { "value": "{color.brand.hover.whiteGhost}" },
+          "backgroundDisabled": { "value": "transparent" },
+          "text": { "value": "{color.grayscale.white}" },
+          "border": { "value": "transparent" },
+          "borderFocus": { "value": "{color.brand.focus.whiteGhost}" }
+        }
+      }
+    }
+}
