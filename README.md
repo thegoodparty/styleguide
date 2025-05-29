@@ -142,7 +142,7 @@ This package uses an automated design token system that ensures consistency betw
 ### How It Works
 
 1. **Design tokens** are defined in JSON files (`src/design-tokens/`)
-2. **Style Dictionary** processes these tokens and generates CSS custom properties
+2. **Style Dictionary** processes these tokens and generates CSS custom properties ([Project](https://styledictionary.com) | [Repo](https://github.com/style-dictionary/style-dictionary))
 3. **Components** use semantic token classes (e.g., `bg-button-default-background`)
 4. **Tailwind CSS v4** automatically picks up the generated theme
 
