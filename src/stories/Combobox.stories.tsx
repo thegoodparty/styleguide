@@ -197,7 +197,7 @@ function CustomStylesCombobox() {
         <Command className="rounded-lg border shadow-md">
           <CommandInput 
             placeholder="Search framework..." 
-            className="h-9"
+            className="h-10"
           />
           <CommandEmpty className="py-6 text-center text-sm">
             No framework found.
