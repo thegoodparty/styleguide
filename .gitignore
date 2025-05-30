@@ -134,3 +134,7 @@ dist
 .pnp.*
 
 *storybook.log
+
+# AI Tooling & Planning
+.ai/
+repomix-*

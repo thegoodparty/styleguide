@@ -6,15 +6,17 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src/design-tokens.css"
+    "src/design-tokens.css",
+    "src/typography.css"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist --tsconfig tsconfig.app.json && npm run build:tokens && cp src/design-tokens.css dist/ && echo '@import \"./design-tokens.css\";' > dist/index.css",
+    "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist --tsconfig tsconfig.app.json && npm run build:tokens && cp src/design-tokens.css src/typography.css dist/ && echo '@import \"./design-tokens.css\";\n@import \"./typography.css\";' > dist/index.css",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "storybook:tokens": "npm run build:tokens && npm run storybook",
@@ -95,6 +97,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^0.12.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^16.0.0",
     "playwright": "^1.52.0",
     "storybook": "^8.6.12",
