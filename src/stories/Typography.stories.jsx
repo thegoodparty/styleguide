@@ -7,10 +7,10 @@ export default {
       },
     },
   },
-};
+}
 
-const sampleText = "Almost before we knew it, we had left the ground.";
-const longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.";
+const sampleText = "Almost before we knew it, we had left the ground."
+const longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
 
 export const Headings = () => (
   <div className="space-y-6">
@@ -39,7 +39,7 @@ export const Headings = () => (
       <h6>Heading Level 6</h6>
     </div>
   </div>
-);
+)
 
 export const BodyText = () => (
   <div className="space-y-6 max-w-prose">
@@ -68,7 +68,7 @@ export const BodyText = () => (
       <p className="text-muted">{longText}</p>
     </div>
   </div>
-);
+)
 
 export const InlineElements = () => (
   <div className="space-y-4 max-w-prose">
@@ -81,7 +81,7 @@ export const InlineElements = () => (
       <small>This is small text using the small element.</small>
     </p>
   </div>
-);
+)
 
 export const Lists = () => (
   <div className="space-y-6 max-w-prose">
@@ -115,7 +115,7 @@ export const Lists = () => (
       </ol>
     </div>
   </div>
-);
+)
 
 export const BlockElements = () => (
   <div className="space-y-6 max-w-prose">
@@ -136,7 +136,7 @@ export const BlockElements = () => (
 console.log(greet('World'));`}</code></pre>
     </div>
   </div>
-);
+)
 
 export const Table = () => (
   <div className="max-w-prose">
@@ -168,7 +168,7 @@ export const Table = () => (
       </tbody>
     </table>
   </div>
-);
+)
 
 export const ButtonText = () => (
   <div className="space-y-4">
@@ -193,7 +193,7 @@ export const ButtonText = () => (
       <code className="text-xs text-muted">.button-text-small · 12px</code>
     </div>
   </div>
-);
+)
 
 export const UtilityClasses = () => (
   <div className="space-y-6">
@@ -230,7 +230,7 @@ export const UtilityClasses = () => (
       </div>
     </div>
   </div>
-);
+)
 
 export const CompleteExample = () => (
   <article className="max-w-prose space-y-6">
@@ -278,4 +278,4 @@ export const CompleteExample = () => (
       work together to create a cohesive reading experience.
     </p>
   </article>
-); 
+) 

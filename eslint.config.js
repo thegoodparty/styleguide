@@ -6,7 +6,15 @@ import tseslint from 'typescript-eslint'
 import unusedImports from 'eslint-plugin-unused-imports'
 
 export default tseslint.config(
-  { ignores: ['dist', 'storybook-static', '.storybook'] },
+  { 
+    ignores: [
+      'dist', 
+      'storybook-static', 
+      '.storybook',
+      'src/design-tokens/tokens.js', // Auto-generated
+      'src/tailwind-tokens.js', // Auto-generated
+    ] 
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -100,10 +108,12 @@ export default tseslint.config(
   },
   {
     // Storybook files can export anything and use hooks in render functions
+    // Disable unused-imports as the plugin incorrectly flags JSX components used in stories
     files: ['**/*.stories.{js,jsx,ts,tsx}', '.storybook/**/*.{js,jsx,ts,tsx}'],
     rules: {
       'react-refresh/only-export-components': 'off',
       'react-hooks/rules-of-hooks': 'off',
+      'unused-imports/no-unused-imports': 'off', // Disabled due to false positives with JSX in stories
     },
   }
 )

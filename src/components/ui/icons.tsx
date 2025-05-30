@@ -27,7 +27,7 @@ import {
   UsersIcon,
   XCircleIcon,
   XMarkIcon,
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/solid'
 
 export {
   ArrowDownTrayIcon as DownloadIcon,
@@ -58,4 +58,4 @@ export {
   UsersIcon,
   XCircleIcon,
   XMarkIcon,
-}; 
+} 
