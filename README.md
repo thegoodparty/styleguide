@@ -73,7 +73,7 @@ The styleguide includes a complete typography system with pre-styled HTML elemen
    @import 'goodparty-styleguide/dist/index.css';
    ```
    
-   > **Typography included:** The main CSS import includes both components and typography styles.
+   > **Complete styles included:** The main CSS import includes design tokens, Tailwind theme, typography, and all component styles.
 
 3. Use components and typography in your project:
    ```tsx
@@ -103,12 +103,25 @@ The styleguide includes a complete typography system with pre-styled HTML elemen
    }
    ```
 
-### Option 2: Typography Only
+### Option 2: Individual CSS Files
 
-If you only need the typography system without React components:
+If you need more granular control, import individual CSS files:
 
 ```css
-/* Import just typography styles */
+/* Core design tokens (required) */
+@import 'goodparty-styleguide/dist/design-tokens.css';
+
+/* Tailwind color mappings (required for components) */
+@import 'goodparty-styleguide/dist/tailwind-theme.css';
+
+/* Typography system (optional) */
+@import 'goodparty-styleguide/dist/typography.css';
+```
+
+Or just typography styles without components:
+
+```css
+/* Typography only */
 @import 'goodparty-styleguide/dist/typography.css';
 ```
 
@@ -188,6 +201,23 @@ This gives you:
    @import 'tailwindcss/utilities';
    @import 'goodparty-styleguide/dist/index.css';
    ```
+   
+   > **Note:** In Tailwind v3, you may need to manually copy design token values to your `tailwind.config.js` for full compatibility.
+
+## 📦 What's Included
+
+When you install this package, you get these build artifacts in `dist/`:
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| `index.css` | Main stylesheet importing all CSS files | **Recommended** - Import this for complete styling |
+| `design-tokens.css` | Core CSS custom properties for colors, spacing, etc. | Individual control - Required for any styling |
+| `tailwind-theme.css` | Auto-generated Tailwind CSS v4 theme mappings | Individual control - Required for components |  
+| `typography.css` | Complete typography system with Outfit font | Individual control or typography-only projects |
+| `index.js` / `index.cjs` | React components (ESM/CommonJS) | JavaScript imports |
+| `index.d.ts` | TypeScript definitions | Type checking |
+
+**Quick Start:** Just import `dist/index.css` - it includes everything you need.
 
 ## 🎨 Design Token System
 
@@ -277,9 +307,12 @@ npm publish
 
 The design token system is built with [Style Dictionary](https://amzn.github.io/style-dictionary/) and generates:
 
-- **CSS Custom Properties** (`src/design-tokens.css`) - Core token definitions
+- **CSS Custom Properties** (`src/design-tokens.css`) - Core token definitions  
 - **Tailwind Theme** (`src/tailwind-theme.css`) - Auto-generated Tailwind CSS v4 theme
+- **Typography System** (`src/typography.css`) - Complete typography with Outfit font
 - **JavaScript Tokens** (`src/design-tokens/tokens.js`) - Programmatic access to token values
+
+All CSS files are automatically included in the `dist/` build output and imported via `dist/index.css`.
 
 #### Token Architecture
 
