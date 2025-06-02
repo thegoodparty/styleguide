@@ -56,6 +56,7 @@ The styleguide includes a complete typography system with pre-styled HTML elemen
 - ✅ CSS custom properties for all typography values
 - ✅ Outfit font with system fallbacks
 - ✅ Responsive and accessible defaults
+- ✅ A new checklist item for the design system
 
 ## 🆕 Usage in a New Project
 
