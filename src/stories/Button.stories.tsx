@@ -82,13 +82,24 @@ export const WithIcon: Story = {
   args: {
     children: 'Download',
     variant: 'default',
+    icon: <DownloadIcon className="h-4 w-4" />,
   },
+}
+
+export const IconPlacement: Story = {
   render: (args) => (
-    <Button {...args}>
-      <DownloadIcon className="mr-2 h-4 w-4" />
-      {args.children}
-    </Button>
+    <div className="flex flex-col gap-4 items-start">
+      <Button {...args} icon={<DownloadIcon className="h-4 w-4" />} iconPosition="left">
+        Icon Left
+      </Button>
+      <Button {...args} icon={<DownloadIcon className="h-4 w-4" />} iconPosition="right">
+        Icon Right
+      </Button>
+    </div>
   ),
+  args: {
+    variant: 'default',
+  }
 }
 
 export const Sizes: Story = {

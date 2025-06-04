@@ -30,33 +30,43 @@ const buttonVariants = cva(
         medium: "h-10 px-5 py-2.5 button-text-large has-[>svg]:px-4",
         large: "h-12 px-6 py-3 button-text-large has-[>svg]:px-5",
       },
+      iconPosition: {
+        left: "", // Default flex direction
+        right: "flex-row-reverse",
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "medium",
+      iconPosition: "left",
     },
   }
 )
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-  }) {
-  const Comp = asChild ? Slot : "button"
-
-  return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  )
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+  icon?: React.ReactNode
 }
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, iconPosition, asChild = false, icon, children, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, iconPosition, className }))}
+        ref={ref}
+        {...props}
+      >
+        {icon}
+        {children}
+      </Comp>
+    )
+  }
+)
+
+Button.displayName = "Button"
 
 export { Button, buttonVariants }
