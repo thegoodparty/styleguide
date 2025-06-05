@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+storybook-static/
+
+# Generated files
+src/design-tokens/tokens.js
+src/tailwind-tokens.js
+
+# Package files
+package-lock.json
+*.lock
+
+# Git
+.git/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log 
