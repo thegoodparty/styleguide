@@ -257,4 +257,4 @@ export const WithUserMenu: Story = {
 
 export const WithCustomStyles: Story = {
   render: () => <CustomStylesMenubar />,
-} 
+}

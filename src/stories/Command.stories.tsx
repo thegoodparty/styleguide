@@ -123,16 +123,16 @@ export const WithNestedGroups: Story = {
 export const WithCustomStyling: Story = {
   render: () => (
     <Command className="rounded-lg border shadow-md">
-      <CommandInput 
-        placeholder="Type a command or search..." 
+      <CommandInput
+        placeholder="Type a command or search..."
         className="border-b px-4 py-3"
       />
       <CommandList className="p-2">
         <CommandEmpty className="py-6 text-center text-sm">
           No results found.
         </CommandEmpty>
-        <CommandGroup 
-          heading="Favorites" 
+        <CommandGroup
+          heading="Favorites"
           className="text-xs font-medium text-muted-foreground"
         >
           <CommandItem className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm">
@@ -145,8 +145,8 @@ export const WithCustomStyling: Story = {
           </CommandItem>
         </CommandGroup>
         <CommandSeparator className="my-2" />
-        <CommandGroup 
-          heading="Settings" 
+        <CommandGroup
+          heading="Settings"
           className="text-xs font-medium text-muted-foreground"
         >
           <CommandItem className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm">
@@ -161,4 +161,4 @@ export const WithCustomStyling: Story = {
       </CommandList>
     </Command>
   ),
-} 
+}

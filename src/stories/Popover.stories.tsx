@@ -136,7 +136,10 @@ export const WithActions: Story = {
             <Button variant="ghost" className="w-full justify-start">
               Share
             </Button>
-            <Button variant="ghost" className="w-full justify-start text-destructive">
+            <Button
+              variant="ghost"
+              className="w-full justify-start text-destructive"
+            >
               Delete
             </Button>
           </div>
@@ -144,4 +147,4 @@ export const WithActions: Story = {
       </PopoverContent>
     </Popover>
   ),
-} 
+}

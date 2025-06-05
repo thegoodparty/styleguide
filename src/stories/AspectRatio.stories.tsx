@@ -76,4 +76,4 @@ export const WithVideo: Story = {
       </AspectRatio>
     </div>
   ),
-} 
+}

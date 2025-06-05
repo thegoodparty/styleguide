@@ -102,9 +102,7 @@ export const WithSubMenu: Story = {
           </DropdownMenuSubContent>
         </DropdownMenuSub>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-destructive">
-          Delete
-        </DropdownMenuItem>
+        <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ),
@@ -177,4 +175,4 @@ export const WithIcons: Story = {
       </DropdownMenuContent>
     </DropdownMenu>
   ),
-} 
+}

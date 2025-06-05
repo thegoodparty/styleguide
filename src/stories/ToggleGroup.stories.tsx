@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from '../components/ui/toggle-group'
+import { ToggleGroup, ToggleGroupItem } from '../components/ui/toggle-group'
 
 const meta: Meta<typeof ToggleGroup> = {
   title: 'Components/ToggleGroup',
@@ -311,4 +308,4 @@ export const WithCustomVariant: Story = {
       </ToggleGroupItem>
     </ToggleGroup>
   ),
-} 
+}

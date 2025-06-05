@@ -69,10 +69,7 @@ function SwitchLabel() {
 function CustomStylesLabel() {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label
-        htmlFor="username"
-        className="text-lg font-semibold text-primary"
-      >
+      <Label htmlFor="username" className="text-lg font-semibold text-primary">
         Username
       </Label>
       <Input
@@ -103,4 +100,4 @@ export const WithSwitch: Story = {
 
 export const WithCustomStyles: Story = {
   render: () => <CustomStylesLabel />,
-} 
+}

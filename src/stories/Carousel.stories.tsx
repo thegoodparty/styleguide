@@ -18,20 +18,20 @@ type Story = StoryObj<typeof Carousel>
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80",
-    alt: "Photo by Drew Beamer",
+    src: 'https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80',
+    alt: 'Photo by Drew Beamer',
   },
   {
-    src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&dpr=2&q=80",
-    alt: "Photo by Daniele Levis Pelusi",
+    src: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&dpr=2&q=80',
+    alt: 'Photo by Daniele Levis Pelusi',
   },
   {
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&dpr=2&q=80",
-    alt: "Photo by Aiony Haust",
+    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&dpr=2&q=80',
+    alt: 'Photo by Aiony Haust',
   },
   {
-    src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&dpr=2&q=80",
-    alt: "Photo by Christina Morillo",
+    src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&dpr=2&q=80',
+    alt: 'Photo by Christina Morillo',
   },
 ]
 
@@ -61,7 +61,7 @@ export const WithMultipleItems: Story = {
   render: () => (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
       }}
       className="w-full"
     >
@@ -88,7 +88,7 @@ export const WithAutoPlay: Story = {
   render: () => (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
         loop: true,
       }}
       className="w-full max-w-xs"
@@ -162,4 +162,4 @@ export const WithCustomStyles: Story = {
       <CarouselNext className="right-2" />
     </Carousel>
   ),
-} 
+}

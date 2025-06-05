@@ -20,7 +20,9 @@ export const Default: Story = {
   render: () => (
     <Collapsible className="w-[350px] space-y-2">
       <div className="flex items-center justify-between space-x-4">
-        <h4 className="text-sm font-semibold">@peduarte starred 3 repositories</h4>
+        <h4 className="text-sm font-semibold">
+          @peduarte starred 3 repositories
+        </h4>
         <CollapsibleTrigger asChild>
           <Button variant="ghost" size="small" className="w-9 p-0">
             <ChevronDownIcon className="h-4 w-4" />
@@ -108,7 +110,8 @@ export const WithCustomStyles: Story = {
         <div className="rounded-md border bg-card p-4">
           <h4 className="mb-2 text-lg font-semibold">Section Title</h4>
           <p className="text-sm text-muted-foreground">
-            This section has custom styling applied to both the trigger and content.
+            This section has custom styling applied to both the trigger and
+            content.
           </p>
         </div>
       </CollapsibleContent>
@@ -132,4 +135,4 @@ export const WithAnimation: Story = {
       </CollapsibleContent>
     </Collapsible>
   ),
-} 
+}

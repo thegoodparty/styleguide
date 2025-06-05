@@ -106,7 +106,8 @@ function CustomStylesHoverCard() {
         <div className="space-y-2">
           <h4 className="text-lg font-semibold">Custom Styled Card</h4>
           <p className="text-sm text-muted-foreground">
-            This hover card has custom styling applied to both the trigger and content.
+            This hover card has custom styling applied to both the trigger and
+            content.
           </p>
           <div className="mt-4 flex items-center justify-between">
             <span className="text-xs text-muted-foreground">Last updated</span>
@@ -162,4 +163,4 @@ export const WithCustomStyles: Story = {
 
 export const WithInteractiveContent: Story = {
   render: () => <InteractiveContentHoverCard />,
-} 
+}

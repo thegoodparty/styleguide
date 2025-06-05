@@ -50,13 +50,9 @@ export const WithCheckbox: Story = {
       <ContextMenuContent className="w-64">
         <ContextMenuLabel>View Options</ContextMenuLabel>
         <ContextMenuSeparator />
-        <ContextMenuCheckboxItem checked>
-          Show Toolbar
-        </ContextMenuCheckboxItem>
+        <ContextMenuCheckboxItem checked>Show Toolbar</ContextMenuCheckboxItem>
         <ContextMenuCheckboxItem>Show Statusbar</ContextMenuCheckboxItem>
-        <ContextMenuCheckboxItem checked>
-          Show Sidebar
-        </ContextMenuCheckboxItem>
+        <ContextMenuCheckboxItem checked>Show Sidebar</ContextMenuCheckboxItem>
       </ContextMenuContent>
     </ContextMenu>
   ),
@@ -101,9 +97,7 @@ export const WithSubMenu: Story = {
           </ContextMenuSubContent>
         </ContextMenuSub>
         <ContextMenuSeparator />
-        <ContextMenuItem className="text-destructive">
-          Delete
-        </ContextMenuItem>
+        <ContextMenuItem className="text-destructive">Delete</ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>
   ),
@@ -176,4 +170,4 @@ export const WithIcons: Story = {
       </ContextMenuContent>
     </ContextMenu>
   ),
-} 
+}

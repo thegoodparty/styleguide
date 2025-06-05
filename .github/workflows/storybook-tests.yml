@@ -3,12 +3,12 @@ name: Storybook Tests
 on:
   deployment_status:
     environments:
-      - 'Preview - gp-styleguide'
-      - 'Production - gp-styleguide'
-      
+      - "Preview - gp-styleguide"
+      - "Production - gp-styleguide"
+
   schedule:
-  # Run at midnight PST (8 AM UTC)
-  - cron: '0 8 * * *'
+    # Run at midnight PST (8 AM UTC)
+    - cron: "0 8 * * *"
 
 jobs:
   test:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: "20.x"
 
       - name: Install dependencies
         run: npm install
@@ -39,7 +39,7 @@ jobs:
         run: |
           # Get the Vercel preview URL directly from the deployment status
           DEPLOYMENT_URL="${{ github.event.deployment_status.target_url }}"
-          
+
           echo "Using deployment URL: $DEPLOYMENT_URL"
           echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
 
@@ -61,7 +61,7 @@ jobs:
           # Set STATUS and COLOR based on test outcome
           STATUS=$(if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then echo "Pass"; else echo "Fail"; fi)
           COLOR=$(if [[ "${{ steps.storybook-test.outputs.test_outcome }}" == "success" ]]; then echo "good"; else echo "danger"; fi)
-          
+
           # Send the Slack notification
           curl -X POST -H "Content-type: application/json" \
           --data '{
