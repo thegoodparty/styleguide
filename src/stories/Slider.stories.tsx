@@ -66,4 +66,4 @@ export const WithSteps: Story = {
       <Slider id="steps" defaultValue={[5]} max={10} step={1} />
     </div>
   ),
-} 
+}

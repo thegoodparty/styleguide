@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ChartContainer, ChartLegend, ChartTooltip } from '../components/ui/chart'
+import {
+  ChartContainer,
+  ChartLegend,
+  ChartTooltip,
+} from '../components/ui/chart'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts'
 
 const meta: Meta<typeof ChartContainer> = {
@@ -33,4 +37,4 @@ export const Default: Story = {
       </LineChart>
     </ChartContainer>
   ),
-} 
+}

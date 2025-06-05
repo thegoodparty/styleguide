@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { 
+import {
   Sidebar,
   SidebarProvider,
   SidebarContent,
@@ -13,9 +13,15 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarTrigger,
-  SidebarInset
+  SidebarInset,
 } from '../components/ui/sidebar'
-import { HomeIcon, UsersIcon, FolderOpenIcon, SettingsIcon, ChevronRightIcon } from '../components/ui/icons'
+import {
+  HomeIcon,
+  UsersIcon,
+  FolderOpenIcon,
+  SettingsIcon,
+  ChevronRightIcon,
+} from '../components/ui/icons'
 
 const meta: Meta<typeof Sidebar> = {
   title: 'Components/Sidebar',
@@ -90,7 +96,10 @@ export const Default: Story = {
             <h1 className="text-lg font-semibold">Main Content</h1>
           </header>
           <div className="flex-1 p-4">
-            <p>This is the main content area. Use the trigger button to toggle the sidebar.</p>
+            <p>
+              This is the main content area. Use the trigger button to toggle
+              the sidebar.
+            </p>
           </div>
         </div>
       </SidebarInset>
@@ -145,7 +154,10 @@ export const Floating: Story = {
             <h1 className="text-lg font-semibold">Floating Sidebar</h1>
           </header>
           <div className="flex-1 p-4">
-            <p>This sidebar has a floating variant with rounded corners and shadow.</p>
+            <p>
+              This sidebar has a floating variant with rounded corners and
+              shadow.
+            </p>
           </div>
         </div>
       </SidebarInset>
@@ -209,7 +221,10 @@ export const Collapsible: Story = {
             <h1 className="text-lg font-semibold">Collapsible Sidebar</h1>
           </header>
           <div className="flex-1 p-4">
-            <p>This sidebar can collapse to show only icons. Hover over the icons to see tooltips when collapsed.</p>
+            <p>
+              This sidebar can collapse to show only icons. Hover over the icons
+              to see tooltips when collapsed.
+            </p>
           </div>
         </div>
       </SidebarInset>
@@ -280,10 +295,13 @@ export const WithNestedItems: Story = {
             <h1 className="text-lg font-semibold">Grouped Navigation</h1>
           </header>
           <div className="flex-1 p-4">
-            <p>This sidebar demonstrates grouped navigation items with proper labels and structure.</p>
+            <p>
+              This sidebar demonstrates grouped navigation items with proper
+              labels and structure.
+            </p>
           </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
   ),
-} 
+}

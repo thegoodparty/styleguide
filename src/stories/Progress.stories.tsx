@@ -82,4 +82,4 @@ export const DifferentSizes: Story = {
       </div>
     </div>
   ),
-} 
+}

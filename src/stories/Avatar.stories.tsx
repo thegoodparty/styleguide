@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { UserIcon, CheckIcon, StarIcon } from '../components/ui/icons'
-import { Avatar, AvatarFallback, AvatarImage, AvatarIcon, AvatarBadge } from '../components/ui/avatar'
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  AvatarIcon,
+  AvatarBadge,
+} from '../components/ui/avatar'
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
@@ -223,4 +229,4 @@ export const FallbackExamples: Story = {
       </Avatar>
     </div>
   ),
-} 
+}

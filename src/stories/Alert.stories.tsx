@@ -122,4 +122,4 @@ export const WithDismiss: Story = {
       </button>
     </Alert>
   ),
-} 
+}

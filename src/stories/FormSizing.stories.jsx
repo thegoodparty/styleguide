@@ -1,9 +1,26 @@
 import { Input } from '../components/ui/input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '../components/ui/select'
 import { Toggle } from '../components/ui/toggle'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs'
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from '../components/ui/menubar'
-import { Command, CommandInput, CommandList, CommandItem } from '../components/ui/command'
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from '../components/ui/menubar'
+import {
+  Command,
+  CommandInput,
+  CommandList,
+  CommandItem,
+} from '../components/ui/command'
 
 export default {
   title: 'Design System/Form Sizing',
@@ -18,13 +35,15 @@ export default {
 
 export const DefaultSizing = () => (
   <div className="space-y-8 p-6 max-w-2xl">
-    <h3 className="text-lg font-semibold mb-4">All Form Controls - 40px Height</h3>
+    <h3 className="text-lg font-semibold mb-4">
+      All Form Controls - 40px Height
+    </h3>
     <div className="space-y-4">
       <div className="flex items-center gap-4">
         <label className="w-24 text-sm">Input:</label>
         <Input placeholder="Standard input..." className="flex-1" />
       </div>
-      
+
       <div className="flex items-center gap-4">
         <label className="w-24 text-sm">Select:</label>
         <Select>
@@ -37,12 +56,12 @@ export const DefaultSizing = () => (
           </SelectContent>
         </Select>
       </div>
-      
+
       <div className="flex items-center gap-4">
         <label className="w-24 text-sm">Toggle:</label>
         <Toggle>Toggle me</Toggle>
       </div>
-      
+
       <div className="flex items-center gap-4">
         <label className="w-24 text-sm">Tabs:</label>
         <Tabs defaultValue="1" className="flex-1">
@@ -53,7 +72,7 @@ export const DefaultSizing = () => (
           </TabsList>
         </Tabs>
       </div>
-      
+
       <div className="flex items-center gap-4">
         <label className="w-24 text-sm">Menubar:</label>
         <Menubar>
@@ -73,7 +92,7 @@ export const DefaultSizing = () => (
           </MenubarMenu>
         </Menubar>
       </div>
-      
+
       <div className="flex items-start gap-4">
         <label className="w-24 text-sm pt-2">Command:</label>
         <Command className="flex-1 border rounded-md">
@@ -102,7 +121,7 @@ export const SizeVariants = () => (
           <Toggle size="sm">Small</Toggle>
         </div>
       </div>
-      
+
       <div>
         <p className="text-sm text-gray-600 mb-2">Default (40px)</p>
         <div className="flex items-center gap-2">
@@ -118,12 +137,14 @@ export const SizeVariants = () => (
           <Toggle>Default</Toggle>
         </div>
       </div>
-      
+
       <div>
         <p className="text-sm text-gray-600 mb-2">Large (40px)</p>
         <div className="flex items-center gap-2">
           <Toggle size="lg">Large Toggle</Toggle>
-          <span className="text-sm text-gray-500">(Note: Only Toggle has large variant at 40px)</span>
+          <span className="text-sm text-gray-500">
+            (Note: Only Toggle has large variant at 40px)
+          </span>
         </div>
       </div>
     </div>
@@ -133,8 +154,10 @@ export const SizeVariants = () => (
 export const AlignmentTest = () => (
   <div className="space-y-8 p-6">
     <h3 className="text-lg font-semibold mb-4">Alignment Test</h3>
-    <p className="text-sm text-gray-600 mb-4">All form controls should align perfectly at 40px height</p>
-    
+    <p className="text-sm text-gray-600 mb-4">
+      All form controls should align perfectly at 40px height
+    </p>
+
     <div className="bg-gray-50 p-4 rounded-lg">
       <div className="flex items-center gap-2">
         <Input placeholder="Search..." className="max-w-xs" />
@@ -159,11 +182,11 @@ export const AlignmentTest = () => (
         </Menubar>
       </div>
     </div>
-    
+
     <div className="mt-4 p-4 bg-blue-50 rounded text-sm">
       <p>✓ All controls are exactly 40px (2.5rem) in height</p>
       <p>✓ Consistent visual weight across different control types</p>
       <p>✓ Proper alignment when used together in forms</p>
     </div>
   </div>
-) 
+)

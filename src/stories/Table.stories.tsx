@@ -103,12 +103,35 @@ export const WithStripedRows: Story = {
       </TableHeader>
       <TableBody>
         {[
-          { product: "Laptop", category: "Electronics", price: "$999", stock: "10" },
-          { product: "Smartphone", category: "Electronics", price: "$699", stock: "15" },
-          { product: "Headphones", category: "Audio", price: "$199", stock: "20" },
-          { product: "Keyboard", category: "Accessories", price: "$99", stock: "25" },
+          {
+            product: 'Laptop',
+            category: 'Electronics',
+            price: '$999',
+            stock: '10',
+          },
+          {
+            product: 'Smartphone',
+            category: 'Electronics',
+            price: '$699',
+            stock: '15',
+          },
+          {
+            product: 'Headphones',
+            category: 'Audio',
+            price: '$199',
+            stock: '20',
+          },
+          {
+            product: 'Keyboard',
+            category: 'Accessories',
+            price: '$99',
+            stock: '25',
+          },
         ].map((item, index) => (
-          <TableRow key={index} className={index % 2 === 0 ? "bg-muted/50" : ""}>
+          <TableRow
+            key={index}
+            className={index % 2 === 0 ? 'bg-muted/50' : ''}
+          >
             <TableCell className="font-medium">{item.product}</TableCell>
             <TableCell>{item.category}</TableCell>
             <TableCell>{item.price}</TableCell>
@@ -133,9 +156,24 @@ export const WithHoverEffect: Story = {
       </TableHeader>
       <TableBody>
         {[
-          { task: "Design Review", status: "In Progress", priority: "High", dueDate: "2024-03-20" },
-          { task: "Code Implementation", status: "Pending", priority: "Medium", dueDate: "2024-03-25" },
-          { task: "Testing", status: "Not Started", priority: "Low", dueDate: "2024-03-30" },
+          {
+            task: 'Design Review',
+            status: 'In Progress',
+            priority: 'High',
+            dueDate: '2024-03-20',
+          },
+          {
+            task: 'Code Implementation',
+            status: 'Pending',
+            priority: 'Medium',
+            dueDate: '2024-03-25',
+          },
+          {
+            task: 'Testing',
+            status: 'Not Started',
+            priority: 'Low',
+            dueDate: '2024-03-30',
+          },
         ].map((item, index) => (
           <TableRow key={index} className="hover:bg-muted/50 cursor-pointer">
             <TableCell className="font-medium">{item.task}</TableCell>
@@ -147,4 +185,4 @@ export const WithHoverEffect: Story = {
       </TableBody>
     </Table>
   ),
-} 
+}

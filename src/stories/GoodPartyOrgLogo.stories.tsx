@@ -54,7 +54,9 @@ export const OnDifferentBackgrounds: Story = {
         <GoodPartyOrgLogo />
       </div>
       <div className="flex flex-col items-center gap-2 p-6 bg-gray-100 rounded-lg">
-        <h3 className="text-sm font-medium text-gray-900">Light Gray Background</h3>
+        <h3 className="text-sm font-medium text-gray-900">
+          Light Gray Background
+        </h3>
         <GoodPartyOrgLogo />
       </div>
       <div className="flex flex-col items-center gap-2 p-6 bg-gray-800 rounded-lg">
@@ -72,7 +74,9 @@ export const OnDifferentBackgrounds: Story = {
 export const ResponsivePreview: Story = {
   render: () => (
     <div className="flex flex-col gap-4 items-center">
-      <h3 className="text-sm font-medium">Responsive Sizing (resize viewport to see changes)</h3>
+      <h3 className="text-sm font-medium">
+        Responsive Sizing (resize viewport to see changes)
+      </h3>
       <div className="border-2 border-dashed border-gray-300 p-8 rounded-lg">
         <GoodPartyOrgLogo />
       </div>
@@ -100,4 +104,4 @@ export const WithHoverEffects: Story = {
       </div>
     </div>
   ),
-} 
+}

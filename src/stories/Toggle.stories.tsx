@@ -158,4 +158,4 @@ export const Multiple: Story = {
       </Toggle>
     </div>
   ),
-} 
+}

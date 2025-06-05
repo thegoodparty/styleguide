@@ -2,7 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from '../components/ui/form'
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+} from '../components/ui/form'
 import { Input } from '../components/ui/input'
 import { Button } from '../components/ui/button'
 
@@ -18,7 +26,7 @@ type Story = StoryObj<typeof Form>
 
 const formSchema = z.object({
   email: z.string().email({
-    message: "Please enter a valid email address.",
+    message: 'Please enter a valid email address.',
   }),
 })
 
@@ -27,7 +35,7 @@ export const Default: Story = {
     const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
       defaultValues: {
-        email: "",
+        email: '',
       },
     })
 
@@ -47,7 +55,9 @@ export const Default: Story = {
                 <FormControl>
                   <Input placeholder="Enter your email" {...field} />
                 </FormControl>
-                <FormDescription>Your email will remain private.</FormDescription>
+                <FormDescription>
+                  Your email will remain private.
+                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -57,4 +67,4 @@ export const Default: Story = {
       </Form>
     )
   },
-} 
+}

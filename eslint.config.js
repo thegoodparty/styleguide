@@ -8,17 +8,21 @@ import prettier from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
 
 export default tseslint.config(
-  { 
+  {
     ignores: [
-      'dist', 
-      'storybook-static', 
+      'dist',
+      'storybook-static',
       '.storybook',
       'src/design-tokens/tokens.js', // Auto-generated
       'src/tailwind-tokens.js', // Auto-generated
-    ] 
+    ],
   },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierConfig],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      prettierConfig,
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -38,16 +42,16 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
-        'warn', 
-        { 
+        'warn',
+        {
           allowConstantExport: true,
           allowExportNames: ['meta', 'default'],
-        }
+        },
       ],
-      
+
       // Prettier integration
       'prettier/prettier': 'error',
-      
+
       // TypeScript-specific rules from the legacy config
       '@typescript-eslint/no-namespace': 'off',
       '@typescript-eslint/interface-name-prefix': 'off',
@@ -64,7 +68,7 @@ export default tseslint.config(
           varsIgnorePattern: '^_',
         },
       ],
-      
+
       // Unused imports detection
       'unused-imports/no-unused-imports': 'error',
     },
@@ -91,16 +95,16 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
-        'warn', 
-        { 
+        'warn',
+        {
           allowConstantExport: true,
           allowExportNames: ['meta', 'default'],
-        }
+        },
       ],
-      
+
       // Prettier integration
       'prettier/prettier': 'error',
-      
+
       'unused-imports/no-unused-imports': 'error',
     },
   },
@@ -120,5 +124,5 @@ export default tseslint.config(
       'react-hooks/rules-of-hooks': 'off',
       'unused-imports/no-unused-imports': 'off', // Disabled due to false positives with JSX in stories
     },
-  }
+  },
 )

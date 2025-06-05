@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '../components/ui/input-otp'
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from '../components/ui/input-otp'
 
 const meta: Meta<typeof InputOTP> = {
   title: 'Components/InputOtp',
@@ -41,4 +46,4 @@ export const Disabled: Story = {
       </InputOTPGroup>
     </InputOTP>
   ),
-} 
+}

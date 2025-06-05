@@ -31,8 +31,8 @@ export const Default: Story = {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your account
-            and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -54,7 +54,8 @@ export const WithCustomButtons: Story = {
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Project</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete this project? All associated data will be permanently removed.
+            Are you sure you want to delete this project? All associated data
+            will be permanently removed.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -96,7 +97,8 @@ export const WithIcon: Story = {
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Item</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete the selected item.
+            This action cannot be undone. This will permanently delete the
+            selected item.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -119,11 +121,10 @@ export const WithLongContent: Story = {
           <AlertDialogTitle>Important Information</AlertDialogTitle>
           <AlertDialogDescription className="space-y-4">
             <p>
-              This is a detailed explanation of the action you are about to take. Please read carefully before proceeding.
+              This is a detailed explanation of the action you are about to
+              take. Please read carefully before proceeding.
             </p>
-            <p>
-              The following changes will be made to your account:
-            </p>
+            <p>The following changes will be made to your account:</p>
             <ul className="list-disc pl-4 space-y-2">
               <li>All your data will be permanently deleted</li>
               <li>Your account will be deactivated</li>
@@ -131,7 +132,8 @@ export const WithLongContent: Story = {
               <li>This action cannot be undone</li>
             </ul>
             <p>
-              If you have any questions, please contact our support team before proceeding.
+              If you have any questions, please contact our support team before
+              proceeding.
             </p>
           </AlertDialogDescription>
         </AlertDialogHeader>
@@ -142,4 +144,4 @@ export const WithLongContent: Story = {
       </AlertDialogContent>
     </AlertDialog>
   ),
-} 
+}

@@ -23,4 +23,4 @@ export const Default: Story = {
       </div>
     </ScrollArea>
   ),
-} 
+}

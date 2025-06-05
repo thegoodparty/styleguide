@@ -80,10 +80,7 @@ export const WithForm: Story = {
           </div>
           <div className="grid gap-2">
             <label htmlFor="type">Type</label>
-            <select
-              id="type"
-              className="rounded-md border p-2"
-            >
+            <select id="type" className="rounded-md border p-2">
               <option value="">Select a type</option>
               <option value="type1">Type 1</option>
               <option value="type2">Type 2</option>
@@ -118,10 +115,7 @@ export const WithCustomHeight: Story = {
         <div className="p-4">
           <div className="space-y-4">
             {Array.from({ length: 10 }).map((_, i) => (
-              <div
-                key={i}
-                className="rounded-lg border p-4"
-              >
+              <div key={i} className="rounded-lg border p-4">
                 <h3 className="font-medium">Section {i + 1}</h3>
                 <p className="text-sm text-muted-foreground">
                   This is section {i + 1} of the drawer content.
@@ -184,4 +178,4 @@ export const WithNestedContent: Story = {
       </DrawerContent>
     </Drawer>
   ),
-} 
+}

@@ -33,30 +33,30 @@ interface Framework {
 
 const frameworks: Framework[] = [
   {
-    value: "next.js",
-    label: "Next.js",
+    value: 'next.js',
+    label: 'Next.js',
   },
   {
-    value: "sveltekit",
-    label: "SvelteKit",
+    value: 'sveltekit',
+    label: 'SvelteKit',
   },
   {
-    value: "nuxt.js",
-    label: "Nuxt.js",
+    value: 'nuxt.js',
+    label: 'Nuxt.js',
   },
   {
-    value: "remix",
-    label: "Remix",
+    value: 'remix',
+    label: 'Remix',
   },
   {
-    value: "astro",
-    label: "Astro",
+    value: 'astro',
+    label: 'Astro',
   },
 ]
 
 function DefaultCombobox() {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState('')
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -69,7 +69,7 @@ function DefaultCombobox() {
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
+            : 'Select framework...'}
           <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -83,14 +83,14 @@ function DefaultCombobox() {
                 key={framework.value}
                 value={framework.value}
                 onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
+                  setValue(currentValue === value ? '' : currentValue)
                   setOpen(false)
                 }}
               >
                 <CheckIcon
                   className={cn(
-                    "mr-2 h-4 w-4",
-                    value === framework.value ? "opacity-100" : "opacity-0"
+                    'mr-2 h-4 w-4',
+                    value === framework.value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
                 {framework.label}
@@ -105,23 +105,23 @@ function DefaultCombobox() {
 
 function MultipleGroupsCombobox() {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState('')
 
   const items = {
-    "Frontend": [
-      { value: "react", label: "React" },
-      { value: "vue", label: "Vue" },
-      { value: "angular", label: "Angular" },
+    Frontend: [
+      { value: 'react', label: 'React' },
+      { value: 'vue', label: 'Vue' },
+      { value: 'angular', label: 'Angular' },
     ],
-    "Backend": [
-      { value: "node", label: "Node.js" },
-      { value: "django", label: "Django" },
-      { value: "rails", label: "Ruby on Rails" },
+    Backend: [
+      { value: 'node', label: 'Node.js' },
+      { value: 'django', label: 'Django' },
+      { value: 'rails', label: 'Ruby on Rails' },
     ],
-    "Mobile": [
-      { value: "react-native", label: "React Native" },
-      { value: "flutter", label: "Flutter" },
-      { value: "swift", label: "Swift" },
+    Mobile: [
+      { value: 'react-native', label: 'React Native' },
+      { value: 'flutter', label: 'Flutter' },
+      { value: 'swift', label: 'Swift' },
     ],
   }
 
@@ -138,7 +138,7 @@ function MultipleGroupsCombobox() {
             ? Object.values(items)
                 .flat()
                 .find((item) => item.value === value)?.label
-            : "Select technology..."}
+            : 'Select technology...'}
           <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -153,14 +153,14 @@ function MultipleGroupsCombobox() {
                   key={item.value}
                   value={item.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
+                    setValue(currentValue === value ? '' : currentValue)
                     setOpen(false)
                   }}
                 >
                   <CheckIcon
                     className={cn(
-                      "mr-2 h-4 w-4",
-                      value === item.value ? "opacity-100" : "opacity-0"
+                      'mr-2 h-4 w-4',
+                      value === item.value ? 'opacity-100' : 'opacity-0',
                     )}
                   />
                   {item.label}
@@ -176,7 +176,7 @@ function MultipleGroupsCombobox() {
 
 function CustomStylesCombobox() {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState('')
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -189,16 +189,13 @@ function CustomStylesCombobox() {
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
+            : 'Select framework...'}
           <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command className="rounded-lg border shadow-md">
-          <CommandInput 
-            placeholder="Search framework..." 
-            className="h-10"
-          />
+          <CommandInput placeholder="Search framework..." className="h-10" />
           <CommandEmpty className="py-6 text-center text-sm">
             No framework found.
           </CommandEmpty>
@@ -208,7 +205,7 @@ function CustomStylesCombobox() {
                 key={framework.value}
                 value={framework.value}
                 onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
+                  setValue(currentValue === value ? '' : currentValue)
                   setOpen(false)
                 }}
                 className="flex items-center justify-between rounded-md px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground"
@@ -216,8 +213,8 @@ function CustomStylesCombobox() {
                 <span>{framework.label}</span>
                 <CheckIcon
                   className={cn(
-                    "h-4 w-4",
-                    value === framework.value ? "opacity-100" : "opacity-0"
+                    'h-4 w-4',
+                    value === framework.value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
               </CommandItem>
@@ -231,18 +228,18 @@ function CustomStylesCombobox() {
 
 function DisabledItemsCombobox() {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState('')
 
   const frameworksWithDisabled = [
     ...frameworks,
     {
-      value: "gatsby",
-      label: "Gatsby",
+      value: 'gatsby',
+      label: 'Gatsby',
       disabled: true,
     },
     {
-      value: "nextra",
-      label: "Nextra",
+      value: 'nextra',
+      label: 'Nextra',
       disabled: true,
     },
   ]
@@ -257,8 +254,10 @@ function DisabledItemsCombobox() {
           className="w-[200px] justify-between"
         >
           {value
-            ? frameworksWithDisabled.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
+            ? frameworksWithDisabled.find(
+                (framework) => framework.value === value,
+              )?.label
+            : 'Select framework...'}
           <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
@@ -272,20 +271,20 @@ function DisabledItemsCombobox() {
                 key={framework.value}
                 value={framework.value}
                 onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
+                  setValue(currentValue === value ? '' : currentValue)
                   setOpen(false)
                 }}
                 disabled={framework.disabled}
                 className={cn(
-                  "flex items-center justify-between",
-                  framework.disabled && "opacity-50 cursor-not-allowed"
+                  'flex items-center justify-between',
+                  framework.disabled && 'opacity-50 cursor-not-allowed',
                 )}
               >
                 <span>{framework.label}</span>
                 <CheckIcon
                   className={cn(
-                    "h-4 w-4",
-                    value === framework.value ? "opacity-100" : "opacity-0"
+                    'h-4 w-4',
+                    value === framework.value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
               </CommandItem>
@@ -311,4 +310,4 @@ export const WithCustomStyles: Story = {
 
 export const WithDisabledItems: Story = {
   render: () => <DisabledItemsCombobox />,
-} 
+}

@@ -65,8 +65,8 @@ export const WithImage: Story = {
       <CardContent>
         <CardTitle>Project Title</CardTitle>
         <CardDescription className="mt-2">
-          This is a description of the project. It can be multiple lines long and
-          will wrap appropriately.
+          This is a description of the project. It can be multiple lines long
+          and will wrap appropriately.
         </CardDescription>
       </CardContent>
       <CardFooter>
@@ -93,4 +93,4 @@ export const Simple: Story = {
       </CardFooter>
     </Card>
   ),
-} 
+}

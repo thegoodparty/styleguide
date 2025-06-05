@@ -127,10 +127,7 @@ export const WithForm: Story = {
           </div>
           <div className="grid gap-2">
             <label htmlFor="category">Category</label>
-            <select
-              id="category"
-              className="rounded-md border p-2"
-            >
+            <select id="category" className="rounded-md border p-2">
               <option value="">Select a category</option>
               <option value="web">Web Development</option>
               <option value="mobile">Mobile Development</option>
@@ -156,9 +153,7 @@ export const WithCustomWidth: Story = {
       <SheetContent className="w-[540px] sm:w-[640px]">
         <SheetHeader>
           <SheetTitle>Wide Sheet</SheetTitle>
-          <SheetDescription>
-            This sheet has a custom width.
-          </SheetDescription>
+          <SheetDescription>This sheet has a custom width.</SheetDescription>
         </SheetHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-2 gap-4">
@@ -179,4 +174,4 @@ export const WithCustomWidth: Story = {
       </SheetContent>
     </Sheet>
   ),
-} 
+}

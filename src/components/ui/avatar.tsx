@@ -1,59 +1,59 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import * as AvatarPrimitive from "@radix-ui/react-avatar"
-import { cva, type VariantProps } from "class-variance-authority"
+import * as React from 'react'
+import * as AvatarPrimitive from '@radix-ui/react-avatar'
+import { cva, type VariantProps } from 'class-variance-authority'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 const avatarVariants = cva(
-  "relative flex shrink-0 overflow-hidden rounded-full",
+  'relative flex shrink-0 overflow-hidden rounded-full',
   {
     variants: {
       size: {
-        xSmall: "size-6",
-        small: "size-8",
-        medium: "size-10",
-        large: "size-12",
-        xLarge: "size-16",
+        xSmall: 'size-6',
+        small: 'size-8',
+        medium: 'size-10',
+        large: 'size-12',
+        xLarge: 'size-16',
       },
       variant: {
-        default: "bg-avatar-default-background",
-        brightyellow: "bg-avatar-brightyellow-background",
-        lavender: "bg-avatar-lavender-background",
-        halogreen: "bg-avatar-halogreen-background",
-        blue: "bg-avatar-blue-background",
-        waxflower: "bg-avatar-waxflower-background",
+        default: 'bg-avatar-default-background',
+        brightyellow: 'bg-avatar-brightyellow-background',
+        lavender: 'bg-avatar-lavender-background',
+        halogreen: 'bg-avatar-halogreen-background',
+        blue: 'bg-avatar-blue-background',
+        waxflower: 'bg-avatar-waxflower-background',
       },
     },
     defaultVariants: {
-      size: "medium",
-      variant: "default",
+      size: 'medium',
+      variant: 'default',
     },
-  }
+  },
 )
 
 const avatarBadgeVariants = cva(
-  "absolute flex items-center justify-center rounded-full bg-brand-cream ring-2 ring-brand-cream",
+  'absolute flex items-center justify-center rounded-full bg-brand-cream ring-2 ring-brand-cream',
   {
     variants: {
       size: {
-        small: "size-3",
-        medium: "size-4", 
-        large: "size-5",
+        small: 'size-3',
+        medium: 'size-4',
+        large: 'size-5',
       },
       position: {
-        "top-left": "top-0 left-0",
-        "top-right": "top-0 right-0",
-        "bottom-left": "bottom-0 left-0",
-        "bottom-right": "bottom-0 right-0",
+        'top-left': 'top-0 left-0',
+        'top-right': 'top-0 right-0',
+        'bottom-left': 'bottom-0 left-0',
+        'bottom-right': 'bottom-0 right-0',
       },
     },
     defaultVariants: {
-      size: "medium",
-      position: "bottom-right",
+      size: 'medium',
+      position: 'bottom-right',
     },
-  }
+  },
 )
 
 interface AvatarProps
@@ -61,15 +61,10 @@ interface AvatarProps
     VariantProps<typeof avatarVariants> {}
 
 interface AvatarBadgeProps
-  extends React.ComponentProps<"div">,
+  extends React.ComponentProps<'div'>,
     VariantProps<typeof avatarBadgeVariants> {}
 
-function Avatar({
-  className,
-  size,
-  variant,
-  ...props
-}: AvatarProps) {
+function Avatar({ className, size, variant, ...props }: AvatarProps) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
@@ -86,7 +81,7 @@ function AvatarImage({
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
-      className={cn("aspect-square size-full object-cover", className)}
+      className={cn('aspect-square size-full object-cover', className)}
       {...props}
     />
   )
@@ -100,8 +95,8 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        "flex size-full items-center justify-center rounded-full text-sm font-medium",
-        className
+        'flex size-full items-center justify-center rounded-full text-sm font-medium',
+        className,
       )}
       {...props}
     />
@@ -112,13 +107,13 @@ function AvatarIcon({
   className,
   children,
   ...props
-}: React.ComponentProps<"div">) {
+}: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="avatar-icon"
       className={cn(
-        "flex size-full items-center justify-center rounded-full",
-        className
+        'flex size-full items-center justify-center rounded-full',
+        className,
       )}
       {...props}
     >

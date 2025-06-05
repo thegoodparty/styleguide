@@ -3,14 +3,16 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Typography styles for the design system using standard HTML elements and utility classes.',
+        component:
+          'Typography styles for the design system using standard HTML elements and utility classes.',
       },
     },
   },
 }
 
-const sampleText = "Almost before we knew it, we had left the ground."
-const longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+const sampleText = 'Almost before we knew it, we had left the ground.'
+const longText =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'
 
 export const Headings = () => (
   <div className="space-y-6">
@@ -47,22 +49,22 @@ export const BodyText = () => (
       <code className="text-xs text-muted">p · 16px · Medium</code>
       <p>{longText}</p>
     </div>
-    
+
     <div>
       <code className="text-xs text-muted">.text-lead · 20px · Regular</code>
       <p className="text-lead">{longText}</p>
     </div>
-    
+
     <div>
       <code className="text-xs text-muted">.text-large · 18px</code>
       <p className="text-large">{longText}</p>
     </div>
-    
+
     <div>
       <code className="text-xs text-muted">.text-small · 14px</code>
       <p className="text-small">{longText}</p>
     </div>
-    
+
     <div>
       <code className="text-xs text-muted">.text-muted</code>
       <p className="text-muted">{longText}</p>
@@ -73,10 +75,11 @@ export const BodyText = () => (
 export const InlineElements = () => (
   <div className="space-y-4 max-w-prose">
     <p>
-      This is a paragraph with <strong>strong text</strong>, <em>emphasized text</em>, 
-      and <a href="#">a link</a>. You can also use <code>inline code</code> within text.
+      This is a paragraph with <strong>strong text</strong>,{' '}
+      <em>emphasized text</em>, and <a href="#">a link</a>. You can also use{' '}
+      <code>inline code</code> within text.
     </p>
-    
+
     <p>
       <small>This is small text using the small element.</small>
     </p>
@@ -90,7 +93,8 @@ export const Lists = () => (
       <ul>
         <li>First item in the list</li>
         <li>Second item with more text to show line wrapping behavior</li>
-        <li>Third item
+        <li>
+          Third item
           <ul>
             <li>Nested item one</li>
             <li>Nested item two</li>
@@ -99,13 +103,14 @@ export const Lists = () => (
         <li>Fourth item</li>
       </ul>
     </div>
-    
+
     <div>
       <h3>Ordered List</h3>
       <ol>
         <li>First step in the process</li>
         <li>Second step with detailed explanation</li>
-        <li>Third step
+        <li>
+          Third step
           <ol>
             <li>Sub-step A</li>
             <li>Sub-step B</li>
@@ -122,18 +127,20 @@ export const BlockElements = () => (
     <div>
       <h3>Blockquote</h3>
       <blockquote>
-        "Design is not just what it looks like and feels like. Design is how it works."
-        — Steve Jobs
+        "Design is not just what it looks like and feels like. Design is how it
+        works." — Steve Jobs
       </blockquote>
     </div>
-    
+
     <div>
       <h3>Code Block</h3>
-      <pre><code>{`function greet(name) {
+      <pre>
+        <code>{`function greet(name) {
   return \`Hello, \${name}!\`;
 }
 
-console.log(greet('World'));`}</code></pre>
+console.log(greet('World'));`}</code>
+      </pre>
     </div>
   </div>
 )
@@ -178,14 +185,14 @@ export const ButtonText = () => (
       </button>
       <code className="text-xs text-muted">.button-text-large · 16px</code>
     </div>
-    
+
     <div className="flex items-center gap-4">
       <button className="button-text-medium px-3 py-1.5 bg-blue-500 text-white rounded">
         Medium Button
       </button>
       <code className="text-xs text-muted">.button-text-medium · 14px</code>
     </div>
-    
+
     <div className="flex items-center gap-4">
       <button className="button-text-small px-2 py-1 bg-blue-500 text-white rounded">
         Small Button
@@ -209,7 +216,7 @@ export const UtilityClasses = () => (
         <p className="text-3xl">3X Large (.text-3xl)</p>
       </div>
     </div>
-    
+
     <div>
       <h3>Font Weights</h3>
       <div className="space-y-2">
@@ -219,14 +226,18 @@ export const UtilityClasses = () => (
         <p className="font-bold">Bold (.font-bold)</p>
       </div>
     </div>
-    
+
     <div>
       <h3>Line Heights</h3>
       <div className="space-y-4">
         <p className="leading-none">None (.leading-none) - {sampleText}</p>
         <p className="leading-tight">Tight (.leading-tight) - {sampleText}</p>
-        <p className="leading-normal">Normal (.leading-normal) - {sampleText}</p>
-        <p className="leading-relaxed">Relaxed (.leading-relaxed) - {sampleText}</p>
+        <p className="leading-normal">
+          Normal (.leading-normal) - {sampleText}
+        </p>
+        <p className="leading-relaxed">
+          Relaxed (.leading-relaxed) - {sampleText}
+        </p>
       </div>
     </div>
   </div>
@@ -240,42 +251,48 @@ export const CompleteExample = () => (
         A guide to creating user-centered design systems
       </p>
     </header>
-    
+
     <p>
-      Good typography is <strong>invisible</strong>. When it's done well, 
-      readers don't notice the typeface, margins, or line spacing. They 
-      simply <em>absorb the content</em>.
+      Good typography is <strong>invisible</strong>. When it's done well,
+      readers don't notice the typeface, margins, or line spacing. They simply{' '}
+      <em>absorb the content</em>.
     </p>
-    
+
     <h2>Core Principles</h2>
-    
+
     <p>
-      There are three fundamental principles to keep in mind when designing
-      a typography system:
+      There are three fundamental principles to keep in mind when designing a
+      typography system:
     </p>
-    
+
     <ol>
-      <li><strong>Hierarchy</strong> - Guide the reader's eye</li>
-      <li><strong>Consistency</strong> - Create predictable patterns</li>
-      <li><strong>Readability</strong> - Optimize for comprehension</li>
+      <li>
+        <strong>Hierarchy</strong> - Guide the reader's eye
+      </li>
+      <li>
+        <strong>Consistency</strong> - Create predictable patterns
+      </li>
+      <li>
+        <strong>Readability</strong> - Optimize for comprehension
+      </li>
     </ol>
-    
+
     <blockquote>
-      "Typography is the craft of endowing human language with a durable 
-      visual form." — Robert Bringhurst
+      "Typography is the craft of endowing human language with a durable visual
+      form." — Robert Bringhurst
     </blockquote>
-    
+
     <h3>Implementation Details</h3>
-    
+
     <p>
-      When implementing a typography system, use semantic HTML elements 
-      like <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> for 
-      headings, and <code>&lt;p&gt;</code> for paragraphs.
+      When implementing a typography system, use semantic HTML elements like{' '}
+      <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code> for headings, and{' '}
+      <code>&lt;p&gt;</code> for paragraphs.
     </p>
-    
+
     <p className="text-small text-muted">
-      Note: This example demonstrates how different typography elements 
-      work together to create a cohesive reading experience.
+      Note: This example demonstrates how different typography elements work
+      together to create a cohesive reading experience.
     </p>
   </article>
-) 
+)

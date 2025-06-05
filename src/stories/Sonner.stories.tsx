@@ -15,8 +15,10 @@ type Story = StoryObj<typeof Sonner>
 export const Default: Story = {
   render: () => (
     <div>
-      <Button onClick={() => toast('This is a toast notification!')}>Show Toast</Button>
+      <Button onClick={() => toast('This is a toast notification!')}>
+        Show Toast
+      </Button>
       <Sonner />
     </div>
   ),
-} 
+}

@@ -67,4 +67,4 @@ export const WithEllipsis: Story = {
       </PaginationContent>
     </Pagination>
   ),
-} 
+}

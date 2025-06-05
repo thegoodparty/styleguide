@@ -109,4 +109,4 @@ export const Disabled: Story = {
       </TabsContent>
     </Tabs>
   ),
-} 
+}

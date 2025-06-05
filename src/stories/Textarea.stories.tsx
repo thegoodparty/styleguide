@@ -11,9 +11,7 @@ export default meta
 type Story = StoryObj<typeof Textarea>
 
 export const Default: Story = {
-  render: () => (
-    <Textarea placeholder="Type your message here." />
-  ),
+  render: () => <Textarea placeholder="Type your message here." />,
 }
 
 export const WithLabel: Story = {
@@ -38,22 +36,18 @@ export const WithDescription: Story = {
 }
 
 export const Disabled: Story = {
-  render: () => (
-    <Textarea placeholder="Type your message here." disabled />
-  ),
+  render: () => <Textarea placeholder="Type your message here." disabled />,
 }
 
 export const WithCustomRows: Story = {
-  render: () => (
-    <Textarea placeholder="Type your message here." rows={10} />
-  ),
+  render: () => <Textarea placeholder="Type your message here." rows={10} />,
 }
 
 export const WithCustomClassName: Story = {
   render: () => (
-    <Textarea 
-      placeholder="Type your message here." 
+    <Textarea
+      placeholder="Type your message here."
       className="min-h-[200px] resize-none"
     />
   ),
-} 
+}

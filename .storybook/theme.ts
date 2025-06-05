@@ -6,4 +6,4 @@ export default create({
   brandUrl: '/',
   brandImage: '/favicon/apple-touch-icon.png',
   brandTarget: '_self',
-}) 
+})

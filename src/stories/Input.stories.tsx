@@ -29,8 +29,15 @@ export const WithError: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <label htmlFor="email">Email</label>
-      <Input type="email" id="email" placeholder="Email" className="border-red-500" />
-      <p className="text-sm text-red-500">Please enter a valid email address.</p>
+      <Input
+        type="email"
+        id="email"
+        placeholder="Email"
+        className="border-red-500"
+      />
+      <p className="text-sm text-red-500">
+        Please enter a valid email address.
+      </p>
     </div>
   ),
 }
@@ -69,4 +76,4 @@ export const File: Story = {
   args: {
     type: 'file',
   },
-} 
+}
