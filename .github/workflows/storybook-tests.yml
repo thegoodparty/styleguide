@@ -43,6 +43,11 @@ jobs:
           echo "Using deployment URL: $DEPLOYMENT_URL"
           echo "BASE_URL=$DEPLOYMENT_URL" >> "$GITHUB_ENV"
 
+      - name: Set BASE_URL for scheduled runs
+        if: github.event_name == 'schedule'
+        run: |
+          echo "BASE_URL=https://style.goodparty.org" >> "$GITHUB_ENV"
+
       - name: Run Storybook tests
         id: storybook-test
         run: |
