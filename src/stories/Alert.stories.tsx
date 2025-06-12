@@ -21,10 +21,75 @@ export const Default: Story = {
   ),
 }
 
+export const Info: Story = {
+  render: () => (
+    <Alert variant="info">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+      <AlertTitle>Alert Title</AlertTitle>
+      <AlertDescription>
+        This is an alert description.
+      </AlertDescription>
+    </Alert>
+  ),
+}
+
+export const Success: Story = {
+  render: () => (
+    <Alert variant="success">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+      <AlertTitle>Success! Your changes have been saved.</AlertTitle>
+      <AlertDescription>
+        This is an alert with icon, title and description.
+      </AlertDescription>
+    </Alert>
+  ),
+}
+
 export const Destructive: Story = {
   render: () => (
     <Alert variant="destructive">
-      <AlertTitle>Error</AlertTitle>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      <AlertTitle>Something went wrong!</AlertTitle>
       <AlertDescription>
         Your session has expired. Please log in again.
       </AlertDescription>
@@ -32,7 +97,7 @@ export const Destructive: Story = {
   ),
 }
 
-export const WithIcon: Story = {
+export const All: Story = {
   render: () => (
     <div className="space-y-4">
       <Alert>
@@ -46,16 +111,58 @@ export const WithIcon: Story = {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="h-4 w-4"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+        <AlertTitle>Alert Title</AlertTitle>
+        <AlertDescription>
+          This is an alert description.
+        </AlertDescription>
+      </Alert>
+
+      <Alert variant="info">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+        <AlertTitle>Alert Title</AlertTitle>
+        <AlertDescription>
+          This is an alert description.
+        </AlertDescription>
+      </Alert>
+
+      <Alert variant="success">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
           <path d="m9 12 2 2 4-4" />
         </svg>
-        <AlertTitle>Success</AlertTitle>
+        <AlertTitle>Success! Your changes have been saved.</AlertTitle>
         <AlertDescription>
-          Your changes have been saved successfully.
+          This is an alert with icon, title and description.
         </AlertDescription>
       </Alert>
+
       <Alert variant="destructive">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -67,15 +174,14 @@ export const WithIcon: Story = {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="h-4 w-4"
         >
           <circle cx="12" cy="12" r="10" />
           <line x1="12" y1="8" x2="12" y2="12" />
           <line x1="12" y1="16" x2="12.01" y2="16" />
         </svg>
-        <AlertTitle>Error</AlertTitle>
+        <AlertTitle>Something went wrong!</AlertTitle>
         <AlertDescription>
-          There was a problem with your request.
+          Your session has expired. Please log in again.
         </AlertDescription>
       </Alert>
     </div>

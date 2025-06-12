@@ -1,0 +1,27 @@
+{
+  "brand": {
+    "primary": { "value": "{color.brightYellow.600}" },
+    "secondary": { "value": "{color.midnight.900}" },
+    "accent": { "value": "{color.haloGreen.400}" },
+    "destructive": { "value": "{color.red.600}" },
+    "surface": {
+      "primary": { "value": "{color.grayscale.white}" },
+      "secondary": { "value": "{color.grayscale.50}" },
+      "tertiary": { "value": "{color.grayscale.100}" },
+      "inverse": { "value": "{color.grayscale.900}" }
+    },
+    "text": {
+      "primary": { "value": "{color.grayscale.black}" },
+      "secondary": { "value": "{color.grayscale.600}" },
+      "tertiary": { "value": "{color.grayscale.500}" },
+      "inverse": { "value": "{color.grayscale.white}" },
+      "disabled": { "value": "{color.grayscale.400}" }
+    },
+    "border": {
+      "primary": { "value": "{color.grayscale.300}" },
+      "secondary": { "value": "{color.grayscale.200}" },
+      "strong": { "value": "{color.grayscale.600}" },
+      "inverse": { "value": "{color.grayscale.white}" }
+    }
+  }
+} 

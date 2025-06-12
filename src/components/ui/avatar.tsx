@@ -11,6 +11,7 @@ const avatarVariants = cva(
   {
     variants: {
       size: {
+<<<<<<< HEAD
         xSmall: 'size-6',
         small: 'size-8',
         medium: 'size-10',
@@ -24,6 +25,22 @@ const avatarVariants = cva(
         halogreen: 'bg-avatar-halogreen-background',
         blue: 'bg-avatar-blue-background',
         waxflower: 'bg-avatar-waxflower-background',
+=======
+        xSmall: "w-5 h-5",
+        small: "w-6 h-6",
+        medium: "w-8 h-8",
+        large: "w-10 h-10",
+        xLarge: "w-12 h-12",
+      },
+      variant: {
+        default: "bg-[--color-avatar-default-background] text-[--color-avatar-default-text] border-[--color-avatar-default-border]",
+        primary: "bg-[--color-avatar-primary-background] text-[--color-avatar-primary-text] border-[--color-avatar-primary-border]",
+        secondary: "bg-[--color-avatar-secondary-background] text-[--color-avatar-secondary-text] border-[--color-avatar-secondary-border]",
+        accent: "bg-[--color-avatar-accent-background] text-[--color-avatar-accent-text] border-[--color-avatar-accent-border]",
+        success: "bg-[--color-avatar-success-background] text-[--color-avatar-success-text] border-[--color-avatar-success-border]",
+        info: "bg-[--color-avatar-info-background] text-[--color-avatar-info-text] border-[--color-avatar-info-border]",
+        warning: "bg-[--color-avatar-warning-background] text-[--color-avatar-warning-text] border-[--color-avatar-warning-border]",
+>>>>>>> ca08013 (Experimented with token changes and updated components with those token changes. Ready for review.)
       },
     },
     defaultVariants: {
@@ -34,6 +51,7 @@ const avatarVariants = cva(
 )
 
 const avatarBadgeVariants = cva(
+<<<<<<< HEAD
   'absolute flex items-center justify-center rounded-full bg-brand-cream ring-2 ring-brand-cream',
   {
     variants: {
@@ -41,6 +59,15 @@ const avatarBadgeVariants = cva(
         small: 'size-3',
         medium: 'size-4',
         large: 'size-5',
+=======
+  "absolute flex items-center justify-center rounded-full bg-[--color-avatar-badge-background] text-[--color-avatar-badge-text] border-[--color-avatar-badge-border] ring-2 ring-[--color-avatar-badge-background]",
+  {
+    variants: {
+      size: {
+        small: "w-3 h-3 text-xs",
+        medium: "w-4 h-4 text-xs", 
+        large: "w-5 h-5 text-sm",
+>>>>>>> ca08013 (Experimented with token changes and updated components with those token changes. Ready for review.)
       },
       position: {
         'top-left': 'top-0 left-0',

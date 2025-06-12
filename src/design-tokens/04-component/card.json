@@ -1,0 +1,88 @@
+{
+  "component": {
+    "card": {
+      "default": {
+        "background": { "value": "{semantic.surface.default}" },
+        "border": { "value": "{semantic.border.default}" },
+        "borderRadius": { "value": "{borderRadius.lg}" },
+        "borderWidth": { "value": "{borderWidth.1}" },
+        "shadow": { "value": "{boxShadow.sm}" },
+        "padding": { "value": "{spacing.component.card.padding.medium}" }
+      },
+      "elevated": {
+        "background": { "value": "{semantic.surface.default}" },
+        "border": { "value": "transparent" },
+        "borderRadius": { "value": "{borderRadius.lg}" },
+        "borderWidth": { "value": "{borderWidth.0}" },
+        "shadow": { "value": "{boxShadow.lg}" },
+        "padding": { "value": "{spacing.component.card.padding.medium}" }
+      },
+      "outlined": {
+        "background": { "value": "{semantic.surface.default}" },
+        "border": { "value": "{semantic.border.strong}" },
+        "borderRadius": { "value": "{borderRadius.lg}" },
+        "borderWidth": { "value": "{borderWidth.1}" },
+        "shadow": { "value": "{boxShadow.none}" },
+        "padding": { "value": "{spacing.component.card.padding.medium}" }
+      },
+      "subtle": {
+        "background": { "value": "{semantic.surface.subtle}" },
+        "border": { "value": "{semantic.border.subtle}" },
+        "borderRadius": { "value": "{borderRadius.lg}" },
+        "borderWidth": { "value": "{borderWidth.1}" },
+        "shadow": { "value": "{boxShadow.none}" },
+        "padding": { "value": "{spacing.component.card.padding.medium}" }
+      },
+      "size": {
+        "small": {
+          "padding": { "value": "{spacing.component.card.padding.small}" },
+          "borderRadius": { "value": "{borderRadius.base}" }
+        },
+        "medium": {
+          "padding": { "value": "{spacing.component.card.padding.medium}" },
+          "borderRadius": { "value": "{borderRadius.lg}" }
+        },
+        "large": {
+          "padding": { "value": "{spacing.component.card.padding.large}" },
+          "borderRadius": { "value": "{borderRadius.xl}" }
+        }
+      },
+      "content": {
+        "gap": { "value": "{spacing.component.card.gap}" },
+        "title": {
+          "fontSize": { "value": "{typography.heading.h4.fontSize}" },
+          "fontWeight": { "value": "{typography.heading.h4.fontWeight}" },
+          "lineHeight": { "value": "{typography.heading.h4.lineHeight}" },
+          "color": { "value": "{semantic.text.default}" }
+        },
+        "description": {
+          "fontSize": { "value": "{typography.body.base.fontSize}" },
+          "fontWeight": { "value": "{typography.body.base.fontWeight}" },
+          "lineHeight": { "value": "{typography.body.base.lineHeight}" },
+          "color": { "value": "{semantic.text.subtle}" }
+        },
+        "caption": {
+          "fontSize": { "value": "{typography.caption.default.fontSize}" },
+          "fontWeight": { "value": "{typography.caption.default.fontWeight}" },
+          "lineHeight": { "value": "{typography.caption.default.lineHeight}" },
+          "color": { "value": "{semantic.text.muted}" }
+        }
+      },
+      "interactive": {
+        "hover": {
+          "background": { "value": "{semantic.surface.subtle}" },
+          "border": { "value": "{semantic.border.strong}" },
+          "shadow": { "value": "{boxShadow.md}" }
+        },
+        "focus": {
+          "border": { "value": "{semantic.border.focus}" },
+          "shadow": { "value": "{boxShadow.base}" }
+        },
+        "active": {
+          "background": { "value": "{semantic.surface.muted}" },
+          "shadow": { "value": "{boxShadow.sm}" }
+        }
+      }
+    }
+  }
+} 
