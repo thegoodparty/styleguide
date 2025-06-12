@@ -68,10 +68,6 @@ export const OnDifferentBackgrounds: Story = {
         <h3 className="text-sm font-medium text-white">Dark Background</h3>
         <GoodPartyOrgLogoWordmark />
       </div>
-      <div className="flex flex-col items-center gap-2 p-6 bg-blue-600 rounded-lg">
-        <h3 className="text-sm font-medium text-white">Blue Background</h3>
-        <GoodPartyOrgLogoWordmark />
-      </div>
     </div>
   ),
 }
