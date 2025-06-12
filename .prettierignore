@@ -8,6 +8,8 @@ storybook-static/
 # Generated files
 src/design-tokens/tokens.js
 src/tailwind-tokens.js
+src/design-tokens.css
+src/tailwind-theme.css
 
 # Package files
 package-lock.json
