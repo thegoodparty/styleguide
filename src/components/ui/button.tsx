@@ -4,25 +4,51 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
+// Loading spinner component
+const LoadingSpinner = ({ className }: { className?: string }) => (
+  <svg
+    className={cn("animate-spin", className)}
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <circle
+      className="opacity-25"
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="4"
+    ></circle>
+    <path
+      className="opacity-75"
+      fill="currentColor"
+      d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+    ></path>
+  </svg>
+)
+
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border",
   {
     variants: {
       variant: {
         default:
-          "bg-button-default-background text-button-default-text border-button-default-border shadow-xs hover:bg-button-default-backgroundHover disabled:bg-button-default-backgroundDisabled",
+          "button-primary",
         secondary:
-          "bg-button-secondary-background text-button-secondary-text border-button-secondary-border shadow-xs hover:bg-button-secondary-backgroundHover disabled:bg-button-secondary-backgroundDisabled",
+          "button-secondary",
         destructive:
-          "bg-button-destructive-background text-button-destructive-text border-button-destructive-border shadow-xs hover:bg-button-destructive-backgroundHover disabled:bg-button-destructive-backgroundDisabled focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
+          "button-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
         outline:
-          "bg-button-outline-background text-button-outline-text border-button-outline-border shadow-xs hover:bg-button-outline-backgroundHover disabled:bg-button-outline-backgroundDisabled focus-visible:border-button-outline-borderFocus focus-visible:ring-[3px]",
+          "button-outline focus-visible:ring-[3px]",
         ghost:
-          "bg-button-ghost-background text-button-ghost-text border-button-ghost-border hover:bg-button-ghost-backgroundHover disabled:bg-button-ghost-backgroundDisabled focus-visible:border-button-ghost-borderFocus focus-visible:ring-[3px]",
+          "button-ghost focus-visible:ring-[3px]",
+        link:
+          "button-link",
         whiteOutline:
-          "bg-button-whiteOutline-background text-button-whiteOutline-text border-button-whiteOutline-border shadow-xs hover:bg-button-whiteOutline-backgroundHover disabled:bg-button-whiteOutline-backgroundDisabled focus-visible:border-button-whiteOutline-borderFocus focus-visible:ring-[3px]",
+          "button-whiteOutline",
         whiteGhost:
-          "bg-button-whiteGhost-background text-button-whiteGhost-text border-button-whiteGhost-border hover:bg-button-whiteGhost-backgroundHover disabled:bg-button-whiteGhost-backgroundDisabled focus-visible:border-button-whiteGhost-borderFocus focus-visible:ring-[3px]",
+          "button-whiteGhost",
       },
       size: {
         xSmall: "h-6 px-3 py-1.5 button-text-small has-[>svg]:px-2",
@@ -38,25 +64,39 @@ const buttonVariants = cva(
   }
 )
 
+interface ButtonProps extends React.ComponentProps<"button">, VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+  loading?: boolean
+  loadingText?: string
+}
+
 function Button({
   className,
   variant,
   size,
   asChild = false,
+  loading = false,
+  loadingText,
+  children,
+  disabled,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-  }) {
+}: ButtonProps) {
   const Comp = asChild ? Slot : "button"
+  const isDisabled = disabled || loading
 
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      disabled={isDisabled}
       {...props}
-    />
+    >
+      {loading && (
+        <LoadingSpinner className="size-4" />
+      )}
+      {loading ? (loadingText || children) : children}
+    </Comp>
   )
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants, type ButtonProps }

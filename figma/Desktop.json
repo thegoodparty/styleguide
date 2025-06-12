@@ -1,0 +1,114 @@
+{
+  "heading-xl": {
+    "font-family": {
+      "value": "{font.font-outfit}",
+      "type": "text"
+    },
+    "font-size": {
+      "value": "{text.5xl.font-size}",
+      "type": "number"
+    },
+    "line-height": {
+      "value": "{text.5xl.line-height}",
+      "type": "number"
+    },
+    "font-weight": {
+      "value": "{font-weight.bold}",
+      "type": "number"
+    },
+    "letter-spacing": {
+      "value": 0,
+      "type": "number"
+    }
+  },
+  "heading-lg": {
+    "font-family": {
+      "value": "{font.font-outfit}",
+      "type": "text"
+    },
+    "font-size": {
+      "value": "{text.4xl.font-size}",
+      "type": "number"
+    },
+    "line-height": {
+      "value": "{text.4xl.line-height}",
+      "type": "number"
+    },
+    "font-weight": {
+      "value": "{font-weight.bold}",
+      "type": "number"
+    },
+    "letter-spacing": {
+      "value": 0,
+      "type": "number"
+    }
+  },
+  "heading-md": {
+    "font-family": {
+      "value": "{font.font-outfit}",
+      "type": "text"
+    },
+    "font-size": {
+      "value": "{text.3xl.font-size}",
+      "type": "number"
+    },
+    "line-height": {
+      "value": "{text.3xl.line-height}",
+      "type": "number"
+    },
+    "font-weight": {
+      "value": "{font-weight.bold}",
+      "type": "number"
+    },
+    "letter-spacing": {
+      "value": 0,
+      "type": "number"
+    }
+  },
+  "heading-sm": {
+    "font-family": {
+      "value": "{font.font-outfit}",
+      "type": "text"
+    },
+    "font-size": {
+      "value": "{text.2xl.font-size}",
+      "type": "number"
+    },
+    "line-height": {
+      "value": "{text.2xl.line-height}",
+      "type": "number"
+    },
+    "font-weight": {
+      "value": "{font-weight.bold}",
+      "type": "number"
+    },
+    "letter-spacing": {
+      "value": 0,
+      "type": "number"
+    }
+  },
+  "container-padding-x": {
+    "value": "{spacing.6}",
+    "type": "number"
+  },
+  "section-padding-y": {
+    "value": "{spacing.24}",
+    "type": "number"
+  },
+  "section-title-gap-xl": {
+    "value": "{spacing.6}",
+    "type": "number"
+  },
+  "section-title-gap-lg": {
+    "value": "{spacing.5}",
+    "type": "number"
+  },
+  "section-title-gap-md": {
+    "value": "{spacing.5}",
+    "type": "number"
+  },
+  "section-title-gap-sm": {
+    "value": "{spacing.4}",
+    "type": "number"
+  }
+}

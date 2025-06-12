@@ -1,0 +1,284 @@
+{
+  "base": {
+    "accent": {
+      "value": "{colors.accent-light}",
+      "type": "color",
+      "description": "Highlight color for active or focused elements"
+    },
+    "accent-foreground": {
+      "value": "{colors.text-dark}",
+      "type": "color",
+      "description": "Text and icons on accent-colored elements"
+    },
+    "background": {
+      "value": "{colors.background-light}",
+      "type": "color",
+      "description": "Main application background"
+    },
+    "border": {
+      "value": "{colors.border-light}",
+      "type": "color",
+      "description": "Default border color"
+    },
+    "foreground": {
+      "value": "{colors.text-dark}",
+      "type": "color",
+      "description": "Primary text color on the background"
+    },
+    "muted": {
+      "value": "{colors.muted-light}",
+      "type": "color",
+      "description": "Subdued background for less important elements"
+    },
+    "muted-foreground": {
+      "value": "{colors.text-muted-light}",
+      "type": "color",
+      "description": "De-emphasized text (captions, labels)"
+    },
+    "surface": {
+      "value": "{colors.surface-light}",
+      "type": "color",
+      "description": "Background for dropdown menus and popovers"
+    },
+    "surface-foreground": {
+      "value": "{colors.text-dark}",
+      "type": "color",
+      "description": "Text and icons within popovers"
+    },
+    "focus-ring": {
+      "value": "{colors.focus-ring-light}",
+      "type": "color",
+      "description": "Focus indicator color"
+    },
+    "ring-offset": {
+      "value": "{color.tailwind.base.white}",
+      "type": "color",
+      "description": "The color of the space between a focused element and its ring outline"
+    }
+  },
+  "components": {
+    "card-base": {
+      "value": "{colors.card-light}",
+      "type": "color",
+      "description": "Card component background"
+    },
+    "card-foreground": {
+      "value": "{colors.text-dark}",
+      "type": "color",
+      "description": "Text and icons within cards"
+    },
+    "input-border": {
+      "value": "{colors.border-light}",
+      "type": "color",
+      "description": "Form inputs and button borders"
+    },
+    "input-base": {
+      "value": "{colors.background-light}",
+      "type": "color",
+      "description": "Used in UI elements that have background color variable in light mode and input/30 variable in dark mode"
+    },
+    "input-active": {
+      "value": "{colors.tertiary-light}",
+      "type": "color",
+      "description": "Used in UI elements that have background color variable in light mode and input/30 variable in dark mode"
+    },
+    "input-foreground": {
+      "value": "{colors.text-light}",
+      "type": "color",
+      "description": "Used in UI elements that have background color variable in light mode and input/30 variable in dark mode"
+    },
+    "tooltip-base": {
+      "value": "{colors.muted-dark}",
+      "type": "color"
+    },
+    "tooltip-foreground": {
+      "value": "{colors.text-light}",
+      "type": "color"
+    }
+  },
+  "theme": {
+    "destructive": {
+      "value": "{colors.destructive-light}",
+      "type": "color",
+      "description": "Error and deletion action color"
+    },
+    "destructive-foreground": {
+      "value": "{colors.text-light}",
+      "type": "color",
+      "description": "Text and icons on destructive-colored elements"
+    },
+    "primary": {
+      "value": "{colors.primary-light}",
+      "type": "color",
+      "description": "Brand color for primary actions (buttons, highlights)"
+    },
+    "primary-foreground": {
+      "value": "{colors.text-dark}",
+      "type": "color",
+      "description": "Text and icons on primary-colored elements"
+    },
+    "secondary": {
+      "value": "{colors.secondary-light}",
+      "type": "color",
+      "description": "Less prominent action color"
+    },
+    "secondary-foreground": {
+      "value": "{colors.text-light}",
+      "type": "color",
+      "description": "Text and icons on secondary-colored elements"
+    },
+    "link": {
+      "value": "{colors.link-light}",
+      "type": "color",
+      "description": "Error and deletion action color"
+    },
+    "link-foreground": {
+      "value": "{colors.text-light}",
+      "type": "color",
+      "description": "Text and icons on destructive-colored elements"
+    }
+  },
+  "alpha": {
+    "5": {
+      "value": "#fffffff2",
+      "type": "color"
+    },
+    "10": {
+      "value": "#ffffffe6",
+      "type": "color"
+    },
+    "20": {
+      "value": "#ffffffcc",
+      "type": "color"
+    },
+    "30": {
+      "value": "#ffffffb3",
+      "type": "color"
+    },
+    "40": {
+      "value": "#ffffff99",
+      "type": "color"
+    },
+    "50": {
+      "value": "#ffffff80",
+      "type": "color"
+    },
+    "60": {
+      "value": "#ffffff66",
+      "type": "color"
+    },
+    "70": {
+      "value": "#ffffff4d",
+      "type": "color"
+    },
+    "80": {
+      "value": "#ffffff33",
+      "type": "color"
+    },
+    "90": {
+      "value": "#ffffff1a",
+      "type": "color"
+    }
+  },
+  "data": {
+    "chart-1": {
+      "value": "{colors.chart-1-light}",
+      "type": "color",
+      "description": "Data visualization colors"
+    },
+    "chart-2": {
+      "value": "{colors.chart-2-light}",
+      "type": "color",
+      "description": "Data visualization colors"
+    },
+    "chart-3": {
+      "value": "{colors.chart-3-light}",
+      "type": "color",
+      "description": "Data visualization colors"
+    },
+    "chart-4": {
+      "value": "{colors.chart-4-light}",
+      "type": "color",
+      "description": "Data visualization colors"
+    },
+    "chart-5": {
+      "value": "{colors.chart-5-light}",
+      "type": "color",
+      "description": "Data visualization colors"
+    }
+  },
+  "sidebar": {
+    "primary-foreground": {
+      "value": "{colors.sidebar-primary-foreground-light}",
+      "type": "color",
+      "description": "Text on sidebar primary elements"
+    },
+    "primary": {
+      "value": "{colors.sidebar-primary-light}",
+      "type": "color",
+      "description": "Primary actions within sidebar"
+    },
+    "foreground": {
+      "value": "{colors.sidebar-foreground-light}",
+      "type": "color",
+      "description": "Text and icons within sidebar"
+    },
+    "background": {
+      "value": "{colors.sidebar-background-light}",
+      "type": "color",
+      "description": "Sidebar background"
+    },
+    "accent": {
+      "value": "{colors.sidebar-accent-light}",
+      "type": "color",
+      "description": "Highlighted elements within sidebar"
+    },
+    "accent-foreground": {
+      "value": "{colors.sidebar-accent-foreground-light}",
+      "type": "color",
+      "description": "Text on sidebar accent elements"
+    },
+    "border": {
+      "value": "{colors.sidebar-border-light}",
+      "type": "color",
+      "description": "Sidebar divider lines or borders"
+    },
+    "ring": {
+      "value": "{colors.sidebar-ring-light}",
+      "type": "color",
+      "description": "Focus indicators within sidebar"
+    }
+  },
+  "custom": {
+    "outline-focus": {
+      "value": "#a3a3a380",
+      "type": "color",
+      "description": "Used in focus effect"
+    },
+    "destructive-focus": {
+      "value": "#dc26264d",
+      "type": "color",
+      "description": "Used in UI elements that have destructive/20 color variable in light mode and destructive/40 variable in dark mode"
+    },
+    "link-focus": {
+      "value": "#2563eb4d",
+      "type": "color",
+      "description": "Used in focus effect"
+    },
+    "default-focus": {
+      "value": "#dba21966",
+      "type": "color",
+      "description": "Used in focus effect"
+    },
+    "secondary-focus": {
+      "value": "#84a3d280",
+      "type": "color",
+      "description": "Used in focus effect"
+    },
+    "input-focus": {
+      "value": "#783dde4d",
+      "type": "color",
+      "description": "Used in focus effect"
+    }
+  }
+}
