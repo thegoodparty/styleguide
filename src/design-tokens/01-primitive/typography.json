@@ -1,8 +1,12 @@
 {
   "typography": {
     "fontFamily": {
-      "sans": { "value": "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" },
-      "mono": { "value": "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace" }
+      "sans": {
+        "value": "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+      },
+      "mono": {
+        "value": "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace"
+      }
     },
     "fontSize": {
       "xs": { "value": "12px" },
@@ -47,4 +51,4 @@
       "widest": { "value": "0.1em" }
     }
   }
-} 
+}

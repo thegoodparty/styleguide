@@ -8,7 +8,8 @@ const meta: Meta<typeof AspectRatio> = {
   parameters: {
     docs: {
       description: {
-        component: 'A component for maintaining consistent aspect ratios while properly containing content.',
+        component:
+          'A component for maintaining consistent aspect ratios while properly containing content.',
       },
     },
   },

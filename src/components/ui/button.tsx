@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 // Loading spinner component
 const LoadingSpinner = ({ className }: { className?: string }) => (
   <svg
-    className={cn("animate-spin", className)}
+    className={cn('animate-spin', className)}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -33,14 +33,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "button-primary",
-        secondary: "button-secondary",
-        destructive: "button-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
-        outline: "button-outline focus-visible:ring-[3px]",
-        ghost: "button-ghost focus-visible:ring-[3px]",
-        link: "button-link",
-        whiteOutline: "button-whiteOutline",
-        whiteGhost: "button-whiteGhost",
+        default: 'button-primary',
+        secondary: 'button-secondary',
+        destructive:
+          'button-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
+        outline: 'button-outline focus-visible:ring-[3px]',
+        ghost: 'button-ghost focus-visible:ring-[3px]',
+        link: 'button-link',
+        whiteOutline: 'button-whiteOutline',
+        whiteGhost: 'button-whiteGhost',
       },
       size: {
         xSmall: 'h-6 px-3 py-1.5 button-text-small has-[>svg]:px-2',
@@ -61,12 +62,14 @@ const buttonVariants = cva(
   },
 )
 
-interface ButtonProps extends React.ComponentProps<"button">, VariantProps<typeof buttonVariants> {
+interface ButtonProps
+  extends React.ComponentProps<'button'>,
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
   loadingText?: string
   icon?: React.ReactNode
-  iconPosition?: "left" | "right"
+  iconPosition?: 'left' | 'right'
 }
 
 function Button({
@@ -77,12 +80,12 @@ function Button({
   loading = false,
   loadingText,
   icon,
-  iconPosition = "left",
+  iconPosition = 'left',
   children,
   disabled,
   ...props
 }: ButtonProps) {
-  const Comp = asChild ? Slot : "button"
+  const Comp = asChild ? Slot : 'button'
   const isDisabled = disabled || loading
 
   return (
@@ -90,15 +93,15 @@ function Button({
       data-slot="button"
       className={cn(
         buttonVariants({ variant, size, className }),
-        iconPosition === "right" ? "flex-row-reverse" : ""
+        iconPosition === 'right' ? 'flex-row-reverse' : '',
       )}
       disabled={isDisabled}
       {...props}
     >
-      {icon && iconPosition === "left" && icon}
+      {icon && iconPosition === 'left' && icon}
       {loading && <LoadingSpinner className="size-4" />}
-      {loading ? (loadingText || children) : children}
-      {icon && iconPosition === "right" && icon}
+      {loading ? loadingText || children : children}
+      {icon && iconPosition === 'right' && icon}
     </Comp>
   )
 }

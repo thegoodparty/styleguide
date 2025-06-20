@@ -152,17 +152,35 @@ export const LoadingStates: Story = {
     <div className="flex flex-col gap-4">
       <h3 className="text-lg font-semibold">Loading States</h3>
       <div className="flex gap-4">
-        <Button variant="default" loading>Loading...</Button>
-        <Button variant="secondary" loading>Loading...</Button>
-        <Button variant="destructive" loading>Loading...</Button>
-        <Button variant="outline" loading>Loading...</Button>
-        <Button variant="ghost" loading>Loading...</Button>
-        <Button variant="link" loading>Loading...</Button>
+        <Button variant="default" loading>
+          Loading...
+        </Button>
+        <Button variant="secondary" loading>
+          Loading...
+        </Button>
+        <Button variant="destructive" loading>
+          Loading...
+        </Button>
+        <Button variant="outline" loading>
+          Loading...
+        </Button>
+        <Button variant="ghost" loading>
+          Loading...
+        </Button>
+        <Button variant="link" loading>
+          Loading...
+        </Button>
       </div>
       <div className="flex gap-4">
-        <Button variant="default" loading loadingText="Saving...">Save</Button>
-        <Button variant="secondary" loading loadingText="Processing...">Process</Button>
-        <Button variant="destructive" loading loadingText="Deleting...">Delete</Button>
+        <Button variant="default" loading loadingText="Saving...">
+          Save
+        </Button>
+        <Button variant="secondary" loading loadingText="Processing...">
+          Process
+        </Button>
+        <Button variant="destructive" loading loadingText="Deleting...">
+          Delete
+        </Button>
       </div>
     </div>
   ),
@@ -171,19 +189,40 @@ export const LoadingStates: Story = {
 export const AllStates: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
-      {(["default", "secondary", "destructive", "outline", "ghost", "link"] as const).map(variant => (
+      {(
+        [
+          'default',
+          'secondary',
+          'destructive',
+          'outline',
+          'ghost',
+          'link',
+        ] as const
+      ).map((variant) => (
         <div key={variant} className="flex gap-4">
-          <Button variant={variant} size="large">{variant} Enabled</Button>
-          <Button variant={variant} size="large" disabled>{variant} Disabled</Button>
-          <Button variant={variant} size="large" loading>{variant} Loading</Button>
+          <Button variant={variant} size="large">
+            {variant} Enabled
+          </Button>
+          <Button variant={variant} size="large" disabled>
+            {variant} Disabled
+          </Button>
+          <Button variant={variant} size="large" loading>
+            {variant} Loading
+          </Button>
         </div>
       ))}
       {/* White variants on dark background */}
       {(['whiteOutline', 'whiteGhost'] as const).map((variant) => (
         <div key={variant} className="flex gap-4 bg-gray-800 p-4 rounded-lg">
-          <Button variant={variant} size="large">{variant} Enabled</Button>
-          <Button variant={variant} size="large" disabled>{variant} Disabled</Button>
-          <Button variant={variant} size="large" loading>{variant} Loading</Button>
+          <Button variant={variant} size="large">
+            {variant} Enabled
+          </Button>
+          <Button variant={variant} size="large" disabled>
+            {variant} Disabled
+          </Button>
+          <Button variant={variant} size="large" loading>
+            {variant} Loading
+          </Button>
         </div>
       ))}
     </div>
@@ -211,46 +250,95 @@ export const StateMatrix: Story = {
     return (
       <div className="space-y-8">
         <h2 className="text-2xl font-bold">Button State Matrix</h2>
-        
+
         {variants.map(({ name, variant, darkBg }) => (
-          <div key={variant} className={`p-6 rounded-lg ${darkBg ? 'bg-gray-800' : 'bg-gray-50'}`}>
-            <h3 className={`text-lg font-semibold mb-4 ${darkBg ? 'text-white' : 'text-gray-900'}`}>
+          <div
+            key={variant}
+            className={`p-6 rounded-lg ${darkBg ? 'bg-gray-800' : 'bg-gray-50'}`}
+          >
+            <h3
+              className={`text-lg font-semibold mb-4 ${darkBg ? 'text-white' : 'text-gray-900'}`}
+            >
               {name}
             </h3>
-            
+
             {/* Default size row */}
             <div className="mb-4">
               <div className="grid grid-cols-5 gap-4 items-center">
-                <div className={`text-sm font-medium ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}>
+                <div
+                  className={`text-sm font-medium ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}
+                >
                   default
                 </div>
-                <Button variant={variant} size="medium">Button</Button>
-                <Button variant={variant} size="medium" className="hover:opacity-80">Button</Button>
-                <Button variant={variant} size="medium" className="focus-visible:ring-2">Button</Button>
-                <Button variant={variant} size="medium" loading>Button</Button>
-                <Button variant={variant} size="medium" disabled>Button</Button>
+                <Button variant={variant} size="medium">
+                  Button
+                </Button>
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="hover:opacity-80"
+                >
+                  Button
+                </Button>
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="focus-visible:ring-2"
+                >
+                  Button
+                </Button>
+                <Button variant={variant} size="medium" loading>
+                  Button
+                </Button>
+                <Button variant={variant} size="medium" disabled>
+                  Button
+                </Button>
               </div>
             </div>
 
             {/* Icon only row */}
             <div className="mb-4">
               <div className="grid grid-cols-5 gap-4 items-center">
-                <div className={`text-sm font-medium ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}>
+                <div
+                  className={`text-sm font-medium ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}
+                >
                   icon
                 </div>
-                <Button variant={variant} size="medium" className="w-10 h-10 p-0">
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="w-10 h-10 p-0"
+                >
                   <DownloadIcon className="h-4 w-4" />
                 </Button>
-                <Button variant={variant} size="medium" className="w-10 h-10 p-0 hover:opacity-80">
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="w-10 h-10 p-0 hover:opacity-80"
+                >
                   <DownloadIcon className="h-4 w-4" />
                 </Button>
-                <Button variant={variant} size="medium" className="w-10 h-10 p-0 focus-visible:ring-2">
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="w-10 h-10 p-0 focus-visible:ring-2"
+                >
                   <DownloadIcon className="h-4 w-4" />
                 </Button>
-                <Button variant={variant} size="medium" className="w-10 h-10 p-0" loading>
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="w-10 h-10 p-0"
+                  loading
+                >
                   <DownloadIcon className="h-4 w-4" />
                 </Button>
-                <Button variant={variant} size="medium" className="w-10 h-10 p-0" disabled>
+                <Button
+                  variant={variant}
+                  size="medium"
+                  className="w-10 h-10 p-0"
+                  disabled
+                >
                   <DownloadIcon className="h-4 w-4" />
                 </Button>
               </div>
@@ -260,14 +348,34 @@ export const StateMatrix: Story = {
             {sizes.map(({ name: sizeName, size }) => (
               <div key={sizeName} className="mb-4">
                 <div className="grid grid-cols-5 gap-4 items-center">
-                  <div className={`text-sm font-medium ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <div
+                    className={`text-sm font-medium ${darkBg ? 'text-gray-300' : 'text-gray-600'}`}
+                  >
                     {sizeName}
                   </div>
-                  <Button variant={variant} size={size}>Button</Button>
-                  <Button variant={variant} size={size} className="hover:opacity-80">Button</Button>
-                  <Button variant={variant} size={size} className="focus-visible:ring-2">Button</Button>
-                  <Button variant={variant} size={size} loading>Button</Button>
-                  <Button variant={variant} size={size} disabled>Button</Button>
+                  <Button variant={variant} size={size}>
+                    Button
+                  </Button>
+                  <Button
+                    variant={variant}
+                    size={size}
+                    className="hover:opacity-80"
+                  >
+                    Button
+                  </Button>
+                  <Button
+                    variant={variant}
+                    size={size}
+                    className="focus-visible:ring-2"
+                  >
+                    Button
+                  </Button>
+                  <Button variant={variant} size={size} loading>
+                    Button
+                  </Button>
+                  <Button variant={variant} size={size} disabled>
+                    Button
+                  </Button>
                 </div>
               </div>
             ))}
@@ -314,7 +422,16 @@ export const IconButtonVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-4">
-        {(["default", "secondary", "destructive", "outline", "ghost", "link"] as const).map(variant => (
+        {(
+          [
+            'default',
+            'secondary',
+            'destructive',
+            'outline',
+            'ghost',
+            'link',
+          ] as const
+        ).map((variant) => (
           <IconButton key={variant} variant={variant} aria-label={variant}>
             <DownloadIcon className="h-5 w-5" />
           </IconButton>
@@ -331,8 +448,22 @@ export const IconButtonVariants: Story = {
       {/* Loading states */}
       <div className="flex items-center gap-4">
         <h4 className="text-sm font-medium">Loading States:</h4>
-        {(["default", "secondary", "destructive", "outline", "ghost", "link"] as const).map(variant => (
-          <IconButton key={variant} variant={variant} loading aria-label={`${variant} loading`}>
+        {(
+          [
+            'default',
+            'secondary',
+            'destructive',
+            'outline',
+            'ghost',
+            'link',
+          ] as const
+        ).map((variant) => (
+          <IconButton
+            key={variant}
+            variant={variant}
+            loading
+            aria-label={`${variant} loading`}
+          >
             <DownloadIcon className="h-5 w-5" />
           </IconButton>
         ))}

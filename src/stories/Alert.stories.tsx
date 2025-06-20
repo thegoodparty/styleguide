@@ -39,9 +39,7 @@ export const Info: Story = {
         <path d="m9 12 2 2 4-4" />
       </svg>
       <AlertTitle>Alert Title</AlertTitle>
-      <AlertDescription>
-        This is an alert description.
-      </AlertDescription>
+      <AlertDescription>This is an alert description.</AlertDescription>
     </Alert>
   ),
 }
@@ -116,9 +114,7 @@ export const All: Story = {
           <path d="m9 12 2 2 4-4" />
         </svg>
         <AlertTitle>Alert Title</AlertTitle>
-        <AlertDescription>
-          This is an alert description.
-        </AlertDescription>
+        <AlertDescription>This is an alert description.</AlertDescription>
       </Alert>
 
       <Alert variant="info">
@@ -137,9 +133,7 @@ export const All: Story = {
           <path d="m9 12 2 2 4-4" />
         </svg>
         <AlertTitle>Alert Title</AlertTitle>
-        <AlertDescription>
-          This is an alert description.
-        </AlertDescription>
+        <AlertDescription>This is an alert description.</AlertDescription>
       </Alert>
 
       <Alert variant="success">

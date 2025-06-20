@@ -24,10 +24,10 @@ StyleDictionary.registerFormat({
       // Handle component tokens
       if (path[0] === 'component') {
         const componentName = path[1] // button, avatar, etc.
-        const variantName = path[2]   // primary, secondary, etc.
-        const property = path[3]      // background, text, border, etc.
-        const state = path[4]         // default, hover, active, disabled
-        
+        const variantName = path[2] // primary, secondary, etc.
+        const property = path[3] // background, text, border, etc.
+        const state = path[4] // default, hover, active, disabled
+
         // Create unique property names that include the state
         // e.g., --color-button-primary-background-default: var(--component-button-primary-background-default);
         if (state) {
@@ -52,32 +52,38 @@ export default {
     'src/design-tokens/02-brand/**/*.json',
     'src/design-tokens/03-semantic/**/*.json',
     'src/design-tokens/04-component/**/*.json',
-    'src/design-tokens/05-platform/**/*.json'
+    'src/design-tokens/05-platform/**/*.json',
   ],
   platforms: {
     css: {
       transformGroup: 'css',
       buildPath: 'src/',
-      files: [{
-        destination: 'design-tokens.css',
-        format: 'css/variables',
-      }],
+      files: [
+        {
+          destination: 'design-tokens.css',
+          format: 'css/variables',
+        },
+      ],
     },
     js: {
       transformGroup: 'js',
       buildPath: 'src/design-tokens/',
-      files: [{
-        destination: 'tokens.js',
-        format: 'javascript/es6',
-      }],
+      files: [
+        {
+          destination: 'tokens.js',
+          format: 'javascript/es6',
+        },
+      ],
     },
     tailwind: {
       transformGroup: 'css',
       buildPath: 'src/',
-      files: [{
-        destination: 'tailwind-theme.css',
-        format: 'tailwind/theme-css',
-      }],
+      files: [
+        {
+          destination: 'tailwind-theme.css',
+          format: 'tailwind/theme-css',
+        },
+      ],
     },
   },
 }

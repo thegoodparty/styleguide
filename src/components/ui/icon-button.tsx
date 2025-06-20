@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 // Loading spinner component for icon buttons
 const LoadingSpinner = ({ className }: { className?: string }) => (
   <svg
-    className={cn("animate-spin", className)}
+    className={cn('animate-spin', className)}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -33,14 +33,19 @@ const iconButtonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-button-default-background text-button-default-text border-button-default-border hover:bg-button-default-backgroundHover disabled:bg-button-default-backgroundDisabled",
-        secondary: "bg-button-secondary-background text-button-secondary-text border-button-secondary-border hover:bg-button-secondary-backgroundHover disabled:bg-button-secondary-backgroundDisabled",
-        destructive: "bg-button-destructive-background text-button-destructive-text border-button-destructive-border hover:bg-button-destructive-backgroundHover disabled:bg-button-destructive-backgroundDisabled focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
-        outline: "bg-button-outline-background text-button-outline-text border-button-outline-border hover:bg-button-outline-backgroundHover disabled:bg-button-outline-backgroundDisabled focus-visible:border-button-outline-borderFocus focus-visible:ring-[3px]",
-        ghost: "bg-button-ghost-background text-button-ghost-text border-button-ghost-border hover:bg-button-ghost-backgroundHover disabled:bg-button-ghost-backgroundDisabled focus-visible:border-button-ghost-borderFocus focus-visible:ring-[3px]",
-        link: "bg-transparent text-link border-transparent hover:opacity-80 disabled:opacity-50 focus-visible:ring-link/20 focus-visible:ring-[3px] focus-visible:border-transparent",
-        whiteOutline: "button-whiteOutline",
-        whiteGhost: "button-whiteGhost",
+        default:
+          'bg-button-default-background text-button-default-text border-button-default-border hover:bg-button-default-backgroundHover disabled:bg-button-default-backgroundDisabled',
+        secondary:
+          'bg-button-secondary-background text-button-secondary-text border-button-secondary-border hover:bg-button-secondary-backgroundHover disabled:bg-button-secondary-backgroundDisabled',
+        destructive:
+          'bg-button-destructive-background text-button-destructive-text border-button-destructive-border hover:bg-button-destructive-backgroundHover disabled:bg-button-destructive-backgroundDisabled focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
+        outline:
+          'bg-button-outline-background text-button-outline-text border-button-outline-border hover:bg-button-outline-backgroundHover disabled:bg-button-outline-backgroundDisabled focus-visible:border-button-outline-borderFocus focus-visible:ring-[3px]',
+        ghost:
+          'bg-button-ghost-background text-button-ghost-text border-button-ghost-border hover:bg-button-ghost-backgroundHover disabled:bg-button-ghost-backgroundDisabled focus-visible:border-button-ghost-borderFocus focus-visible:ring-[3px]',
+        link: 'bg-transparent text-link border-transparent hover:opacity-80 disabled:opacity-50 focus-visible:ring-link/20 focus-visible:ring-[3px] focus-visible:border-transparent',
+        whiteOutline: 'button-whiteOutline',
+        whiteGhost: 'button-whiteGhost',
       },
       size: {
         xSmall: 'size-6',
@@ -74,18 +79,24 @@ function IconButton({
   disabled,
   ...props
 }: IconButtonProps) {
-  const Comp = asChild ? Slot : "button"
+  const Comp = asChild ? Slot : 'button'
   const isDisabled = disabled || loading
 
   // Calculate spinner size based on button size
   const getSpinnerSize = () => {
     switch (size) {
-      case 'xSmall': return 'size-3'
-      case 'small': return 'size-4'
-      case 'medium': return 'size-5'
-      case 'large': return 'size-6'
-      case 'xLarge': return 'size-8'
-      default: return 'size-5'
+      case 'xSmall':
+        return 'size-3'
+      case 'small':
+        return 'size-4'
+      case 'medium':
+        return 'size-5'
+      case 'large':
+        return 'size-6'
+      case 'xLarge':
+        return 'size-8'
+      default:
+        return 'size-5'
     }
   }
 
@@ -96,11 +107,7 @@ function IconButton({
       disabled={isDisabled}
       {...props}
     >
-      {loading ? (
-        <LoadingSpinner className={getSpinnerSize()} />
-      ) : (
-        children
-      )}
+      {loading ? <LoadingSpinner className={getSpinnerSize()} /> : children}
     </Comp>
   )
 }

@@ -106,19 +106,19 @@
   }
 
   /* Loading states preserve original colors */
-  .button-primary[data-loading="true"] {
+  .button-primary[data-loading='true'] {
     color: var(--component-button-primary-text-loading);
   }
-  .button-secondary[data-loading="true"] {
+  .button-secondary[data-loading='true'] {
     color: var(--component-button-secondary-text-loading);
   }
-  .button-destructive[data-loading="true"] {
+  .button-destructive[data-loading='true'] {
     color: var(--component-button-destructive-text-loading);
   }
-  .button-outline[data-loading="true"] {
+  .button-outline[data-loading='true'] {
     color: var(--component-button-outline-text-loading);
   }
-  .button-ghost[data-loading="true"] {
+  .button-ghost[data-loading='true'] {
     color: var(--component-button-ghost-text-loading);
   }
 
@@ -142,7 +142,7 @@
     border-color: var(--component-button-link-border-disabled);
     opacity: var(--component-button-link-opacity-disabled);
   }
-  .button-link[data-loading="true"] {
+  .button-link[data-loading='true'] {
     color: var(--component-button-link-text-loading);
   }
 
