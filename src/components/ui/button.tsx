@@ -23,6 +23,8 @@ const buttonVariants = cva(
           'bg-button-whiteOutline-background text-button-whiteOutline-text border-button-whiteOutline-border shadow-xs hover:bg-button-whiteOutline-backgroundHover disabled:bg-button-whiteOutline-backgroundDisabled focus-visible:border-button-whiteOutline-borderFocus focus-visible:ring-[3px]',
         whiteGhost:
           'bg-button-whiteGhost-background text-button-whiteGhost-text border-button-whiteGhost-border hover:bg-button-whiteGhost-backgroundHover disabled:bg-button-whiteGhost-backgroundDisabled focus-visible:border-button-whiteGhost-borderFocus focus-visible:ring-[3px]',
+        white:
+          'bg-white text-black border-0 shadow-xs hover:bg-gray-100 disabled:bg-gray-200',
       },
       size: {
         xSmall: 'h-6 px-3 py-1.5 button-text-small has-[>svg]:px-2',
@@ -50,7 +52,10 @@ export interface ButtonProps
   icon?: React.ReactNode
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<
+  any,
+  ButtonProps
+>(
   (
     {
       className,
@@ -71,7 +76,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           buttonVariants({ variant, size, iconPosition, className }),
         )}
-        ref={ref}
+        ref={ref as any}
         {...props}
       >
         {icon}
