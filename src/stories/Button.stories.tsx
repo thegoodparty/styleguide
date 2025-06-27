@@ -78,6 +78,20 @@ export const WhiteOutline: Story = {
   ],
 }
 
+export const White: Story = {
+  args: {
+    children: 'White',
+    variant: 'white',
+  },
+  decorators: [
+    (Story) => (
+      <div className="bg-gray-800 p-8 rounded-lg">
+        <Story />
+      </div>
+    ),
+  ],
+}
+
 export const WithIcon: Story = {
   args: {
     children: 'Download',
