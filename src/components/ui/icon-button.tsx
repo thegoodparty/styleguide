@@ -43,9 +43,9 @@ const iconButtonVariants = cva(
           'bg-button-outline-background text-button-outline-text border-button-outline-border hover:bg-button-outline-backgroundHover disabled:bg-button-outline-backgroundDisabled focus-visible:border-button-outline-borderFocus focus-visible:ring-[3px]',
         ghost:
           'bg-button-ghost-background text-button-ghost-text border-button-ghost-border hover:bg-button-ghost-backgroundHover disabled:bg-button-ghost-backgroundDisabled focus-visible:border-button-ghost-borderFocus focus-visible:ring-[3px]',
-        link: 'bg-transparent text-link border-transparent hover:opacity-80 disabled:opacity-50 focus-visible:ring-link/20 focus-visible:ring-[3px] focus-visible:border-transparent',
-        whiteOutline: 'button-whiteOutline',
-        whiteGhost: 'button-whiteGhost',
+        link: 'bg-transparent text-[color:var(--semantic-text-link)] border-transparent hover:text-[color:var(--semantic-text-link-hover)] disabled:opacity-50 focus-visible:ring-[color:var(--semantic-text-link)]/20 focus-visible:ring-[3px] focus-visible:border-transparent',
+        whiteOutline: 'bg-transparent text-white border-white/20 hover:bg-white/10 disabled:bg-transparent disabled:text-white/50 disabled:border-white/10 focus-visible:border-white focus-visible:ring-white/20 focus-visible:ring-[3px]',
+        whiteGhost: 'bg-transparent text-white border-transparent hover:bg-white/10 disabled:bg-transparent disabled:text-white/50 focus-visible:border-white/20 focus-visible:ring-white/20 focus-visible:ring-[3px]',
       },
       size: {
         xSmall: 'size-6',
@@ -69,7 +69,7 @@ interface IconButtonProps
   loading?: boolean
 }
 
-function IconButton({
+const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(({
   className,
   variant,
   size,
@@ -78,7 +78,7 @@ function IconButton({
   children,
   disabled,
   ...props
-}: IconButtonProps) {
+}, ref) => {
   const Comp = asChild ? Slot : 'button'
   const isDisabled = disabled || loading
 
@@ -102,6 +102,7 @@ function IconButton({
 
   return (
     <Comp
+      ref={ref}
       data-slot="icon-button"
       className={cn(iconButtonVariants({ variant, size, className }))}
       disabled={isDisabled}
@@ -110,6 +111,8 @@ function IconButton({
       {loading ? <LoadingSpinner className={getSpinnerSize()} /> : children}
     </Comp>
   )
-}
+})
+
+IconButton.displayName = 'IconButton'
 
 export { IconButton, iconButtonVariants, type IconButtonProps }

@@ -72,7 +72,7 @@ interface ButtonProps
   iconPosition?: 'left' | 'right'
 }
 
-function Button({
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   className,
   variant,
   size,
@@ -84,26 +84,28 @@ function Button({
   children,
   disabled,
   ...props
-}: ButtonProps) {
+}, ref) => {
   const Comp = asChild ? Slot : 'button'
   const isDisabled = disabled || loading
 
   return (
     <Comp
+      ref={ref}
       data-slot="button"
       className={cn(
-        buttonVariants({ variant, size, className }),
-        iconPosition === 'right' ? 'flex-row-reverse' : '',
+        buttonVariants({ variant, size, iconPosition, className })
       )}
       disabled={isDisabled}
       {...props}
     >
-      {icon && iconPosition === 'left' && icon}
+      {!loading && icon && iconPosition === 'left' && icon}
       {loading && <LoadingSpinner className="size-4" />}
       {loading ? loadingText || children : children}
-      {icon && iconPosition === 'right' && icon}
+      {!loading && icon && iconPosition === 'right' && icon}
     </Comp>
   )
-}
+})
+
+Button.displayName = 'Button'
 
 export { Button, buttonVariants, type ButtonProps }
