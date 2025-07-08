@@ -1,0 +1,63 @@
+{
+  "spacing": {
+    "layout": {
+      "section": { "value": "{spacing.scale.24}" },
+      "container": { "value": "{spacing.scale.16}" },
+      "component": { "value": "{spacing.scale.8}" },
+      "element": { "value": "{spacing.scale.4}" }
+    },
+    "inset": {
+      "large": { "value": "{spacing.scale.6}" },
+      "medium": { "value": "{spacing.scale.4}" },
+      "small": { "value": "{spacing.scale.3}" },
+      "tiny": { "value": "{spacing.scale.2}" }
+    },
+    "stack": {
+      "large": { "value": "{spacing.scale.8}" },
+      "medium": { "value": "{spacing.scale.6}" },
+      "small": { "value": "{spacing.scale.4}" },
+      "tiny": { "value": "{spacing.scale.2}" }
+    },
+    "inline": {
+      "large": { "value": "{spacing.scale.6}" },
+      "medium": { "value": "{spacing.scale.4}" },
+      "small": { "value": "{spacing.scale.3}" },
+      "tiny": { "value": "{spacing.scale.2}" }
+    },
+    "component": {
+      "button": {
+        "padding": {
+          "x": {
+            "large": { "value": "{spacing.scale.6}" },
+            "medium": { "value": "{spacing.scale.5}" },
+            "small": { "value": "{spacing.scale.4}" },
+            "tiny": { "value": "{spacing.scale.3}" }
+          },
+          "y": {
+            "large": { "value": "{spacing.scale.3}" },
+            "medium": { "value": "{spacing.scale.2}" },
+            "small": { "value": "{spacing.scale.2}" },
+            "tiny": { "value": "{spacing.scale.1}" }
+          }
+        },
+        "gap": { "value": "{spacing.scale.2}" }
+      },
+      "card": {
+        "padding": {
+          "large": { "value": "{spacing.scale.8}" },
+          "medium": { "value": "{spacing.scale.6}" },
+          "small": { "value": "{spacing.scale.4}" }
+        },
+        "gap": { "value": "{spacing.scale.4}" }
+      },
+      "form": {
+        "gap": { "value": "{spacing.scale.4}" },
+        "fieldGap": { "value": "{spacing.scale.2}" },
+        "inputPadding": {
+          "x": { "value": "{spacing.scale.3}" },
+          "y": { "value": "{spacing.scale.2}" }
+        }
+      }
+    }
+  }
+}

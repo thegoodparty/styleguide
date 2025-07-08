@@ -61,7 +61,9 @@ export const OnDifferentBackgrounds: Story = {
         <GoodPartyOrgLogoWordmark />
       </div>
       <div className="flex flex-col items-center gap-2 p-6 bg-gray-100 rounded-lg">
-        <h3 className="text-sm font-medium text-gray-900">Light Gray Background</h3>
+        <h3 className="text-sm font-medium text-gray-900">
+          Light Gray Background
+        </h3>
         <GoodPartyOrgLogoWordmark />
       </div>
       <div className="flex flex-col items-center gap-2 p-6 bg-gray-800 rounded-lg">
@@ -105,4 +107,4 @@ export const WithHoverEffects: Story = {
       </div>
     </div>
   ),
-} 
+}
