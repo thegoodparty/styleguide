@@ -92,11 +92,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
     <Comp
       ref={ref}
       data-slot="button"
+      data-loading={loading}
       className={cn(
         buttonVariants({ variant, size, iconPosition, className })
       )}
-      disabled={isDisabled}
       {...props}
+      disabled={isDisabled}
     >
       {!loading && icon && iconPosition === 'left' && icon}
       {loading && <LoadingSpinner className="size-4" />}

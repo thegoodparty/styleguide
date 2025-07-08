@@ -33,19 +33,14 @@ const iconButtonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-button-default-background text-button-default-text border-button-default-border hover:bg-button-default-backgroundHover disabled:bg-button-default-backgroundDisabled',
-        secondary:
-          'bg-button-secondary-background text-button-secondary-text border-button-secondary-border hover:bg-button-secondary-backgroundHover disabled:bg-button-secondary-backgroundDisabled',
-        destructive:
-          'bg-button-destructive-background text-button-destructive-text border-button-destructive-border hover:bg-button-destructive-backgroundHover disabled:bg-button-destructive-backgroundDisabled focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
-        outline:
-          'bg-button-outline-background text-button-outline-text border-button-outline-border hover:bg-button-outline-backgroundHover disabled:bg-button-outline-backgroundDisabled focus-visible:border-button-outline-borderFocus focus-visible:ring-[3px]',
-        ghost:
-          'bg-button-ghost-background text-button-ghost-text border-button-ghost-border hover:bg-button-ghost-backgroundHover disabled:bg-button-ghost-backgroundDisabled focus-visible:border-button-ghost-borderFocus focus-visible:ring-[3px]',
-        link: 'bg-transparent text-[color:var(--semantic-text-link)] border-transparent hover:text-[color:var(--semantic-text-link-hover)] disabled:opacity-50 focus-visible:ring-[color:var(--semantic-text-link)]/20 focus-visible:ring-[3px] focus-visible:border-transparent',
-        whiteOutline: 'bg-transparent text-white border-white/20 hover:bg-white/10 disabled:bg-transparent disabled:text-white/50 disabled:border-white/10 focus-visible:border-white focus-visible:ring-white/20 focus-visible:ring-[3px]',
-        whiteGhost: 'bg-transparent text-white border-transparent hover:bg-white/10 disabled:bg-transparent disabled:text-white/50 focus-visible:border-white/20 focus-visible:ring-white/20 focus-visible:ring-[3px]',
+        default: 'button-primary',
+        secondary: 'button-secondary',
+        destructive: 'button-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40',
+        outline: 'button-outline focus-visible:ring-[3px]',
+        ghost: 'button-ghost focus-visible:ring-[3px]',
+        link: 'button-link',
+        whiteOutline: 'button-whiteOutline focus-visible:border-white focus-visible:ring-white/20 focus-visible:ring-[3px]',
+        whiteGhost: 'button-whiteGhost focus-visible:border-white/20 focus-visible:ring-white/20 focus-visible:ring-[3px]',
       },
       size: {
         xSmall: 'size-6',
@@ -104,9 +99,10 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(({
     <Comp
       ref={ref}
       data-slot="icon-button"
+      data-loading={loading}
       className={cn(iconButtonVariants({ variant, size, className }))}
-      disabled={isDisabled}
       {...props}
+      disabled={isDisabled}
     >
       {loading ? <LoadingSpinner className={getSpinnerSize()} /> : children}
     </Comp>
