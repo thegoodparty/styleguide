@@ -1,0 +1,123 @@
+{
+  "color": {
+    "blue": {
+      "50": { "value": "#E3F1FF" },
+      "100": { "value": "#D1E7FE" },
+      "200": { "value": "#A3CDFE" },
+      "300": { "value": "#75AFFE" },
+      "400": { "value": "#5395FD" },
+      "500": { "value": "#1B6AFC" },
+      "600": { "value": "#1351D8" },
+      "700": { "value": "#0D3CB5" },
+      "800": { "value": "#082A92" },
+      "900": { "value": "#051D78" },
+      "950": { "value": "#01114D" }
+    },
+    "brightYellow": {
+      "50": { "value": "#FFFADF" },
+      "100": { "value": "#FFF1C9" },
+      "200": { "value": "#FFEDBA" },
+      "300": { "value": "#FFE291" },
+      "400": { "value": "#FFE06C" },
+      "500": { "value": "#FFD759" },
+      "600": { "value": "#FFC523" },
+      "700": { "value": "#DBA219" },
+      "800": { "value": "#B78211" },
+      "900": { "value": "#93640B" },
+      "950": { "value": "#7A4F06" }
+    },
+    "grayscale": {
+      "50": { "value": "#F7FAFB" },
+      "100": { "value": "#EEF3F6" },
+      "200": { "value": "#E0E6EC" },
+      "300": { "value": "#D1D8DF" },
+      "400": { "value": "#B9C3CC" },
+      "500": { "value": "#879099" },
+      "600": { "value": "#70757A" },
+      "700": { "value": "#595C5F" },
+      "800": { "value": "#3E4042" },
+      "900": { "value": "#2D2E30" },
+      "950": { "value": "#1E1F20" },
+      "black": { "value": "#000000" },
+      "white": { "value": "#FFFFFF" }
+    },
+    "green": {
+      "50": { "value": "#EEFFE9" },
+      "100": { "value": "#DFFAD6" },
+      "200": { "value": "#B9F6B0" },
+      "300": { "value": "#86E382" },
+      "400": { "value": "#5EC963" },
+      "500": { "value": "#30A541" },
+      "600": { "value": "#187637" },
+      "700": { "value": "#0F5F31" },
+      "800": { "value": "#094F2D" },
+      "900": { "value": "#033A20" },
+      "950": { "value": "#002212" }
+    },
+    "haloGreen": {
+      "50": { "value": "#DDF2E8" },
+      "100": { "value": "#CCEADD" },
+      "200": { "value": "#B2E1CC" },
+      "300": { "value": "#7FDCB2" },
+      "400": { "value": "#63D1A0" },
+      "500": { "value": "#55BC8E" },
+      "600": { "value": "#3A9D7B" },
+      "700": { "value": "#257F68" },
+      "800": { "value": "#16695C" },
+      "900": { "value": "#115449" },
+      "950": { "value": "#043630" }
+    },
+    "lavender": {
+      "50": { "value": "#F8ECFF" },
+      "100": { "value": "#F1E5FF" },
+      "200": { "value": "#EDDCFF" },
+      "300": { "value": "#E5CDFF" },
+      "400": { "value": "#DCBCFF" },
+      "500": { "value": "#D7B2FF" },
+      "600": { "value": "#CDA1FF" },
+      "700": { "value": "#9E6BEB" },
+      "800": { "value": "#783DDE" },
+      "900": { "value": "#441E9F" },
+      "950": { "value": "#200B6A" }
+    },
+    "midnight": {
+      "50": { "value": "#ECF5FF" },
+      "100": { "value": "#D8E7F7" },
+      "200": { "value": "#B4CEF0" },
+      "300": { "value": "#84A3D2" },
+      "400": { "value": "#5975A6" },
+      "500": { "value": "#3E527C" },
+      "600": { "value": "#293F6C" },
+      "700": { "value": "#1D305C" },
+      "800": { "value": "#14234D" },
+      "900": { "value": "#0B1529" },
+      "950": { "value": "#060B17" }
+    },
+    "red": {
+      "50": { "value": "#FEF2F2" },
+      "100": { "value": "#FEE2E2" },
+      "200": { "value": "#FECACA" },
+      "300": { "value": "#FCA5A5" },
+      "400": { "value": "#F87171" },
+      "500": { "value": "#E00C30" },
+      "600": { "value": "#DC2626" },
+      "700": { "value": "#93081F" },
+      "800": { "value": "#991B1B" },
+      "900": { "value": "#7F1D1D" },
+      "950": { "value": "#450A0A" }
+    },
+    "waxflower": {
+      "50": { "value": "#FFEBD8" },
+      "100": { "value": "#FFE0C1" },
+      "200": { "value": "#FFCAA2" },
+      "300": { "value": "#FFB081" },
+      "400": { "value": "#FF9364" },
+      "500": { "value": "#FF7A4A" },
+      "600": { "value": "#FF5722" },
+      "700": { "value": "#E64A19" },
+      "800": { "value": "#D84315" },
+      "900": { "value": "#BF360C" },
+      "950": { "value": "#8D2A0A" }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "semantic": {
+    "primary": {
+      "default": { "value": "{brand.primary}" },
+      "hover": { "value": "{color.brightYellow.700}" },
+      "active": { "value": "{color.brightYellow.800}" },
+      "focus": { "value": "{color.brightYellow.600}" },
+      "disabled": {
+        "value": "{brand.primary}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      }
+    },
+    "secondary": {
+      "default": { "value": "{brand.secondary}" },
+      "hover": { "value": "{color.midnight.800}" },
+      "active": { "value": "{color.midnight.950}" },
+      "focus": { "value": "{color.midnight.700}" },
+      "disabled": {
+        "value": "{brand.secondary}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      }
+    },
+    "success": {
+      "default": { "value": "{color.green.500}" },
+      "hover": { "value": "{color.green.700}" },
+      "active": { "value": "{color.green.800}" },
+      "focus": { "value": "{color.green.400}" },
+      "disabled": {
+        "value": "{color.green.500}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      },
+      "subtle": { "value": "{color.green.50}" },
+      "muted": { "value": "{color.green.100}" }
+    },
+    "danger": {
+      "default": { "value": "{brand.destructive}" },
+      "hover": { "value": "{color.red.700}" },
+      "active": { "value": "{color.red.800}" },
+      "focus": { "value": "{color.red.400}" },
+      "disabled": {
+        "value": "{brand.destructive}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      },
+      "subtle": { "value": "{color.red.50}" },
+      "muted": { "value": "{color.red.100}" }
+    },
+    "warning": {
+      "default": { "value": "{color.waxflower.400}" },
+      "hover": { "value": "{color.waxflower.500}" },
+      "active": { "value": "{color.waxflower.600}" },
+      "focus": { "value": "{color.waxflower.300}" },
+      "disabled": {
+        "value": "{color.waxflower.400}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      },
+      "subtle": { "value": "{color.waxflower.50}" },
+      "muted": { "value": "{color.waxflower.100}" }
+    },
+    "info": {
+      "default": { "value": "{color.blue.500}" },
+      "hover": { "value": "{color.blue.700}" },
+      "active": { "value": "{color.blue.800}" },
+      "focus": { "value": "{color.blue.400}" },
+      "disabled": {
+        "value": "{color.blue.500}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      },
+      "subtle": { "value": "{color.blue.50}" },
+      "muted": { "value": "{color.blue.100}" }
+    },
+    "accent": {
+      "default": { "value": "{brand.accent}" },
+      "hover": { "value": "{color.haloGreen.500}" },
+      "active": { "value": "{color.haloGreen.600}" },
+      "focus": { "value": "{color.haloGreen.300}" },
+      "disabled": {
+        "value": "{brand.accent}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
+      },
+      "subtle": { "value": "{color.haloGreen.50}" },
+      "muted": { "value": "{color.haloGreen.100}" }
+    },
+    "surface": {
+      "default": { "value": "{brand.surface.primary}" },
+      "subtle": { "value": "{brand.surface.secondary}" },
+      "muted": { "value": "{brand.surface.tertiary}" },
+      "inverse": { "value": "{brand.surface.inverse}" },
+      "overlay": {
+        "value": "{color.grayscale.black}",
+        "attributes": { "modify": [{ "type": "alpha", "value": 0.8 }] }
+      }
+    },
+    "text": {
+      "primary": { "value": "{color.grayscale.950}" },
+      "default": { "value": "{brand.text.primary}" },
+      "subtle": { "value": "{brand.text.secondary}" },
+      "muted": { "value": "{brand.text.tertiary}" },
+      "inverse": { "value": "{brand.text.inverse}" },
+      "disabled": { "value": "{brand.text.disabled}" },
+      "link": { "value": "{color.blue.600}" },
+      "linkHover": { "value": "{color.blue.800}" }
+    },
+    "border": {
+      "default": { "value": "{brand.border.primary}" },
+      "subtle": { "value": "{brand.border.secondary}" },
+      "strong": { "value": "{brand.border.strong}" },
+      "inverse": { "value": "{brand.border.inverse}" },
+      "focus": { "value": "{color.blue.500}" }
+    },
+    "link": {
+      "default": { "value": "#2563EB" },
+      "hover": { "value": "#1D4ED8" },
+      "focus": { "value": "#2563EB" }
+    }
+  }
+}
