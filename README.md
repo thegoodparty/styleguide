@@ -23,7 +23,7 @@ pnpm add goodparty-styleguide
 Import components directly from the package:
 
 ```tsx
-import { Button, Input, Card } from 'goodparty-styleguide'
+import { Button, Input, Card, DataTable } from 'goodparty-styleguide'
 
 export default function Example() {
   return (
@@ -272,6 +272,86 @@ This package uses an automated design token system that ensures consistency betw
 - `halogreen` - Halo green brand color
 - `blue` - Blue brand color
 - `waxflower` - Wax flower brand color
+
+#### DataTable
+
+The DataTable component provides a powerful, feature-rich table with sorting, filtering, pagination, and row selection:
+
+```tsx
+import { DataTable, DataTableColumnHeader } from 'goodparty-styleguide'
+import { ColumnDef } from '@tanstack/react-table'
+
+interface User {
+  id: string
+  name: string
+  email: string
+  status: 'active' | 'inactive'
+}
+
+const columns: ColumnDef<User>[] = [
+  {
+    accessorKey: 'name',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Name" />
+    ),
+  },
+  {
+    accessorKey: 'email',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Email" />
+    ),
+  },
+  {
+    accessorKey: 'status',
+    header: 'Status',
+    cell: ({ row }) => (
+      <Badge
+        variant={row.getValue('status') === 'active' ? 'default' : 'secondary'}
+      >
+        {row.getValue('status')}
+      </Badge>
+    ),
+  },
+]
+
+const data: User[] = [
+  { id: '1', name: 'John Doe', email: 'john@example.com', status: 'active' },
+  {
+    id: '2',
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    status: 'inactive',
+  },
+]
+
+export default function UsersTable() {
+  return (
+    <DataTable
+      columns={columns}
+      data={data}
+      searchKey="name"
+      searchPlaceholder="Filter names..."
+    />
+  )
+}
+```
+
+**Features:**
+
+- Sorting by columns
+- Global search/filtering
+- Column visibility toggle
+- Pagination with customizable page sizes
+- Row selection with checkboxes
+- Responsive design
+- Built on TanStack Table
+
+**Helper Components:**
+
+- `DataTableColumnHeader` - Sortable column headers with dropdown menu
+- `DataTableRowActions` - Action buttons for each row
+- `DataTableSelectCheckbox` - Header checkbox for select all
+- `DataTableSelectRowCheckbox` - Row selection checkbox
 
 ### Customizing Design Tokens
 
