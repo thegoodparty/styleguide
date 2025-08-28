@@ -557,3 +557,39 @@ function InteractiveExample() {
 export const Interactive: Story = {
   render: () => <InteractiveExample />,
 }
+
+export const ServerSidePagination: Story = {
+  args: {
+    columns: paymentColumns,
+    data: samplePayments,
+    searchKey: 'email',
+    searchPlaceholder: 'Filter emails...',
+    pagination: false,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'DataTable with pagination disabled for server-side pagination implementations.',
+      },
+    },
+  },
+}
+
+export const NoPagination: Story = {
+  args: {
+    columns: userColumns,
+    data: sampleUsers,
+    searchKey: 'name',
+    searchPlaceholder: 'Filter names...',
+    pagination: false,
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'DataTable without pagination controls, useful when you want to handle pagination externally.',
+      },
+    },
+  },
+}
