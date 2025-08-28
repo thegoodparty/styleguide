@@ -569,7 +569,8 @@ export const ServerSidePagination: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'DataTable with pagination disabled for server-side pagination implementations.',
+        story:
+          'DataTable with pagination disabled for server-side pagination implementations.',
       },
     },
   },
@@ -586,7 +587,8 @@ export const NoPagination: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'DataTable without pagination controls, useful when you want to handle pagination externally.',
+        story:
+          'DataTable without pagination controls, useful when you want to handle pagination externally.',
       },
     },
   },
