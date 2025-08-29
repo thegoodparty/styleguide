@@ -127,27 +127,29 @@ function DataTable<TData, TValue>({
                       column.toggleVisibility(!!value)
                     }
                   >
-                    {(() => {
-                      const header = column.columnDef.header
-                      if (typeof header === 'string') {
-                        return header
-                      }
-                      if (typeof header === 'function') {
-                        try {
-                          const headerElement = header({
-                            column,
-                            header: column.columnDef as any,
-                            table,
-                          })
-                          if (headerElement?.props?.title) {
-                            return headerElement.props.title
-                          }
-                        } catch (_e) {
-                          // If header function fails, fall back to column.id
+                    <span className="block">
+                      {(() => {
+                        const header = column.columnDef.header
+                        if (typeof header === 'string') {
+                          return header
                         }
-                      }
-                      return column.id
-                    })()}
+                        if (typeof header === 'function') {
+                          try {
+                            const headerElement = header({
+                              column,
+                              header: column.columnDef as any,
+                              table,
+                            })
+                            if (headerElement?.props?.title) {
+                              return headerElement.props.title
+                            }
+                          } catch (_e) {
+                            // If header function fails, fall back to column.id
+                          }
+                        }
+                        return column.id
+                      })()}
+                    </span>
                   </DropdownMenuCheckboxItem>
                 )
               })}
