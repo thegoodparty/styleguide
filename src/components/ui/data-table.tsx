@@ -127,9 +127,27 @@ function DataTable<TData, TValue>({
                       column.toggleVisibility(!!value)
                     }
                   >
-                    {typeof column.columnDef.header === 'string'
-                      ? column.columnDef.header
-                      : column.id}
+                    {(() => {
+                      const header = column.columnDef.header
+                      if (typeof header === 'string') {
+                        return header
+                      }
+                      if (typeof header === 'function') {
+                        try {
+                          const headerElement = header({
+                            column,
+                            header: column.columnDef as any,
+                            table,
+                          })
+                          if (headerElement?.props?.title) {
+                            return headerElement.props.title
+                          }
+                        } catch (_e) {
+                          // If header function fails, fall back to column.id
+                        }
+                      }
+                      return column.id
+                    })()}
                   </DropdownMenuCheckboxItem>
                 )
               })}
