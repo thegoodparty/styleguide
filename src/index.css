@@ -11,6 +11,10 @@
   --color-ring: var(--ring);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-input: var(--input);
+  --color-muted-foreground: var(--muted-foreground);
 }
 
 @layer components {
@@ -189,6 +193,28 @@
 }
 
 @layer base {
+  :root {
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--brand-text-primary);
+    --input: var(--brand-surface-tertiary);
+    --ring: var(--semantic-border-focus);
+    --background: var(--brand-surface-primary);
+    --foreground: var(--brand-text-primary);
+    --border: var(--brand-border-primary);
+    --muted-foreground: var(--brand-text-secondary);
+  }
+
+  .dark {
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--brand-text-inverse);
+    --input: var(--brand-surface-inverse);
+    --ring: var(--semantic-border-focus);
+    --background: var(--brand-surface-inverse);
+    --foreground: var(--brand-text-inverse);
+    --border: var(--brand-border-inverse);
+    --muted-foreground: var(--brand-text-tertiary);
+  }
+
   * {
     @apply border-border outline-ring/50;
   }

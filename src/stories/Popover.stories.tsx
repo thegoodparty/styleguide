@@ -21,7 +21,7 @@ export const Default: Story = {
       <PopoverTrigger asChild>
         <Button variant="outline">Open popover</Button>
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent className="w-80 ">
         <div className="space-y-4">
           <h4 className="font-medium leading-none">Dimensions</h4>
           <p className="text-sm text-muted-foreground">
@@ -69,7 +69,7 @@ export const WithIcon: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="small">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
