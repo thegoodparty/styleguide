@@ -127,7 +127,7 @@ function DataTable<TData, TValue>({
                       column.toggleVisibility(!!value)
                     }
                   >
-                    <span className="block">
+                    <span className="block px-2">
                       {(() => {
                         const header = column.columnDef.header
                         if (typeof header === 'string') {
