@@ -56,6 +56,7 @@ interface DataTableProps<TData, TValue> {
   searchKey?: string
   searchPlaceholder?: string
   pagination?: boolean
+  onRowClick?: (row: TData) => void
 }
 
 function DataTable<TData, TValue>({
@@ -64,6 +65,7 @@ function DataTable<TData, TValue>({
   searchKey,
   searchPlaceholder = 'Filter...',
   pagination = true,
+  onRowClick,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -182,6 +184,12 @@ function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
+                  onClick={
+                    onRowClick ? () => onRowClick(row.original) : undefined
+                  }
+                  className={
+                    onRowClick ? 'cursor-pointer hover:bg-muted/50' : ''
+                  }
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
