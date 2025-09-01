@@ -72,40 +72,45 @@ interface ButtonProps
   iconPosition?: 'left' | 'right'
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
-  className,
-  variant,
-  size,
-  asChild = false,
-  loading = false,
-  loadingText,
-  icon,
-  iconPosition = 'left',
-  children,
-  disabled,
-  ...props
-}, ref) => {
-  const Comp = asChild ? Slot : 'button'
-  const isDisabled = disabled || loading
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      loading = false,
+      loadingText,
+      icon,
+      iconPosition = 'left',
+      children,
+      disabled,
+      ...props
+    },
+    ref,
+  ) => {
+    const Comp = asChild ? Slot : 'button'
+    const isDisabled = disabled || loading
 
-  return (
-    <Comp
-      ref={ref}
-      data-slot="button"
-      data-loading={loading}
-      className={cn(
-        buttonVariants({ variant, size, iconPosition, className })
-      )}
-      {...props}
-      disabled={isDisabled}
-    >
-      {!loading && icon && iconPosition === 'left' && icon}
-      {loading && <LoadingSpinner className="size-4" />}
-      {loading ? loadingText || children : children}
-      {!loading && icon && iconPosition === 'right' && icon}
-    </Comp>
-  )
-})
+    return (
+      <Comp
+        ref={ref}
+        data-slot="button"
+        data-loading={loading}
+        className={cn(
+          buttonVariants({ variant, size, iconPosition, className }),
+        )}
+        {...props}
+        disabled={isDisabled}
+      >
+        {!loading && icon && iconPosition === 'left' && icon}
+        {loading && <LoadingSpinner className="size-4" />}
+        {loading ? loadingText || children : children}
+        {!loading && icon && iconPosition === 'right' && icon}
+      </Comp>
+    )
+  },
+)
 
 Button.displayName = 'Button'
 

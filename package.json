@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist --tsconfig tsconfig.app.json && npm run build:tokens && cp src/design-tokens.css src/tailwind-theme.css src/typography.css dist/ && echo '@import \"./design-tokens.css\";\n@import \"./tailwind-theme.css\";\n@import \"./typography.css\";' > dist/index.css",
+    "build": "tsup src/components/ui/index.ts --dts --format esm,cjs --out-dir dist --tsconfig tsconfig.app.json && npm run build:tokens && cp src/design-tokens.css src/tailwind-theme.css src/typography.css src/index.css dist/",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
