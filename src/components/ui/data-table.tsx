@@ -58,6 +58,7 @@ interface DataTableProps<TData, TValue> {
   pagination?: boolean
   onRowClick?: (row: TData) => void
   onColumnVisibilityChange?: (visibility: VisibilityState) => void
+  initialColumnVisibility?: VisibilityState
 }
 
 function DataTable<TData, TValue>({
@@ -68,13 +69,14 @@ function DataTable<TData, TValue>({
   pagination = true,
   onRowClick,
   onColumnVisibilityChange,
+  initialColumnVisibility = {},
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
   )
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
+    React.useState<VisibilityState>(initialColumnVisibility)
   const [rowSelection, setRowSelection] = React.useState({})
 
   const table = useReactTable({
