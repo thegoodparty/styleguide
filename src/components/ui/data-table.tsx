@@ -57,6 +57,7 @@ interface DataTableProps<TData, TValue> {
   searchPlaceholder?: string
   pagination?: boolean
   onRowClick?: (row: TData) => void
+  onColumnVisibilityChange?: (visibility: VisibilityState) => void
 }
 
 function DataTable<TData, TValue>({
@@ -66,6 +67,7 @@ function DataTable<TData, TValue>({
   searchPlaceholder = 'Filter...',
   pagination = true,
   onRowClick,
+  onColumnVisibilityChange,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -84,7 +86,18 @@ function DataTable<TData, TValue>({
     ...(pagination && { getPaginationRowModel: getPaginationRowModel() }),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
+    onColumnVisibilityChange: (updaterOrValue) => {
+      if (typeof updaterOrValue === 'function') {
+        setColumnVisibility((prev) => {
+          const newVisibility = updaterOrValue(prev)
+          onColumnVisibilityChange?.(newVisibility)
+          return newVisibility
+        })
+      } else {
+        setColumnVisibility(updaterOrValue)
+        onColumnVisibilityChange?.(updaterOrValue)
+      }
+    },
     onRowSelectionChange: setRowSelection,
     state: {
       sorting,
