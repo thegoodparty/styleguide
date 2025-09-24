@@ -130,7 +130,10 @@ function DataTable<TData, TValue>({
               Columns <ChevronDownIcon />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="max-h-[60vh] overflow-y-auto">
+          <DropdownMenuContent
+            align="end"
+            className="max-h-[60vh] overflow-y-auto"
+          >
             {table
               .getAllColumns()
               .filter((column) => column.getCanHide())
