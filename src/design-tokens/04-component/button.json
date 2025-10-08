@@ -8,10 +8,10 @@
           "disabled": { "value": "{semantic.primary.default}" }
         },
         "text": {
-          "default": { "value": "{semantic.text.primary}" },
-          "hover": { "value": "{semantic.text.primary}" },
-          "disabled": { "value": "{semantic.text.primary}" },
-          "loading": { "value": "{semantic.text.primary}" }
+          "default": { "value": "{semantic.text.inverse}" },
+          "hover": { "value": "{semantic.text.inverse}" },
+          "disabled": { "value": "{semantic.text.inverse}" },
+          "loading": { "value": "{semantic.text.inverse}" }
         },
         "border": {
           "default": { "value": "{semantic.primary.default}" },
