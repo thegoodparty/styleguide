@@ -1,6 +1,6 @@
 {
   "brand": {
-    "primary": { "value": "{color.brightYellow.600}" },
+    "primary": { "value": "{color.blue.400}" },
     "secondary": { "value": "{color.midnight.900}" },
     "accent": { "value": "{color.haloGreen.400}" },
     "destructive": { "value": "{color.red.600}" },
