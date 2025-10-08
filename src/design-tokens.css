@@ -449,10 +449,10 @@
   --component-button-primary-background-default: #2563EB;
   --component-button-primary-background-hover: #0D3CB5;
   --component-button-primary-background-disabled: #2563EB;
-  --component-button-primary-text-default: #1E1F20;
-  --component-button-primary-text-hover: #1E1F20;
-  --component-button-primary-text-disabled: #1E1F20;
-  --component-button-primary-text-loading: #1E1F20;
+  --component-button-primary-text-default: #FFFFFF;
+  --component-button-primary-text-hover: #FFFFFF;
+  --component-button-primary-text-disabled: #FFFFFF;
+  --component-button-primary-text-loading: #FFFFFF;
   --component-button-primary-border-default: #2563EB;
   --component-button-primary-border-hover: #0D3CB5;
   --component-button-primary-border-focus: #1351D8;
