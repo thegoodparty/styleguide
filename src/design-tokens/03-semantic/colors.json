@@ -2,9 +2,9 @@
   "semantic": {
     "primary": {
       "default": { "value": "{brand.primary}" },
-      "hover": { "value": "{color.brightYellow.700}" },
-      "active": { "value": "{color.brightYellow.800}" },
-      "focus": { "value": "{color.brightYellow.600}" },
+      "hover": { "value": "{color.blue.700}" },
+      "active": { "value": "{color.blue.800}" },
+      "focus": { "value": "{color.blue.600}" },
       "disabled": {
         "value": "{brand.primary}",
         "attributes": { "modify": [{ "type": "alpha", "value": 0.5 }] }
