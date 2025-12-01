@@ -103,6 +103,7 @@ export const ColorWaxflower700 = "#E64A19";
 export const ColorWaxflower800 = "#D84315";
 export const ColorWaxflower900 = "#BF360C";
 export const ColorWaxflower950 = "#8D2A0A";
+export const CustomDefaultFocus = "#a3a3a380";
 export const BorderRadiusNone = "0px";
 export const BorderRadiusSm = "4px";
 export const BorderRadiusBase = "8px";

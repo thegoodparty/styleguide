@@ -15,6 +15,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-input: var(--input);
   --color-muted-foreground: var(--muted-foreground);
+  --color-custom-default-focus: var(--custom-default-focus);
 }
 
 @layer components {
