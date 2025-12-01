@@ -115,6 +115,7 @@
     "playwright": "^1.52.0",
     "prettier": "^3.5.3",
     "rollup": "^4.9.0",
+    "shadcn": "^3.5.0",
     "storybook": "^8.6.12",
     "style-dictionary": "^5.0.0",
     "tsup": "^8.5.0",
