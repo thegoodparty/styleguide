@@ -1,10 +1,8 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Label } from '../components/ui/label'
 import { Input } from '../components/ui/input'
 import { Checkbox } from '../components/ui/checkbox'
 import { RadioGroup, RadioGroupItem } from '../components/ui/radio-group'
-import { Switch } from '../components/ui/switch'
 
 const meta: Meta<typeof Label> = {
   title: 'Components/Label',
@@ -57,15 +55,6 @@ function RadioGroupLabel() {
   )
 }
 
-function SwitchLabel() {
-  return (
-    <div className="flex items-center space-x-2">
-      <Switch id="airplane-mode" />
-      <Label htmlFor="airplane-mode">Airplane Mode</Label>
-    </div>
-  )
-}
-
 function CustomStylesLabel() {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -92,10 +81,6 @@ export const WithCheckbox: Story = {
 
 export const WithRadioGroup: Story = {
   render: () => <RadioGroupLabel />,
-}
-
-export const WithSwitch: Story = {
-  render: () => <SwitchLabel />,
 }
 
 export const WithCustomStyles: Story = {
