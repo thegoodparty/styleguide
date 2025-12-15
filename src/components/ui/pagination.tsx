@@ -23,14 +23,20 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn('flex flex-row items-center gap-1', className)}
+      className={cn('flex flex-row items-center gap-1 !m-0 !p-0', className)}
       {...props}
     />
   )
 }
 
-function PaginationItem({ ...props }: React.ComponentProps<'li'>) {
-  return <li data-slot="pagination-item" {...props} />
+function PaginationItem({ className, ...props }: React.ComponentProps<'li'>) {
+  return (
+    <li
+      data-slot="pagination-item"
+      className={cn('!mb-0', className)}
+      {...props}
+    />
+  )
 }
 
 type PaginationLinkProps = {
@@ -54,6 +60,7 @@ function PaginationLink({
           variant: isActive ? 'outline' : 'ghost',
           size,
         }),
+        '!text-sm !font-normal !text-foreground !no-underline !rounded-sm !px-3',
         className,
       )}
       {...props}
