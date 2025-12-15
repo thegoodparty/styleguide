@@ -409,7 +409,6 @@ function DataTableColumnHeader({
         type="button"
         className="group cursor-pointer flex items-center space-x-2 text-muted-foreground font-normal hover:bg-accent data-[state=open]:bg-accent focus-visible:outline-none focus-visible:none focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm disabled:pointer-events-none disabled:opacity-50"
         aria-label={`Sort column ${title}`}
-        aria-haspopup="menu"
         onClick={() => {
           const sorted = column.getIsSorted()
           if (!sorted) {
