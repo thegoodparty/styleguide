@@ -397,10 +397,9 @@ const productColumns: ColumnDef<Product>[] = [
 
 export const Default: Story = {
   args: {
-    columns: paymentColumns,
-    data: samplePayments,
-    searchKey: 'email',
-    searchPlaceholder: 'Filter emails...',
+    columns: productColumns,
+    data: sampleProducts,
+    columnVisibilityControls: false,
   },
 }
 
