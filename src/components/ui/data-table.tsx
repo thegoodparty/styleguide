@@ -407,7 +407,7 @@ function DataTableColumnHeader({
     <div className={cn('flex items-center space-x-2', className)}>
       <button
         type="button"
-        className="group cursor-pointer flex items-center space-x-2 text-muted-foreground font-normal hover:bg-accent data-[state=open]:bg-accent focus-visible:outline-none focus-visible:none focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm disabled:pointer-events-none disabled:opacity-50"
+        className="group cursor-pointer flex items-center space-x-2 text-muted-foreground font-normal hover:bg-none data-[state=open]:bg-none focus-visible:outline-none focus-visible:none focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm disabled:pointer-events-none disabled:opacity-50"
         aria-label={`Sort column ${title}`}
         onClick={() => {
           const sorted = column.getIsSorted()
