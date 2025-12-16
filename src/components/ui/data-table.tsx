@@ -259,7 +259,7 @@ function DataTable<TData, TValue>({
                   }
                   className={cn(
                     'h-12',
-                    onRowClick ? 'cursor-pointer hover:bg-muted/50' : '',
+                    onRowClick ? 'cursor-pointer hover:bg-slate-200/50' : '',
                   )}
                 >
                   {row.getVisibleCells().map((cell) => (
@@ -400,7 +400,16 @@ function DataTableColumnHeader({
   className,
 }: DataTableColumnHeaderProps) {
   if (!column.getCanSort()) {
-    return <div className={cn(className)}>{title}</div>
+    return (
+      <div
+        className={cn(
+          'font-normal text-muted-foreground cursor-default',
+          className,
+        )}
+      >
+        {title}
+      </div>
+    )
   }
 
   return (

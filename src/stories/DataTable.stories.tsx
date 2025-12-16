@@ -344,6 +344,7 @@ const productColumns: ColumnDef<Product>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Product" />
     ),
+    enableSorting: false,
   },
   {
     accessorKey: 'category',
@@ -549,6 +550,7 @@ function InteractiveExample() {
       data={samplePayments}
       searchKey="email"
       searchPlaceholder="Search by email..."
+      onRowClick={(row) => console.log('Row clicked:', row)}
     />
   )
 }
