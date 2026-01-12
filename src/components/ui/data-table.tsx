@@ -177,7 +177,7 @@ function DataTable<TData, TValue>({
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="ml-auto">
-                  Columns <ChevronDownIcon />
+                  Columns <ChevronDownIcon className="size-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent
