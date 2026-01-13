@@ -14,7 +14,7 @@ yarn add goodparty-styleguide
 pnpm add goodparty-styleguide
 ```
 
-> **Peer dependencies:** You must have `react` and `react-dom` installed in your project.
+> **Peer dependencies:** You must have `react`, `react-dom`, `tailwindcss` (v4+), and `tw-animate-css` installed in your project.
 
 ## 🚀 Usage
 
