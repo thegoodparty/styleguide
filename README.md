@@ -14,7 +14,7 @@ yarn add goodparty-styleguide
 pnpm add goodparty-styleguide
 ```
 
-> **Peer dependencies:** You must have `react`, `react-dom`, `tailwindcss` (v4+), and `tw-animate-css` installed in your project.
+> **Peer dependencies:** You must have `react`, `react-dom`, and `tailwindcss` (v4+) installed in your project.
 
 ## 🚀 Usage
 
@@ -73,10 +73,9 @@ The styleguide includes a complete typography system with pre-styled HTML elemen
 
    > **Note:** `tailwindcss@next` installs the latest version of Tailwind CSS (v4 or newer).
 
-2. Import the styles in your CSS file (e.g., `src/index.css`):
+2. Import the styles in your CSS file (e.g., `src/globals.css` or `src/index.css`):
 
    ```css
-   @import 'tw-animate-css';
    @import 'goodparty-styleguide/dist/index.css';
    ```
 
