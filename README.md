@@ -76,7 +76,7 @@ The styleguide includes a complete typography system with pre-styled HTML elemen
 2. Import the styles in your CSS file (e.g., `src/index.css`):
 
    ```css
-   @import 'tailwindcss';
+   @import 'tw-animate-css';
    @import 'goodparty-styleguide/dist/index.css';
    ```
 
