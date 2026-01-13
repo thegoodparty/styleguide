@@ -65,6 +65,7 @@ interface DataTableProps<TData, TValue> {
   onRowClick?: (row: TData) => void
   onColumnVisibilityChange?: (visibility: VisibilityState) => void
   initialColumnVisibility?: VisibilityState
+  className?: string
 }
 
 type PageElement = number | 'ellipsis'
@@ -116,6 +117,7 @@ function DataTable<TData, TValue>({
   onRowClick,
   onColumnVisibilityChange,
   initialColumnVisibility = {},
+  className,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -158,7 +160,7 @@ function DataTable<TData, TValue>({
   const selectedRows = table.getFilteredSelectedRowModel().rows.length
 
   return (
-    <div className="w-full">
+    <div className={cn('w-full', className)}>
       {(columnVisibilityControls || searchKey) && (
         <div className="flex items-center py-4">
           {searchKey && (
@@ -288,8 +290,8 @@ function DataTable<TData, TValue>({
       {pagination && (
         <div className="flex flex-col md:flex-row items-center justify-between space-x-2 py-4">
           <div className="flex items-center w-full justify-between md:justify-start md:space-x-10 mb-4 md:mb-0">
-            <div className="flex items-center justify-center space-x-2">
-              <p className=" text-sm !font-normal !mb-0">Rows per page</p>
+            <div className="flex items-center justify-center space-x-4">
+              <p className=" text-sm !font-normal !mb-0 mr-1">Rows per page</p>
               <Select
                 value={`${table.getState().pagination.pageSize}`}
                 onValueChange={(value) => {
